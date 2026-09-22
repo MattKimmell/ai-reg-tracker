@@ -39,17 +39,6 @@ RELEVANCE_META = {
     "none": {"label": "None", "css": "rel-none"},
 }
 
-# Approximate geographic tile cartogram (rows top→bottom, left→right).
-US_TILE_ROWS: list[list[str | None]] = [
-    [None, None, None, None, None, None, None, None, None, None, None, "ME"],
-    ["AK", None, "WA", "OR", "ID", "MT", "ND", "MN", "WI", "MI", None, "VT", "NH"],
-    [None, None, "CA", "NV", "UT", "WY", "SD", "IA", "IL", "IN", "OH", "PA", "NY", "MA"],
-    [None, None, "AZ", "CO", "NE", "MO", "KY", "WV", "VA", "MD", "DE", "NJ", "CT", "RI"],
-    [None, None, None, "NM", "KS", "AR", "TN", "NC", "SC", None, None, None, None, None],
-    [None, None, None, None, "OK", "LA", "MS", "AL", "GA", None, None, None, None, None],
-    [None, None, None, None, None, "TX", None, None, "FL", None, None, None, None, None],
-    ["HI", None, None, None, None, None, None, None, "DC", None, None, None, None, None],
-]
 
 
 @app.on_event("startup")
@@ -97,17 +86,15 @@ def home(
     stats = db.compute_stats()
     activity = db.activity_by_month(24)
 
-    by_code = {j["code"]: j for j in all_jurisdictions}
-    map_rows = []
-    for row in US_TILE_ROWS:
-        cells = []
-        for code in row:
-            if code is None:
-                cells.append(None)
-            else:
-                j = by_code.get(code)
-                cells.append(j)
-        map_rows.append(cells)
+    # Map status payload for client-side SVG coloring (code → {name, status_css, status_display})
+    map_status = {}
+    for j in all_jurisdictions:
+        if j["kind"] in ("state", "local"):
+            map_status[j["code"]] = {
+                "name": j["name"],
+                "status_css": j["status_css"],
+                "status_display": j["status_display"],
+            }
 
     # Search index for client-side search (all jurisdictions + obligations)
     search_index = []
@@ -139,9 +126,9 @@ def home(
             "status_meta": STATUS_META,
             "total_count": len(jurisdictions),
             "stats": stats,
-            "map_rows": map_rows,
             "activity_json": json.dumps(activity),
             "search_index_json": json.dumps(search_index),
+            "map_status_json": json.dumps(map_status),
         },
     )
 

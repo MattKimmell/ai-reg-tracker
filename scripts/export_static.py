@@ -9,6 +9,7 @@ Writes:
   docs/index.html
   docs/assets/app.js
   docs/assets/style.css
+  docs/assets/us-states.svg
   docs/data/all.json
 
 Hash routes: #/  #/?filter=hot  #/j/CA  #/about
@@ -95,6 +96,11 @@ def write_site(payload: dict) -> None:
         raise FileNotFoundError(f"Missing stylesheet: {APP_CSS}")
     shutil.copy2(APP_CSS, ASSETS / "style.css")
 
+    svg_src = ROOT / "app" / "static" / "us-states.svg"
+    if not svg_src.is_file():
+        raise FileNotFoundError(f"Missing map SVG: {svg_src}")
+    shutil.copy2(svg_src, ASSETS / "us-states.svg")
+
     out_json = DATA_DIR / "all.json"
     out_json.write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
@@ -118,6 +124,7 @@ def main() -> int:
     print(f"  {DOCS / 'index.html'}")
     print(f"  {ASSETS / 'app.js'}")
     print(f"  {ASSETS / 'style.css'}")
+    print(f"  {ASSETS / 'us-states.svg'}")
     print(f"  {DATA_DIR / 'all.json'}")
     print("Open via GitHub Pages or: python -m http.server -d docs 8080")
     return 0

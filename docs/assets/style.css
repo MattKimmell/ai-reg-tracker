@@ -423,55 +423,84 @@ footer.app-footer {
   border: 0;
 }
 
-/* --- US tile map --- */
+/* --- US geographic map --- */
 .map-panel {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.85rem;
+  padding: 0.85rem 1rem 0.5rem;
   margin-bottom: 1.5rem;
-  overflow-x: auto;
+  overflow: hidden;
 }
-.map-row {
-  display: flex;
-  gap: 3px;
-  margin-bottom: 3px;
-  justify-content: flex-start;
+.map-panel .map-loading {
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 2rem 0;
+  text-align: center;
 }
-.map-cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 28px;
-  flex: 0 0 36px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  border-radius: 4px;
-  background: var(--surface2);
-  color: var(--text);
-  text-decoration: none;
-  border: 1px solid transparent;
-  transition: transform 0.1s, border-color 0.15s, box-shadow 0.15s;
+svg.us-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
-.map-cell:hover {
-  text-decoration: none;
-  transform: scale(1.08);
-  border-color: var(--accent);
-  z-index: 1;
+svg.us-map path.state,
+svg.us-map circle.state,
+svg.us-map .state {
+  fill: rgba(90, 106, 126, 0.4);
+  stroke: var(--bg);
+  stroke-width: 1;
+  cursor: pointer;
+  transition: fill 0.12s, opacity 0.12s, stroke-width 0.12s;
+  vector-effect: non-scaling-stroke;
 }
-.map-cell.empty-cell {
-  background: transparent;
-  pointer-events: none;
-  border: none;
+svg.us-map .dc-marker {
+  stroke-width: 1.5;
 }
-.map-cell.status-in-force { background: rgba(61,154,106,0.45); }
-.map-cell.status-pending { background: rgba(201,162,39,0.45); }
-.map-cell.status-hot { background: rgba(212,101,74,0.5); }
-.map-cell.status-watch { background: rgba(123,143,212,0.45); }
-.map-cell.status-quiet { background: rgba(90,106,126,0.4); }
+svg.us-map path.state:hover,
+svg.us-map circle.state:hover,
+svg.us-map .state:hover,
+svg.us-map g.state:hover path,
+svg.us-map g.state:hover circle {
+  opacity: 0.92;
+  stroke: var(--accent);
+  stroke-width: 2;
+  outline: none;
+}
+svg.us-map path.state.status-in-force,
+svg.us-map circle.state.status-in-force,
+svg.us-map g.state.status-in-force .state {
+  fill: rgba(61, 154, 106, 0.65);
+}
+svg.us-map path.state.status-pending,
+svg.us-map circle.state.status-pending,
+svg.us-map g.state.status-pending .state {
+  fill: rgba(201, 162, 39, 0.65);
+}
+svg.us-map path.state.status-hot,
+svg.us-map circle.state.status-hot,
+svg.us-map g.state.status-hot .state {
+  fill: rgba(212, 101, 74, 0.7);
+}
+svg.us-map path.state.status-watch,
+svg.us-map circle.state.status-watch,
+svg.us-map g.state.status-watch .state {
+  fill: rgba(123, 143, 212, 0.65);
+}
+svg.us-map path.state.status-quiet,
+svg.us-map circle.state.status-quiet,
+svg.us-map g.state.status-quiet .state {
+  fill: rgba(90, 106, 126, 0.45);
+}
+svg.us-map path.state.hit,
+svg.us-map circle.state.hit,
+svg.us-map g.state.hit .state {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 2px var(--accent));
+}
 
-.map-cell.hit, .state-tile.hit, .federal-card.hit {
+.state-tile.hit, .federal-card.hit {
   box-shadow: 0 0 0 2px var(--accent);
   border-color: var(--accent);
 }
@@ -488,6 +517,6 @@ footer.app-footer {
 .chart-panel canvas { max-height: 220px; }
 
 @media (max-width: 720px) {
-  .map-cell { width: 28px; height: 24px; flex-basis: 28px; font-size: 0.58rem; }
   .stats-row { grid-template-columns: repeat(3, 1fr); }
+  .map-panel { padding: 0.65rem 0.5rem 0.35rem; }
 }

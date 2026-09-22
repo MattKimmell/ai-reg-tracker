@@ -55,7 +55,7 @@
     if (!input || !results) return;
 
     function clearHighlights() {
-      document.querySelectorAll(".map-cell.hit, .state-tile.hit, .federal-card.hit").forEach(function (el) {
+      document.querySelectorAll(".us-map .state.hit, .state-tile.hit, .federal-card.hit").forEach(function (el) {
         el.classList.remove("hit");
       });
     }
@@ -114,7 +114,63 @@
     });
   }
 
+
+  function mountUsMap() {
+    var panel = document.getElementById("us-map");
+    var byCode = window.TRACKER_MAP || {};
+    if (!panel) return;
+
+    function apply(svgRoot) {
+      svgRoot.classList.add("us-map");
+      svgRoot.removeAttribute("width");
+      svgRoot.removeAttribute("height");
+      var nodes = svgRoot.querySelectorAll(":scope > [data-code]");
+      nodes.forEach(function (el) {
+        var code = (el.getAttribute("data-code") || "").toUpperCase();
+        var meta = byCode[code];
+        if (!meta) return;
+        if (meta.status_css) el.classList.add(meta.status_css);
+        el.setAttribute("data-code", code);
+        var tip = (meta.name || code) + " — " + (meta.status_display || "");
+        el.setAttribute("title", tip);
+        el.setAttribute("aria-label", tip);
+        el.setAttribute("tabindex", "0");
+        el.setAttribute("role", "link");
+        var go = function () {
+          window.location.href = "/j/" + encodeURIComponent(code);
+        };
+        el.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          go();
+        });
+        el.addEventListener("keydown", function (ev) {
+          if (ev.key === "Enter" || ev.key === " ") {
+            ev.preventDefault();
+            go();
+          }
+        });
+      });
+    }
+
+    fetch("/static/us-states.svg", { cache: "force-cache" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.text();
+      })
+      .then(function (svgText) {
+        panel.innerHTML = svgText;
+        var svg = panel.querySelector("svg");
+        if (!svg) throw new Error("SVG missing");
+        apply(svg);
+      })
+      .catch(function (err) {
+        panel.innerHTML = '<p class="map-loading">Map failed to load (' +
+          String(err.message || err) + ').</p>';
+      });
+  }
+
   function boot() {
+    mountUsMap();
     initSearch();
     if (typeof Chart !== "undefined") initChart();
     else {

@@ -17,17 +17,6 @@
     none: { label: "None", css: "rel-none" },
   };
 
-  const US_TILE_ROWS = [
-    [null, null, null, null, null, null, null, null, null, null, null, "ME"],
-    ["AK", null, "WA", "OR", "ID", "MT", "ND", "MN", "WI", "MI", null, "VT", "NH"],
-    [null, null, "CA", "NV", "UT", "WY", "SD", "IA", "IL", "IN", "OH", "PA", "NY", "MA"],
-    [null, null, "AZ", "CO", "NE", "MO", "KY", "WV", "VA", "MD", "DE", "NJ", "CT", "RI"],
-    [null, null, null, "NM", "KS", "AR", "TN", "NC", "SC", null, null, null, null, null],
-    [null, null, null, null, "OK", "LA", "MS", "AL", "GA", null, null, null, null, null],
-    [null, null, null, null, null, "TX", null, null, "FL", null, null, null, null, null],
-    ["HI", null, null, null, null, null, null, null, "DC", null, null, null, null, null],
-  ];
-
   let DATA = null;
   let activityChart = null;
   let searchBound = false;
@@ -164,27 +153,55 @@
     return list.map(enrich);
   }
 
-  function renderMap(byCode) {
-    let html = '<p class="section-label">United States map</p><div class="map-panel" id="us-map">';
-    for (const row of US_TILE_ROWS) {
-      html += '<div class="map-row">';
-      for (const code of row) {
-        if (!code) {
-          html += '<span class="map-cell empty-cell" aria-hidden="true"></span>';
-          continue;
-        }
+  function renderMap() {
+    return `<p class="section-label">United States map</p>
+      <div class="map-panel" id="us-map">
+        <p class="map-loading">Loading map…</p>
+      </div>`;
+  }
+
+  async function mountUsMap(byCode) {
+    const panel = document.getElementById("us-map");
+    if (!panel) return;
+    try {
+      const res = await fetch("assets/us-states.svg", { cache: "force-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const svgText = await res.text();
+      panel.innerHTML = svgText;
+      const svg = panel.querySelector("svg");
+      if (!svg) throw new Error("SVG missing");
+      svg.classList.add("us-map");
+      svg.removeAttribute("width");
+      svg.removeAttribute("height");
+
+      const nodes = svg.querySelectorAll(":scope > [data-code]");
+      nodes.forEach((el) => {
+        const code = (el.getAttribute("data-code") || "").toUpperCase();
         const j = byCode[code];
-        if (!j) {
-          html += `<span class="map-cell empty-cell" title="${esc(code)}"></span>`;
-          continue;
-        }
+        if (!j) return;
         const e = enrich(j);
-        html += `<a class="map-cell ${e.status_css}" href="#/j/${esc(e.code)}" data-code="${esc(e.code)}" title="${esc(e.name)} — ${esc(e.status_display)}">${esc(e.code)}</a>`;
-      }
-      html += "</div>";
+        el.classList.add(e.status_css);
+        el.setAttribute("data-code", e.code);
+        const tip = e.name + " — " + e.status_display;
+        el.setAttribute("title", tip);
+        el.setAttribute("aria-label", tip);
+        el.setAttribute("tabindex", "0");
+        el.setAttribute("role", "link");
+        const go = () => { location.hash = "#/j/" + e.code; };
+        el.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          go();
+        });
+        el.addEventListener("keydown", (ev) => {
+          if (ev.key === "Enter" || ev.key === " ") {
+            ev.preventDefault();
+            go();
+          }
+        });
+      });
+    } catch (err) {
+      panel.innerHTML = `<p class="map-loading">Map failed to load (${esc(err.message)}).</p>`;
     }
-    html += "</div>";
-    return html;
   }
 
   function renderHome(filter) {
@@ -253,7 +270,7 @@
       }
     }
 
-    html += renderMap(byCode);
+    html += renderMap();
 
     html += `<div class="chart-panel">
       <p class="section-label">Regulatory activity (history events + obligation effective dates)</p>
@@ -275,6 +292,7 @@
     }
 
     document.getElementById("app").innerHTML = html;
+    mountUsMap(byCode);
     bindSearch();
     drawChart();
   }
@@ -341,7 +359,7 @@
     const index = buildSearchIndex();
 
     function clearHighlights() {
-      document.querySelectorAll(".map-cell.hit, .state-tile.hit, .federal-card.hit").forEach((el) => {
+      document.querySelectorAll(".us-map .state.hit, .state-tile.hit, .federal-card.hit").forEach((el) => {
         el.classList.remove("hit");
       });
     }

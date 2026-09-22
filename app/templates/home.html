@@ -54,17 +54,7 @@
 
 <p class="section-label">United States map</p>
 <div class="map-panel" id="us-map">
-  {% for row in map_rows %}
-  <div class="map-row">
-    {% for cell in row %}
-      {% if cell %}
-      <a class="map-cell {{ cell.status_css }}" href="/j/{{ cell.code }}" data-code="{{ cell.code }}" title="{{ cell.name }} — {{ cell.status_display }}">{{ cell.code }}</a>
-      {% else %}
-      <span class="map-cell empty-cell" aria-hidden="true"></span>
-      {% endif %}
-    {% endfor %}
-  </div>
-  {% endfor %}
+  <p class="map-loading">Loading map…</p>
 </div>
 
 <div class="chart-panel">
@@ -92,6 +82,7 @@
 <script>
   window.TRACKER_ACTIVITY = {{ activity_json | safe }};
   window.TRACKER_SEARCH = {{ search_index_json | safe }};
+  window.TRACKER_MAP = {{ map_status_json | safe }};
 </script>
 <script src="/static/home.js" defer></script>
 {% endblock %}
