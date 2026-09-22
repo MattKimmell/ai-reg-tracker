@@ -1,6 +1,7 @@
-"""Ellavox AI Regulation Tracker — FastAPI app."""
+"""US AI Reg Tracker — FastAPI app."""
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any
 
@@ -15,9 +16,9 @@ from app import db
 APP_DIR = Path(__file__).resolve().parent
 
 app = FastAPI(
-    title="Ellavox AI Regulation Tracker",
-    description="Local operational briefing for US AI regulation status (federal + states + DC).",
-    version="0.1.0",
+    title="US AI Reg Tracker",
+    description="Operational briefing for US AI regulation status (federal + states + DC).",
+    version="0.2.0",
 )
 
 app.mount("/static", StaticFiles(directory=str(APP_DIR / "static")), name="static")
@@ -38,6 +39,18 @@ RELEVANCE_META = {
     "none": {"label": "None", "css": "rel-none"},
 }
 
+# Approximate geographic tile cartogram (rows top→bottom, left→right).
+US_TILE_ROWS: list[list[str | None]] = [
+    [None, None, None, None, None, None, None, None, None, None, None, "ME"],
+    ["AK", None, "WA", "OR", "ID", "MT", "ND", "MN", "WI", "MI", None, "VT", "NH"],
+    [None, None, "CA", "NV", "UT", "WY", "SD", "IA", "IL", "IN", "OH", "PA", "NY", "MA"],
+    [None, None, "AZ", "CO", "NE", "MO", "KY", "WV", "VA", "MD", "DE", "NJ", "CT", "RI"],
+    [None, None, None, "NM", "KS", "AR", "TN", "NC", "SC", None, None, None, None, None],
+    [None, None, None, None, "OK", "LA", "MS", "AL", "GA", None, None, None, None, None],
+    [None, None, None, None, None, "TX", None, None, "FL", None, None, None, None, None],
+    ["HI", None, None, None, None, None, None, None, "DC", None, None, None, None, None],
+]
+
 
 @app.on_event("startup")
 def startup() -> None:
@@ -53,6 +66,16 @@ def _enrich_jurisdiction(j: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
+def _parse_filter(filter: str) -> tuple[str | None, bool]:
+    voice_only = filter in ("voice", "voice_cs")
+    status = None
+    if filter == "hot":
+        status = "hot"
+    elif filter == "in_force":
+        status = "in_force"
+    return status, voice_only
+
+
 # --- HTML pages ---
 
 
@@ -61,20 +84,49 @@ def home(
     request: Request,
     filter: str = Query("all", alias="filter"),
 ):
-    ellavox_only = filter == "ellavox"
-    status = None
-    if filter == "hot":
-        status = "hot"
-    elif filter == "in_force":
-        status = "in_force"
+    status, voice_only = _parse_filter(filter)
 
+    all_jurisdictions = [_enrich_jurisdiction(j) for j in db.list_jurisdictions()]
     jurisdictions = [_enrich_jurisdiction(j) for j in db.list_jurisdictions(
         status=status,
-        ellavox_only=ellavox_only,
+        voice_only=voice_only,
     )]
     federal = [j for j in jurisdictions if j["kind"] == "federal"]
     states = [j for j in jurisdictions if j["kind"] in ("state", "local")]
     refresh = db.get_meta("last_global_refresh", "—")
+    stats = db.compute_stats()
+    activity = db.activity_by_month(24)
+
+    by_code = {j["code"]: j for j in all_jurisdictions}
+    map_rows = []
+    for row in US_TILE_ROWS:
+        cells = []
+        for code in row:
+            if code is None:
+                cells.append(None)
+            else:
+                j = by_code.get(code)
+                cells.append(j)
+        map_rows.append(cells)
+
+    # Search index for client-side search (all jurisdictions + obligations)
+    search_index = []
+    for j in all_jurisdictions:
+        detail = db.jurisdiction_detail(j["code"])
+        obl_bits = []
+        if detail:
+            for o in detail["obligations"]:
+                obl_bits.append(o.get("title") or "")
+                obl_bits.extend(o.get("themes") or [])
+                obl_bits.append(o.get("summary") or "")
+                obl_bits.append(o.get("voice_cs_why") or "")
+        search_index.append({
+            "code": j["code"],
+            "name": j["name"],
+            "kind": j["kind"],
+            "status_label": j["status_label"],
+            "text": " ".join([j["code"], j["name"], j.get("summary") or "", *obl_bits]).lower(),
+        })
 
     return templates.TemplateResponse(
         "home.html",
@@ -86,6 +138,10 @@ def home(
             "last_refresh": refresh,
             "status_meta": STATUS_META,
             "total_count": len(jurisdictions),
+            "stats": stats,
+            "map_rows": map_rows,
+            "activity_json": json.dumps(activity),
+            "search_index_json": json.dumps(search_index),
         },
     )
 
@@ -100,7 +156,7 @@ def jurisdiction_page(request: Request, code: str):
     obligations = []
     for obl in detail["obligations"]:
         o = dict(obl)
-        rel = o.get("ellavox_relevance") or "none"
+        rel = o.get("voice_cs_relevance") or "none"
         o["rel_display"] = RELEVANCE_META.get(rel, RELEVANCE_META["none"])["label"]
         o["rel_css"] = RELEVANCE_META.get(rel, RELEVANCE_META["none"])["css"]
         obligations.append(o)
@@ -136,18 +192,25 @@ def about(request: Request):
 def api_list_jurisdictions(
     filter: str | None = Query(None),
 ):
-    ellavox_only = filter == "ellavox"
-    status = None
-    if filter == "hot":
-        status = "hot"
-    elif filter == "in_force":
-        status = "in_force"
-    elif filter and filter not in ("all", "ellavox"):
-        status = filter
+    f = filter or "all"
+    status, voice_only = _parse_filter(f)
+    if f not in ("all", "hot", "in_force", "voice", "voice_cs") and f:
+        status = f
+        voice_only = False
 
     return {
         "last_global_refresh": db.get_meta("last_global_refresh"),
-        "jurisdictions": db.list_jurisdictions(status=status, ellavox_only=ellavox_only),
+        "stats": db.compute_stats(),
+        "jurisdictions": db.list_jurisdictions(status=status, voice_only=voice_only),
+    }
+
+
+@app.get("/api/stats")
+def api_stats():
+    return {
+        "last_global_refresh": db.get_meta("last_global_refresh"),
+        "stats": db.compute_stats(),
+        "activity": db.activity_by_month(24),
     }
 
 
@@ -169,8 +232,11 @@ class ObligationIn(BaseModel):
     status: str = "proposed"
     effective_date: str | None = None
     themes: list[str] = Field(default_factory=list)
-    ellavox_relevance: str = "none"
-    ellavox_why: str = ""
+    voice_cs_relevance: str | None = None
+    voice_cs_why: str | None = None
+    # Legacy aliases accepted on ingest
+    ellavox_relevance: str | None = None
+    ellavox_why: str | None = None
     summary: str = ""
     sources: list[SourceIn] = Field(default_factory=list)
 

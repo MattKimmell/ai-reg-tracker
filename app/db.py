@@ -1,8 +1,9 @@
-"""SQLite helpers for the Ellavox AI regulation tracker."""
+"""SQLite helpers for the US AI Reg Tracker."""
 from __future__ import annotations
 
 import json
 import sqlite3
+from collections import Counter
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Iterator
@@ -30,8 +31,8 @@ CREATE TABLE IF NOT EXISTS obligations (
     status TEXT NOT NULL DEFAULT 'proposed',
     effective_date TEXT,
     themes TEXT NOT NULL DEFAULT '[]',
-    ellavox_relevance TEXT NOT NULL DEFAULT 'none',
-    ellavox_why TEXT DEFAULT '',
+    voice_cs_relevance TEXT NOT NULL DEFAULT 'none',
+    voice_cs_why TEXT DEFAULT '',
     summary TEXT NOT NULL DEFAULT ''
 );
 
@@ -65,6 +66,37 @@ def ensure_db() -> None:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     with connect() as conn:
         conn.executescript(SCHEMA)
+        _migrate_legacy_columns(conn)
+
+
+def _migrate_legacy_columns(conn: sqlite3.Connection) -> None:
+    """Rename ellavox_* columns to voice_cs_* if an older DB is present."""
+    cols = {
+        r["name"]
+        for r in conn.execute("PRAGMA table_info(obligations)").fetchall()
+    }
+    if "ellavox_relevance" in cols and "voice_cs_relevance" not in cols:
+        conn.execute(
+            "ALTER TABLE obligations RENAME COLUMN ellavox_relevance TO voice_cs_relevance"
+        )
+    if "ellavox_why" in cols and "voice_cs_why" not in cols:
+        conn.execute(
+            "ALTER TABLE obligations RENAME COLUMN ellavox_why TO voice_cs_why"
+        )
+    # Re-check after possible renames
+    cols = {
+        r["name"]
+        for r in conn.execute("PRAGMA table_info(obligations)").fetchall()
+    }
+    if "voice_cs_relevance" not in cols:
+        conn.execute(
+            "ALTER TABLE obligations ADD COLUMN voice_cs_relevance "
+            "TEXT NOT NULL DEFAULT 'none'"
+        )
+    if "voice_cs_why" not in cols:
+        conn.execute(
+            "ALTER TABLE obligations ADD COLUMN voice_cs_why TEXT DEFAULT ''"
+        )
 
 
 @contextmanager
@@ -116,7 +148,7 @@ def set_meta(key: str, value: str) -> None:
 
 def list_jurisdictions(
     status: str | None = None,
-    ellavox_only: bool = False,
+    voice_only: bool = False,
 ) -> list[dict[str, Any]]:
     q = "SELECT * FROM jurisdictions"
     clauses: list[str] = []
@@ -131,10 +163,10 @@ def list_jurisdictions(
             clauses.append("status_label = ?")
             params.append(status)
 
-    if ellavox_only:
+    if voice_only:
         clauses.append(
             "id IN (SELECT DISTINCT jurisdiction_id FROM obligations "
-            "WHERE ellavox_relevance IN ('high', 'medium'))"
+            "WHERE voice_cs_relevance IN ('high', 'medium'))"
         )
 
     if clauses:
@@ -200,6 +232,81 @@ def get_history(jurisdiction_id: int) -> list[dict[str, Any]]:
         return [dict(r) for r in rows]
 
 
+def list_all_history_events() -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute(
+            "SELECT h.*, j.code AS jurisdiction_code, j.name AS jurisdiction_name "
+            "FROM history_events h "
+            "JOIN jurisdictions j ON j.id = h.jurisdiction_id "
+            "ORDER BY h.event_date ASC, h.id ASC"
+        ).fetchall()
+        return [dict(r) for r in rows]
+
+
+def compute_stats() -> dict[str, int]:
+    """Top-level counts for home stats cards."""
+    with connect() as conn:
+        by_label = {
+            r["status_label"]: r["c"]
+            for r in conn.execute(
+                "SELECT status_label, COUNT(*) AS c FROM jurisdictions GROUP BY status_label"
+            )
+        }
+        voice_high = conn.execute(
+            "SELECT COUNT(*) AS c FROM obligations WHERE voice_cs_relevance = 'high'"
+        ).fetchone()["c"]
+        voice_juris = conn.execute(
+            "SELECT COUNT(DISTINCT jurisdiction_id) AS c FROM obligations "
+            "WHERE voice_cs_relevance IN ('high', 'medium')"
+        ).fetchone()["c"]
+    return {
+        "in_force": by_label.get("in_force", 0),
+        "enacted_pending": by_label.get("enacted_pending", 0),
+        "proposed_hot": by_label.get("proposed_hot", 0),
+        "watch": by_label.get("watch", 0),
+        "quiet": by_label.get("quiet", 0),
+        "voice_high": voice_high,
+        "voice_jurisdictions": voice_juris,
+        "total": sum(by_label.values()),
+    }
+
+
+def activity_by_month(months: int = 24) -> list[dict[str, Any]]:
+    """Aggregate history events (+ obligation effective dates) by YYYY-MM."""
+    counter: Counter[str] = Counter()
+    with connect() as conn:
+        for row in conn.execute("SELECT event_date FROM history_events"):
+            d = (row["event_date"] or "")[:7]
+            if len(d) == 7 and d[4] == "-":
+                counter[d] += 1
+        for row in conn.execute(
+            "SELECT effective_date FROM obligations WHERE effective_date IS NOT NULL"
+        ):
+            d = (row["effective_date"] or "")[:7]
+            if len(d) == 7 and d[4] == "-":
+                counter[d] += 1
+
+    if not counter:
+        return []
+
+    # Build contiguous month range covering last `months` ending at max key or today
+    keys = sorted(counter.keys())
+    end = keys[-1]
+    y, m = int(end[:4]), int(end[5:7])
+    series: list[dict[str, Any]] = []
+    for _ in range(months):
+        series.append({"month": f"{y:04d}-{m:02d}", "count": counter.get(f"{y:04d}-{m:02d}", 0)})
+        m -= 1
+        if m == 0:
+            m = 12
+            y -= 1
+    series.reverse()
+    # Trim leading zeros
+    while series and series[0]["count"] == 0:
+        series.pop(0)
+    return series
+
+
 def jurisdiction_detail(code: str) -> dict[str, Any] | None:
     j = get_jurisdiction_by_code(code)
     if not j:
@@ -213,6 +320,17 @@ def jurisdiction_detail(code: str) -> dict[str, Any] | None:
         "sources": get_sources(jurisdiction_id=j["id"]),
         "history": get_history(j["id"]),
     }
+
+
+def _obl_voice_fields(obl: dict[str, Any]) -> tuple[str, str]:
+    """Accept new or legacy ingest keys."""
+    rel = obl.get("voice_cs_relevance")
+    if rel is None:
+        rel = obl.get("ellavox_relevance", "none")
+    why = obl.get("voice_cs_why")
+    if why is None:
+        why = obl.get("ellavox_why", "")
+    return rel or "none", why or ""
 
 
 def upsert_from_ingest(payload: dict[str, Any]) -> dict[str, Any]:
@@ -275,10 +393,11 @@ def upsert_from_ingest(payload: dict[str, Any]) -> dict[str, Any]:
                 themes_json = json.dumps(themes)
             else:
                 themes_json = str(themes)
+            rel, why = _obl_voice_fields(obl)
             cur = conn.execute(
                 "INSERT INTO obligations "
                 "(jurisdiction_id, title, status, effective_date, themes, "
-                "ellavox_relevance, ellavox_why, summary) "
+                "voice_cs_relevance, voice_cs_why, summary) "
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                 (
                     jid,
@@ -286,8 +405,8 @@ def upsert_from_ingest(payload: dict[str, Any]) -> dict[str, Any]:
                     obl.get("status", "proposed"),
                     obl.get("effective_date"),
                     themes_json,
-                    obl.get("ellavox_relevance", "none"),
-                    obl.get("ellavox_why", ""),
+                    rel,
+                    why,
                     obl.get("summary", ""),
                 ),
             )

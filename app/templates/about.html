@@ -1,15 +1,19 @@
 {% extends "base.html" %}
-{% block title %}About · Ellavox AI Reg Tracker{% endblock %}
+{% block title %}About · US AI Reg Tracker{% endblock %}
 {% block content %}
 <h2 style="margin-top:0;">About</h2>
 <div class="about-body">
   <p>
-    This is an <strong>operational briefing</strong> for Ellavox teams tracking US AI regulation
-    that may affect voice AI workers, customer-service bots, and property-management verticals.
-    It is <strong>not legal advice</strong>. Status labels and summaries are curated for product
-    and GTM awareness; always confirm against primary sources before compliance decisions.
-    Data is refreshed by a monthly Grok Bot routine that posts to
-    <code>POST /api/ingest</code> on this local app.
+    This is an <strong>operational briefing</strong> on US AI regulation that may affect
+    voice/conversation AI operators, customer-service bots, and phone AI — including
+    disclosure, TCPA synthetic-voice, ADMT, and related themes. It is
+    <strong>not legal advice</strong>. Status labels and summaries are curated for product
+    and compliance awareness; always confirm against primary sources before decisions.
+  </p>
+  <p>
+    Data is updated periodically. Each jurisdiction page links to primary sources
+    (statutes, bill pages, agency materials). Federal coverage appears as its own card;
+    states and DC are on the map and list below.
   </p>
   <p style="margin-bottom:0; font-size:0.85rem;">
     Last global refresh: {{ last_refresh }}

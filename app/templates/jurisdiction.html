@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ j.name }} · Ellavox AI Reg Tracker{% endblock %}
+{% block title %}{{ j.name }} · US AI Reg Tracker{% endblock %}
 {% block content %}
 <a class="back" href="/">← All jurisdictions</a>
 
@@ -21,13 +21,13 @@
   <div class="obl">
     <h4>{{ o.title }}</h4>
     <div class="meta">
-      <span class="pill {{ o.rel_css }}">Ellavox: {{ o.rel_display }}</span>
+      <span class="pill {{ o.rel_css }}">Voice/conversation: {{ o.rel_display }}</span>
       <span>Status: {{ o.status }}</span>
       {% if o.effective_date %}<span>Effective: {{ o.effective_date }}</span>{% endif %}
     </div>
     <p>{{ o.summary }}</p>
-    {% if o.ellavox_why %}
-    <p class="why"><strong>Why it matters:</strong> {{ o.ellavox_why }}</p>
+    {% if o.voice_cs_why %}
+    <p class="why"><strong>Why it matters:</strong> {{ o.voice_cs_why }}</p>
     {% endif %}
     {% if o.themes %}
     <div class="themes">

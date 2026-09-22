@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Seed baseline Ellavox AI regulation tracker data (as of 2026-09-22)."""
+"""Seed baseline US AI Reg Tracker data (as of 2026-09-22)."""
 from __future__ import annotations
 
 import json
@@ -76,7 +76,7 @@ PRIORITY: dict[str, dict] = {
         "status_color": "watch",
         "summary": (
             "No comprehensive federal AI statute. Sector rules (TCPA synthetic voice, "
-            "FTC §5) remain the primary Ellavox constraints. EO 14365 advances a "
+            "FTC §5) remain the primary constraints for voice/conversation AI operators. EO 14365 advances a "
             "preemption narrative but does not repeal state AI laws."
         ),
         "notes": (
@@ -90,9 +90,9 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": None,
                 "themes": ["voice_tcpa", "disclosure"],
-                "ellavox_relevance": "high",
-                "ellavox_why": (
-                    "Ellavox phone workers use AI voice; FCC confirms AI-generated "
+                "voice_cs_relevance": "high",
+                "voice_cs_why": (
+                    "Phone AI and voice agents use synthetic speech; FCC confirms AI-generated "
                     "voices are artificial/prerecorded under TCPA — prior express "
                     "consent and caller-ID rules apply."
                 ),
@@ -119,8 +119,8 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": None,
                 "themes": ["disclosure", "governance", "other"],
-                "ellavox_relevance": "high",
-                "ellavox_why": (
+                "voice_cs_relevance": "high",
+                "voice_cs_why": (
                     "Marketing and product claims about AI capabilities, human vs bot "
                     "identity, and call outcomes must not mislead customers or end consumers."
                 ),
@@ -145,10 +145,10 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": "2025-12-11",
                 "themes": ["governance"],
-                "ellavox_relevance": "medium",
-                "ellavox_why": (
+                "voice_cs_relevance": "medium",
+                "voice_cs_why": (
                     "Signals federal interest in preempting or challenging state AI laws; "
-                    "does not itself wipe out state disclosure/ADMT obligations Ellavox faces today."
+                    "does not itself wipe out state disclosure/ADMT obligations voice/conversation AI operators face today."
                 ),
                 "summary": (
                     "Executive Order 14365 (Dec 2025) directs agencies to evaluate 'onerous' "
@@ -184,7 +184,7 @@ PRIORITY: dict[str, dict] = {
             "Enacted chatbot disclosure law (PL 2025, c. 294): clear and conspicuous "
             "notice required when AI chatbots engage consumers in trade/commerce in a "
             "way that may mislead them into believing they are talking to a human. "
-            "High relevance for Ellavox CS bots."
+            "High relevance for customer-service bots and phone AI."
         ),
         "notes": "Codified at 10 M.R.S. §1500-DD (realloc. from §1500-Y). UTPA enforcement.",
         "obligations": [
@@ -193,10 +193,10 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": "2025-06-12",
                 "themes": ["disclosure", "companion_cs"],
-                "ellavox_relevance": "high",
-                "ellavox_why": (
+                "voice_cs_relevance": "high",
+                "voice_cs_why": (
                     "Directly covers textual or aural AI chatbots used with Maine consumers; "
-                    "Ellavox CS and voice bots must disclose when a reasonable consumer "
+                    "Customer-service and voice bots must disclose when a reasonable consumer "
                     "could think they are talking to a human."
                 ),
                 "summary": (
@@ -240,8 +240,8 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": "2019-07-01",
                 "themes": ["disclosure"],
-                "ellavox_relevance": "high",
-                "ellavox_why": (
+                "voice_cs_relevance": "high",
+                "voice_cs_why": (
                     "Requires disclosure when bots communicate online with intent to "
                     "incentivize a purchase or influence a vote; relevant to CS/sales bots."
                 ),
@@ -267,11 +267,11 @@ PRIORITY: dict[str, dict] = {
                 "status": "enacted_pending",
                 "effective_date": "2027-01-01",
                 "themes": ["admt_employment", "admt_housing", "governance", "disclosure"],
-                "ellavox_relevance": "medium",
-                "ellavox_why": (
-                    "If Ellavox or customers use ADMT for significant decisions about CA "
+                "voice_cs_relevance": "medium",
+                "voice_cs_why": (
+                    "If operators or their customers use ADMT for significant decisions about CA "
                     "consumers, notice/opt-out/access duties apply; more relevant for "
-                    "customer ADMT than Ellavox's core voice-CS product."
+                    "customer ADMT than core voice/conversation CS products."
                 ),
                 "summary": (
                     "CPPA ADMT regulations (adopted 2025; general effective date 2026-01-01) "
@@ -291,10 +291,10 @@ PRIORITY: dict[str, dict] = {
                 "status": "proposed",
                 "effective_date": None,
                 "themes": ["disclosure", "companion_cs"],
-                "ellavox_relevance": "high",
-                "ellavox_why": (
+                "voice_cs_relevance": "high",
+                "voice_cs_why": (
                     "Would impose human-agent access and related CS chatbot duties on large "
-                    "private businesses — directly in Ellavox's CS/voice lane if enacted."
+                    "private businesses — directly in the customer-service / phone AI lane if enacted."
                 ),
                 "summary": (
                     "AB 1609 (2025–2026) would add B&P Ch. 22.6.1 on customer-service "
@@ -318,10 +318,10 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": "2025-10-01",
                 "themes": ["admt_employment"],
-                "ellavox_relevance": "low",
-                "ellavox_why": (
-                    "Employment ADS rules matter if Ellavox or customers use AI in hiring; "
-                    "not core to Ellavox phone/CS product."
+                "voice_cs_relevance": "low",
+                "voice_cs_why": (
+                    "Employment ADS rules matter if operators or customers use AI in hiring; "
+                    "not core to phone/CS voice products."
                 ),
                 "summary": (
                     "Civil Rights Council FEHA regulations address automated-decision "
@@ -345,7 +345,7 @@ PRIORITY: dict[str, dict] = {
         "summary": (
             "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective "
             "2026-01-01. Broad governance and prohibited-use framework with AG "
-            "enforcement; medium-high relevance for Ellavox deploying AI in Texas."
+            "enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas."
         ),
         "notes": "Exclusive AG enforcement; cure period; sandbox and AI Council created.",
         "obligations": [
@@ -354,8 +354,8 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": "2026-01-01",
                 "themes": ["governance", "disclosure"],
-                "ellavox_relevance": "medium",
-                "ellavox_why": (
+                "voice_cs_relevance": "medium",
+                "voice_cs_why": (
                     "Applies to developing/deploying/offering AI in Texas; prohibited "
                     "manipulative uses and government disclosure rules. Moderate product "
                     "impact; watch AG guidance and federal-preemption overlay."
@@ -387,7 +387,7 @@ PRIORITY: dict[str, dict] = {
         "status_color": "watch",
         "summary": (
             "Employment-focused AI rules (video interview notice; broader AI employment "
-            "notice/anti-bias themes). Medium relevance — Ellavox is not primarily a "
+            "notice/anti-bias themes). Medium relevance — voice/conversation CS operators are not primarily a "
             "hiring-tool vendor, but customers may ask."
         ),
         "notes": "Track IDHR guidance; detailed proposed notice regs were in flux mid-2026.",
@@ -397,9 +397,9 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": None,
                 "themes": ["admt_employment", "disclosure"],
-                "ellavox_relevance": "medium",
-                "ellavox_why": (
-                    "Customers evaluating AI for hiring workflows may ask Ellavox about IL "
+                "voice_cs_relevance": "medium",
+                "voice_cs_why": (
+                    "Customers evaluating AI for hiring workflows may ask CS/voice vendors about IL "
                     "notice/consent obligations; not core to voice CS workers."
                 ),
                 "summary": (
@@ -428,7 +428,7 @@ PRIORITY: dict[str, dict] = {
         "status_color": "watch",
         "summary": (
             "NYC Local Law 144 (AEDT hiring bias audits) is the main in-force local rule. "
-            "State-level AI bills remain a watch item. Low–medium for Ellavox product; "
+            "State-level AI bills remain a watch item. Low–medium for core voice/CS products; "
             "higher if customers use AEDT in NYC hiring."
         ),
         "notes": "NYC LL144 is local (NYC); tracked under NY state card for discoverability.",
@@ -438,9 +438,9 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": "2023-07-05",
                 "themes": ["admt_employment"],
-                "ellavox_relevance": "low",
-                "ellavox_why": (
-                    "Hiring-tool bias audits and candidate notice — peripheral to Ellavox "
+                "voice_cs_relevance": "low",
+                "voice_cs_why": (
+                    "Hiring-tool bias audits and candidate notice — peripheral to "
                     "voice/CS product; watch if product expands into HR workflows."
                 ),
                 "summary": (
@@ -464,7 +464,7 @@ PRIORITY: dict[str, dict] = {
         "summary": (
             "Utah AI Policy Act framework: generative AI disclosure on clear consumer "
             "request; heightened/proactive disclosure for regulated occupations in "
-            "high-risk interactions. Medium Ellavox relevance for CS bots."
+            "high-risk interactions. Medium relevance for customer-service bots and phone AI."
         ),
         "notes": "Subsequent amendments (e.g. SB 226 / SB 332 era) refine disclosure and chatbot rules — confirm current code when advising.",
         "obligations": [
@@ -473,8 +473,8 @@ PRIORITY: dict[str, dict] = {
                 "status": "in_force",
                 "effective_date": "2024-05-01",
                 "themes": ["disclosure", "companion_cs"],
-                "ellavox_relevance": "medium",
-                "ellavox_why": (
+                "voice_cs_relevance": "medium",
+                "voice_cs_why": (
                     "CS and voice bots serving Utah consumers should honor clear requests "
                     "to disclose generative AI use; regulated-occupation rules may require "
                     "prominent disclosure in sensitive contexts."
@@ -506,7 +506,7 @@ PRIORITY: dict[str, dict] = {
         "summary": (
             "Public Act 26-15 (Online Safety / AI Responsibility & Transparency) — "
             "broad AI statute with phased effective dates. First wave Oct 1 2026; core "
-            "AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for Ellavox."
+            "AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for voice/conversation AI."
         ),
         "notes": (
             "Briefing shorthand 'disclosure effective Oct 1 2026' is only partly accurate: "
@@ -521,10 +521,10 @@ PRIORITY: dict[str, dict] = {
                 "status": "enacted_pending",
                 "effective_date": "2026-10-01",
                 "themes": ["disclosure", "admt_employment", "companion_cs", "governance"],
-                "ellavox_relevance": "high",
-                "ellavox_why": (
+                "voice_cs_relevance": "high",
+                "voice_cs_why": (
                     "Phased disclosure duties and companion/online-safety AI themes make "
-                    "CT a high-watch state for Ellavox CS and voice products; employment "
+                    "CT a high-watch state for CS bots and phone AI; employment "
                     "AEDT rules matter for customers using hiring AI."
                 ),
                 "summary": (
@@ -568,8 +568,8 @@ PRIORITY: dict[str, dict] = {
                 "status": "enacted_pending",
                 "effective_date": "2027-01-01",
                 "themes": ["admt_housing", "governance", "disclosure"],
-                "ellavox_relevance": "high",
-                "ellavox_why": (
+                "voice_cs_relevance": "high",
+                "voice_cs_why": (
                     "AppFolio/property-management customers face ADMT duties for lease "
                     "screening. Pure CS bots that do not materially influence lease "
                     "decisions may be out of scope — document AUP and use cases carefully."
@@ -599,7 +599,7 @@ PRIORITY: dict[str, dict] = {
 
 def quiet_summary(name: str) -> str:
     return (
-        f"{name}: no Ellavox-material AI service, disclosure, or ADMT rules currently "
+        f"{name}: no material AI service, disclosure, or ADMT rules currently "
         f"in focus. Monitor NCSL and local session activity; escalate if chatbot/"
         f"voice disclosure or housing ADMT bills advance."
     )
@@ -619,7 +619,7 @@ def insert_obligation(conn, jid, obl):
     cur = conn.execute(
         "INSERT INTO obligations "
         "(jurisdiction_id, title, status, effective_date, themes, "
-        "ellavox_relevance, ellavox_why, summary) "
+        "voice_cs_relevance, voice_cs_why, summary) "
         "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
         (
             jid,
@@ -627,8 +627,8 @@ def insert_obligation(conn, jid, obl):
             obl["status"],
             obl.get("effective_date"),
             json.dumps(obl.get("themes") or []),
-            obl.get("ellavox_relevance", "none"),
-            obl.get("ellavox_why", ""),
+            obl.get("voice_cs_relevance", "none"),
+            obl.get("voice_cs_why", ""),
             obl.get("summary", ""),
         ),
     )
@@ -679,7 +679,7 @@ def main() -> None:
             conn,
             jid,
             "Baseline snapshot seeded",
-            "Initial Ellavox AI regulation tracker baseline as of 2026-09-22.",
+            "Initial US AI Reg Tracker baseline as of 2026-09-22.",
         )
         count += 1
 
@@ -716,7 +716,7 @@ def main() -> None:
                     "state",
                     "quiet",
                     quiet_summary(name),
-                    "No Ellavox-material AI service/disclosure/ADMT rules in focus yet.",
+                    "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet.",
                 )
                 insert_history(
                     conn,

@@ -16,6 +16,7 @@ Hash routes: #/  #/?filter=hot  #/j/CA  #/about
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import sys
 from datetime import datetime, timezone
@@ -31,6 +32,23 @@ ASSETS = DOCS / "assets"
 DATA_DIR = DOCS / "data"
 STATIC_SRC = Path(__file__).resolve().parent / "static_site"
 APP_CSS = ROOT / "app" / "static" / "style.css"
+APP_HOME_JS = ROOT / "app" / "static" / "home.js"
+
+
+def scrub_public(obj):
+    """Ensure public dump has no Ellavox branding in string values / legacy keys."""
+    if isinstance(obj, dict):
+        out = {}
+        for k, v in obj.items():
+            if k in ("ellavox_relevance", "ellavox_why"):
+                continue
+            out[k] = scrub_public(v)
+        return out
+    if isinstance(obj, list):
+        return [scrub_public(x) for x in obj]
+    if isinstance(obj, str):
+        return re.sub(r"(?i)ellavox", "voice/conversation AI", obj)
+    return obj
 
 
 def build_payload() -> dict:
@@ -41,8 +59,6 @@ def build_payload() -> dict:
         detail = db.jurisdiction_detail(j["code"])
         if not detail:
             continue
-        # Strip internal DB ids from public dump where convenient but keep
-        # obligation_id on sources so the SPA can filter jurisdiction-level links.
         details.append(
             {
                 "jurisdiction": detail["jurisdiction"],
@@ -51,13 +67,16 @@ def build_payload() -> dict:
                 "history": detail["history"],
             }
         )
-    return {
+    payload = {
         "exported_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "last_global_refresh": db.get_meta("last_global_refresh", "—"),
         "jurisdiction_count": len(jurisdictions),
+        "stats": db.compute_stats(),
+        "activity": db.activity_by_month(24),
         "jurisdictions": jurisdictions,
         "details": details,
     }
+    return scrub_public(payload)
 
 
 def write_site(payload: dict) -> None:
@@ -65,7 +84,6 @@ def write_site(payload: dict) -> None:
     ASSETS.mkdir(parents=True, exist_ok=True)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    # SPA shell + JS from templates
     for name in ("index.html", "app.js"):
         src = STATIC_SRC / name
         if not src.is_file():
@@ -73,7 +91,6 @@ def write_site(payload: dict) -> None:
         dest = DOCS / name if name == "index.html" else ASSETS / name
         shutil.copy2(src, dest)
 
-    # Reuse live app CSS so static matches FastAPI UI
     if not APP_CSS.is_file():
         raise FileNotFoundError(f"Missing stylesheet: {APP_CSS}")
     shutil.copy2(APP_CSS, ASSETS / "style.css")
@@ -84,7 +101,6 @@ def write_site(payload: dict) -> None:
         encoding="utf-8",
     )
 
-    # Disable Jekyll processing on GitHub Pages
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
 
 

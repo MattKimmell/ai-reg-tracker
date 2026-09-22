@@ -1,14 +1,33 @@
 {% extends "base.html" %}
-{% block title %}US AI Regulation Status · Ellavox{% endblock %}
+{% block title %}US AI Regulation Status · US AI Reg Tracker{% endblock %}
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+{% endblock %}
 {% block content %}
 <p class="meta-line">Last global refresh: <strong>{{ last_refresh }}</strong>
   · Showing {{ total_count }} jurisdiction{{ 's' if total_count != 1 else '' }}</p>
 
-<div class="chips">
-  <a class="chip {% if filter == 'all' %}active{% endif %}" href="/?filter=all">All</a>
-  <a class="chip {% if filter == 'hot' %}active{% endif %}" href="/?filter=hot">Hot</a>
-  <a class="chip {% if filter == 'in_force' %}active{% endif %}" href="/?filter=in_force">In force</a>
-  <a class="chip {% if filter == 'ellavox' %}active{% endif %}" href="/?filter=ellavox">Ellavox-relevant</a>
+<div class="stats-row" id="stats-row">
+  <div class="stat-card"><div class="stat-num">{{ stats.in_force }}</div><div class="stat-label">In force</div></div>
+  <div class="stat-card"><div class="stat-num">{{ stats.enacted_pending }}</div><div class="stat-label">Enacted / pending</div></div>
+  <div class="stat-card"><div class="stat-num">{{ stats.proposed_hot }}</div><div class="stat-label">Proposed (hot)</div></div>
+  <div class="stat-card"><div class="stat-num">{{ stats.watch }}</div><div class="stat-label">Watch</div></div>
+  <div class="stat-card"><div class="stat-num">{{ stats.quiet }}</div><div class="stat-label">Quiet</div></div>
+  <div class="stat-card accent"><div class="stat-num">{{ stats.voice_high }}</div><div class="stat-label">Voice/conversation high</div></div>
+</div>
+
+<div class="toolbar">
+  <div class="chips">
+    <a class="chip {% if filter == 'all' %}active{% endif %}" href="/?filter=all">All</a>
+    <a class="chip {% if filter == 'hot' %}active{% endif %}" href="/?filter=hot">Hot</a>
+    <a class="chip {% if filter == 'in_force' %}active{% endif %}" href="/?filter=in_force">In force</a>
+    <a class="chip {% if filter == 'voice' %}active{% endif %}" href="/?filter=voice">Voice/conversation</a>
+  </div>
+  <div class="search-wrap">
+    <label class="sr-only" for="search-box">Search</label>
+    <input type="search" id="search-box" placeholder="Search state, code, obligation, theme…" autocomplete="off">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
 </div>
 
 <div class="legend">
@@ -22,7 +41,7 @@
 {% if federal %}
 <p class="section-label">Federal</p>
 {% for j in federal %}
-<a class="federal-card {{ j.status_css }}" href="/j/{{ j.code }}" style="display:block; text-decoration:none; color:inherit;">
+<a class="federal-card {{ j.status_css }}" href="/j/{{ j.code }}" data-code="{{ j.code }}" style="display:block; text-decoration:none; color:inherit;">
   <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;">
     <h2 style="margin:0;">{{ j.name }}</h2>
     <span class="pill {{ j.status_css }}">{{ j.status_display }}</span>
@@ -33,11 +52,31 @@
 {% endfor %}
 {% endif %}
 
+<p class="section-label">United States map</p>
+<div class="map-panel" id="us-map">
+  {% for row in map_rows %}
+  <div class="map-row">
+    {% for cell in row %}
+      {% if cell %}
+      <a class="map-cell {{ cell.status_css }}" href="/j/{{ cell.code }}" data-code="{{ cell.code }}" title="{{ cell.name }} — {{ cell.status_display }}">{{ cell.code }}</a>
+      {% else %}
+      <span class="map-cell empty-cell" aria-hidden="true"></span>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="chart-panel">
+  <p class="section-label">Regulatory activity (history events + obligation effective dates)</p>
+  <canvas id="activity-chart" height="100" aria-label="Activity over time chart"></canvas>
+</div>
+
 {% if states %}
-<p class="section-label">States &amp; DC</p>
-<div class="grid">
+<p class="section-label">States &amp; DC (list)</p>
+<div class="grid" id="state-grid">
   {% for j in states %}
-  <a class="state-tile {{ j.status_css }}" href="/j/{{ j.code }}" title="{{ j.name }}">
+  <a class="state-tile {{ j.status_css }}" href="/j/{{ j.code }}" data-code="{{ j.code }}" title="{{ j.name }}">
     <div class="code">{{ j.code }}</div>
     <div class="name">{{ j.name }}</div>
     <div class="badge">{{ j.status_display }}</div>
@@ -45,6 +84,14 @@
   {% endfor %}
 </div>
 {% else %}
-<p class="empty">No jurisdictions match this filter.</p>
+<p class="empty" id="state-empty">No jurisdictions match this filter.</p>
 {% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.TRACKER_ACTIVITY = {{ activity_json | safe }};
+  window.TRACKER_SEARCH = {{ search_index_json | safe }};
+</script>
+<script src="/static/home.js" defer></script>
 {% endblock %}

@@ -1,7 +1,99 @@
 {
-  "exported_at": "2026-09-22T22:22:58Z",
+  "exported_at": "2026-09-22T23:01:44Z",
   "last_global_refresh": "2026-09-22",
   "jurisdiction_count": 52,
+  "stats": {
+    "in_force": 3,
+    "enacted_pending": 2,
+    "proposed_hot": 1,
+    "watch": 3,
+    "quiet": 43,
+    "voice_high": 7,
+    "voice_jurisdictions": 8,
+    "total": 52
+  },
+  "activity": [
+    {
+      "month": "2025-06",
+      "count": 1
+    },
+    {
+      "month": "2025-07",
+      "count": 0
+    },
+    {
+      "month": "2025-08",
+      "count": 0
+    },
+    {
+      "month": "2025-09",
+      "count": 0
+    },
+    {
+      "month": "2025-10",
+      "count": 1
+    },
+    {
+      "month": "2025-11",
+      "count": 0
+    },
+    {
+      "month": "2025-12",
+      "count": 1
+    },
+    {
+      "month": "2026-01",
+      "count": 1
+    },
+    {
+      "month": "2026-02",
+      "count": 0
+    },
+    {
+      "month": "2026-03",
+      "count": 0
+    },
+    {
+      "month": "2026-04",
+      "count": 0
+    },
+    {
+      "month": "2026-05",
+      "count": 0
+    },
+    {
+      "month": "2026-06",
+      "count": 0
+    },
+    {
+      "month": "2026-07",
+      "count": 0
+    },
+    {
+      "month": "2026-08",
+      "count": 0
+    },
+    {
+      "month": "2026-09",
+      "count": 52
+    },
+    {
+      "month": "2026-10",
+      "count": 1
+    },
+    {
+      "month": "2026-11",
+      "count": 0
+    },
+    {
+      "month": "2026-12",
+      "count": 0
+    },
+    {
+      "month": "2027-01",
+      "count": 2
+    }
+  ],
   "jurisdictions": [
     {
       "id": 1,
@@ -10,7 +102,7 @@
       "kind": "federal",
       "status_color": "watch",
       "status_label": "watch",
-      "summary": "No comprehensive federal AI statute. Sector rules (TCPA synthetic voice, FTC §5) remain the primary Ellavox constraints. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
+      "summary": "No comprehensive federal AI statute. Sector rules (TCPA synthetic voice, FTC §5) remain the primary constraints for voice/conversation AI operators. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
       "last_reviewed": "2026-09-22",
       "notes": "Monitor FCC TCPA voice-AI consent, FTC deceptive-claims enforcement, and any congressional preemption vehicle. State disclosure/ADMT laws remain operative unless Congress acts."
     },
@@ -21,9 +113,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Alabama: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Alabama: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 3,
@@ -32,9 +124,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Alaska: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Alaska: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 4,
@@ -43,9 +135,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Arizona: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Arizona: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 5,
@@ -54,9 +146,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Arkansas: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Arkansas: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 6,
@@ -87,7 +179,7 @@
       "kind": "state",
       "status_color": "proposed_hot",
       "status_label": "proposed_hot",
-      "summary": "Public Act 26-15 (Online Safety / AI Responsibility & Transparency) — broad AI statute with phased effective dates. First wave Oct 1 2026; core AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for Ellavox.",
+      "summary": "Public Act 26-15 (Online Safety / AI Responsibility & Transparency) — broad AI statute with phased effective dates. First wave Oct 1 2026; core AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for voice/conversation AI.",
       "last_reviewed": "2026-09-22",
       "notes": "Briefing shorthand 'disclosure effective Oct 1 2026' is only partly accurate: WARN/AI-layoff disclosure and anti-discrimination amendments hit Oct 1 2026; plain-language AEDT interaction disclosure and written pre-decision notice apply to AEDT deployed on/after Oct 1 2027. Also addresses companion/consumer chatbot and frontier-model themes — confirm PA text for CS-bot scope."
     },
@@ -98,9 +190,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Delaware: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Delaware: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 10,
@@ -109,9 +201,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "District of Columbia: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "District of Columbia: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 11,
@@ -120,9 +212,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Florida: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Florida: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 12,
@@ -131,9 +223,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Georgia: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Georgia: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 13,
@@ -142,9 +234,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Hawaii: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Hawaii: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 14,
@@ -153,9 +245,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Idaho: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Idaho: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 15,
@@ -164,7 +256,7 @@
       "kind": "state",
       "status_color": "watch",
       "status_label": "watch",
-      "summary": "Employment-focused AI rules (video interview notice; broader AI employment notice/anti-bias themes). Medium relevance — Ellavox is not primarily a hiring-tool vendor, but customers may ask.",
+      "summary": "Employment-focused AI rules (video interview notice; broader AI employment notice/anti-bias themes). Medium relevance — voice/conversation CS operators are not primarily a hiring-tool vendor, but customers may ask.",
       "last_reviewed": "2026-09-22",
       "notes": "Track IDHR guidance; detailed proposed notice regs were in flux mid-2026."
     },
@@ -175,9 +267,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Indiana: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Indiana: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 17,
@@ -186,9 +278,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Iowa: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Iowa: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 18,
@@ -197,9 +289,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Kansas: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Kansas: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 19,
@@ -208,9 +300,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Kentucky: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Kentucky: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 20,
@@ -219,9 +311,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Louisiana: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Louisiana: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 21,
@@ -230,7 +322,7 @@
       "kind": "state",
       "status_color": "in_force",
       "status_label": "in_force",
-      "summary": "Enacted chatbot disclosure law (PL 2025, c. 294): clear and conspicuous notice required when AI chatbots engage consumers in trade/commerce in a way that may mislead them into believing they are talking to a human. High relevance for Ellavox CS bots.",
+      "summary": "Enacted chatbot disclosure law (PL 2025, c. 294): clear and conspicuous notice required when AI chatbots engage consumers in trade/commerce in a way that may mislead them into believing they are talking to a human. High relevance for customer-service bots and phone AI.",
       "last_reviewed": "2026-09-22",
       "notes": "Codified at 10 M.R.S. §1500-DD (realloc. from §1500-Y). UTPA enforcement."
     },
@@ -241,9 +333,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Maryland: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Maryland: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 23,
@@ -252,9 +344,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Massachusetts: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Massachusetts: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 24,
@@ -263,9 +355,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Michigan: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Michigan: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 25,
@@ -274,9 +366,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Minnesota: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Minnesota: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 26,
@@ -285,9 +377,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Mississippi: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Mississippi: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 27,
@@ -296,9 +388,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Missouri: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Missouri: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 28,
@@ -307,9 +399,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Montana: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Montana: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 29,
@@ -318,9 +410,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Nebraska: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Nebraska: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 30,
@@ -329,9 +421,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Nevada: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Nevada: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 31,
@@ -340,9 +432,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "New Hampshire: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "New Hampshire: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 32,
@@ -351,9 +443,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "New Jersey: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "New Jersey: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 33,
@@ -362,9 +454,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "New Mexico: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "New Mexico: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 34,
@@ -373,7 +465,7 @@
       "kind": "state",
       "status_color": "watch",
       "status_label": "watch",
-      "summary": "NYC Local Law 144 (AEDT hiring bias audits) is the main in-force local rule. State-level AI bills remain a watch item. Low–medium for Ellavox product; higher if customers use AEDT in NYC hiring.",
+      "summary": "NYC Local Law 144 (AEDT hiring bias audits) is the main in-force local rule. State-level AI bills remain a watch item. Low–medium for core voice/CS products; higher if customers use AEDT in NYC hiring.",
       "last_reviewed": "2026-09-22",
       "notes": "NYC LL144 is local (NYC); tracked under NY state card for discoverability."
     },
@@ -384,9 +476,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "North Carolina: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "North Carolina: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 36,
@@ -395,9 +487,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "North Dakota: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "North Dakota: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 37,
@@ -406,9 +498,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Ohio: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Ohio: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 38,
@@ -417,9 +509,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Oklahoma: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Oklahoma: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 39,
@@ -428,9 +520,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Oregon: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Oregon: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 40,
@@ -439,9 +531,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Pennsylvania: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Pennsylvania: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 41,
@@ -450,9 +542,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Rhode Island: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Rhode Island: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 42,
@@ -461,9 +553,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "South Carolina: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "South Carolina: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 43,
@@ -472,9 +564,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "South Dakota: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "South Dakota: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 44,
@@ -483,9 +575,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Tennessee: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Tennessee: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 45,
@@ -494,7 +586,7 @@
       "kind": "state",
       "status_color": "in_force",
       "status_label": "in_force",
-      "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for Ellavox deploying AI in Texas.",
+      "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas.",
       "last_reviewed": "2026-09-22",
       "notes": "Exclusive AG enforcement; cure period; sandbox and AI Council created."
     },
@@ -505,7 +597,7 @@
       "kind": "state",
       "status_color": "in_force",
       "status_label": "in_force",
-      "summary": "Utah AI Policy Act framework: generative AI disclosure on clear consumer request; heightened/proactive disclosure for regulated occupations in high-risk interactions. Medium Ellavox relevance for CS bots.",
+      "summary": "Utah AI Policy Act framework: generative AI disclosure on clear consumer request; heightened/proactive disclosure for regulated occupations in high-risk interactions. Medium relevance for customer-service bots and phone AI.",
       "last_reviewed": "2026-09-22",
       "notes": "Subsequent amendments (e.g. SB 226 / SB 332 era) refine disclosure and chatbot rules — confirm current code when advising."
     },
@@ -516,9 +608,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Vermont: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Vermont: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 48,
@@ -527,9 +619,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Virginia: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Virginia: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 49,
@@ -538,9 +630,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Washington: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Washington: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 50,
@@ -549,9 +641,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "West Virginia: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "West Virginia: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 51,
@@ -560,9 +652,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Wisconsin: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Wisconsin: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     },
     {
       "id": 52,
@@ -571,9 +663,9 @@
       "kind": "state",
       "status_color": "quiet",
       "status_label": "quiet",
-      "summary": "Wyoming: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+      "summary": "Wyoming: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
       "last_reviewed": "2026-09-22",
-      "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+      "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
     }
   ],
   "details": [
@@ -585,7 +677,7 @@
         "kind": "federal",
         "status_color": "watch",
         "status_label": "watch",
-        "summary": "No comprehensive federal AI statute. Sector rules (TCPA synthetic voice, FTC §5) remain the primary Ellavox constraints. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
+        "summary": "No comprehensive federal AI statute. Sector rules (TCPA synthetic voice, FTC §5) remain the primary constraints for voice/conversation AI operators. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
         "last_reviewed": "2026-09-22",
         "notes": "Monitor FCC TCPA voice-AI consent, FTC deceptive-claims enforcement, and any congressional preemption vehicle. State disclosure/ADMT laws remain operative unless Congress acts."
       },
@@ -600,8 +692,8 @@
             "voice_tcpa",
             "disclosure"
           ],
-          "ellavox_relevance": "high",
-          "ellavox_why": "Ellavox phone workers use AI voice; FCC confirms AI-generated voices are artificial/prerecorded under TCPA — prior express consent and caller-ID rules apply.",
+          "voice_cs_relevance": "high",
+          "voice_cs_why": "Phone AI and voice agents use synthetic speech; FCC confirms AI-generated voices are artificial/prerecorded under TCPA — prior express consent and caller-ID rules apply.",
           "summary": "FCC Declaratory Ruling (FCC 24-17) confirms that AI technologies generating human voices are 'artificial or prerecorded' under the TCPA. Autodialed/prerecorded calls to cell phones generally require prior express written consent (marketing) or prior express consent (informational), plus identification requirements.",
           "sources": [
             {
@@ -631,8 +723,8 @@
             "governance",
             "other"
           ],
-          "ellavox_relevance": "high",
-          "ellavox_why": "Marketing and product claims about AI capabilities, human vs bot identity, and call outcomes must not mislead customers or end consumers.",
+          "voice_cs_relevance": "high",
+          "voice_cs_why": "Marketing and product claims about AI capabilities, human vs bot identity, and call outcomes must not mislead customers or end consumers.",
           "summary": "Section 5 prohibits unfair or deceptive acts or practices in commerce. Applies to AI-related advertising, capability claims, and failure to disclose material facts about automated interactions.",
           "sources": [
             {
@@ -660,8 +752,8 @@
           "themes": [
             "governance"
           ],
-          "ellavox_relevance": "medium",
-          "ellavox_why": "Signals federal interest in preempting or challenging state AI laws; does not itself wipe out state disclosure/ADMT obligations Ellavox faces today.",
+          "voice_cs_relevance": "medium",
+          "voice_cs_why": "Signals federal interest in preempting or challenging state AI laws; does not itself wipe out state disclosure/ADMT obligations voice/conversation AI operators face today.",
           "summary": "Executive Order 14365 (Dec 2025) directs agencies to evaluate 'onerous' state AI laws, consider litigation/funding levers, and recommend a uniform federal framework. It pushes a preemption narrative but does not repeal existing state statutes.",
           "sources": [
             {
@@ -738,9 +830,9 @@
           "jurisdiction_id": 1,
           "event_date": "2026-09-22",
           "title": "Baseline snapshot seeded",
-          "detail": "Initial Ellavox AI regulation tracker baseline as of 2026-09-22.",
+          "detail": "Initial US AI Reg Tracker baseline as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -752,9 +844,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Alabama: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Alabama: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -766,7 +858,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Alabama as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -778,9 +870,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Alaska: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Alaska: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -792,7 +884,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Alaska as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -804,9 +896,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Arizona: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Arizona: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -818,7 +910,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Arizona as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -830,9 +922,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Arkansas: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Arkansas: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -844,7 +936,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Arkansas as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -870,8 +962,8 @@
           "themes": [
             "disclosure"
           ],
-          "ellavox_relevance": "high",
-          "ellavox_why": "Requires disclosure when bots communicate online with intent to incentivize a purchase or influence a vote; relevant to CS/sales bots.",
+          "voice_cs_relevance": "high",
+          "voice_cs_why": "Requires disclosure when bots communicate online with intent to incentivize a purchase or influence a vote; relevant to CS/sales bots.",
           "summary": "Prohibits use of a bot to communicate or interact with another person online with intent to mislead about artificial identity in order to incentivize a purchase or influence a vote, unless the bot discloses it is a bot.",
           "sources": [
             {
@@ -902,8 +994,8 @@
             "governance",
             "disclosure"
           ],
-          "ellavox_relevance": "medium",
-          "ellavox_why": "If Ellavox or customers use ADMT for significant decisions about CA consumers, notice/opt-out/access duties apply; more relevant for customer ADMT than Ellavox's core voice-CS product.",
+          "voice_cs_relevance": "medium",
+          "voice_cs_why": "If operators or their customers use ADMT for significant decisions about CA consumers, notice/opt-out/access duties apply; more relevant for customer ADMT than core voice/conversation CS products.",
           "summary": "CPPA ADMT regulations (adopted 2025; general effective date 2026-01-01) require pre-use notices, opt-outs, and access rights when ADMT substantially replaces human decisionmaking for significant decisions. Existing uses generally must comply by 2027-01-01.",
           "sources": [
             {
@@ -925,8 +1017,8 @@
             "disclosure",
             "companion_cs"
           ],
-          "ellavox_relevance": "high",
-          "ellavox_why": "Would impose human-agent access and related CS chatbot duties on large private businesses — directly in Ellavox's CS/voice lane if enacted.",
+          "voice_cs_relevance": "high",
+          "voice_cs_why": "Would impose human-agent access and related CS chatbot duties on large private businesses — directly in the customer-service / phone AI lane if enacted.",
           "summary": "AB 1609 (2025–2026) would add B&P Ch. 22.6.1 on customer-service chatbots for large private businesses. Enrolled and presented to the Governor 2026-09-14. As of baseline 2026-09-22, final outcome (signed/vetoed) not confirmed — treat as pending, not in force.",
           "sources": [
             {
@@ -954,8 +1046,8 @@
           "themes": [
             "admt_employment"
           ],
-          "ellavox_relevance": "low",
-          "ellavox_why": "Employment ADS rules matter if Ellavox or customers use AI in hiring; not core to Ellavox phone/CS product.",
+          "voice_cs_relevance": "low",
+          "voice_cs_why": "Employment ADS rules matter if operators or customers use AI in hiring; not core to phone/CS voice products.",
           "summary": "Civil Rights Council FEHA regulations address automated-decision systems in employment, including discrimination theories even when a human remains involved. Operative Oct 2025 (Register 2025, No. 26).",
           "sources": [
             {
@@ -1020,7 +1112,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Priority jurisdiction baseline for California as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1048,8 +1140,8 @@
             "governance",
             "disclosure"
           ],
-          "ellavox_relevance": "high",
-          "ellavox_why": "AppFolio/property-management customers face ADMT duties for lease screening. Pure CS bots that do not materially influence lease decisions may be out of scope — document AUP and use cases carefully.",
+          "voice_cs_relevance": "high",
+          "voice_cs_why": "AppFolio/property-management customers face ADMT duties for lease screening. Pure CS bots that do not materially influence lease decisions may be out of scope — document AUP and use cases carefully.",
           "summary": "SB 26-189 (signed May 2026) defines covered ADMT used to materially influence consequential decisions, including lease/purchase of residential real estate. Developer documentation + deployer notice and post-adverse-outcome disclosures generally apply starting 2027-01-01. AG rules for post-adverse disclosures due by that date.",
           "sources": [
             {
@@ -1093,7 +1185,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Priority jurisdiction baseline for Colorado as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1105,7 +1197,7 @@
         "kind": "state",
         "status_color": "proposed_hot",
         "status_label": "proposed_hot",
-        "summary": "Public Act 26-15 (Online Safety / AI Responsibility & Transparency) — broad AI statute with phased effective dates. First wave Oct 1 2026; core AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for Ellavox.",
+        "summary": "Public Act 26-15 (Online Safety / AI Responsibility & Transparency) — broad AI statute with phased effective dates. First wave Oct 1 2026; core AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for voice/conversation AI.",
         "last_reviewed": "2026-09-22",
         "notes": "Briefing shorthand 'disclosure effective Oct 1 2026' is only partly accurate: WARN/AI-layoff disclosure and anti-discrimination amendments hit Oct 1 2026; plain-language AEDT interaction disclosure and written pre-decision notice apply to AEDT deployed on/after Oct 1 2027. Also addresses companion/consumer chatbot and frontier-model themes — confirm PA text for CS-bot scope."
       },
@@ -1122,8 +1214,8 @@
             "companion_cs",
             "governance"
           ],
-          "ellavox_relevance": "high",
-          "ellavox_why": "Phased disclosure duties and companion/online-safety AI themes make CT a high-watch state for Ellavox CS and voice products; employment AEDT rules matter for customers using hiring AI.",
+          "voice_cs_relevance": "high",
+          "voice_cs_why": "Phased disclosure duties and companion/online-safety AI themes make CT a high-watch state for CS bots and phone AI; employment AEDT rules matter for customers using hiring AI.",
           "summary": "Substitute SB 5 / Public Act 26-15 signed May/June 2026. Staggered effective dates: Oct 1 2026 (e.g. WARN notices must disclose AI-related layoffs; AEDT not a defense to discrimination); Oct 1 2027 (plain-language interaction disclosure and written pre-decision AEDT notice). Live primary text preferred over briefing shorthand.",
           "sources": [
             {
@@ -1167,7 +1259,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Priority jurisdiction baseline for Connecticut as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1179,9 +1271,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Delaware: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Delaware: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1193,7 +1285,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Delaware as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1205,9 +1297,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "District of Columbia: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "District of Columbia: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1219,7 +1311,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for District of Columbia as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1231,9 +1323,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Florida: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Florida: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1245,7 +1337,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Florida as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1257,9 +1349,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Georgia: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Georgia: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1271,7 +1363,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Georgia as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1283,9 +1375,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Hawaii: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Hawaii: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1297,7 +1389,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Hawaii as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1309,9 +1401,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Idaho: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Idaho: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1323,7 +1415,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Idaho as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1335,7 +1427,7 @@
         "kind": "state",
         "status_color": "watch",
         "status_label": "watch",
-        "summary": "Employment-focused AI rules (video interview notice; broader AI employment notice/anti-bias themes). Medium relevance — Ellavox is not primarily a hiring-tool vendor, but customers may ask.",
+        "summary": "Employment-focused AI rules (video interview notice; broader AI employment notice/anti-bias themes). Medium relevance — voice/conversation CS operators are not primarily a hiring-tool vendor, but customers may ask.",
         "last_reviewed": "2026-09-22",
         "notes": "Track IDHR guidance; detailed proposed notice regs were in flux mid-2026."
       },
@@ -1350,8 +1442,8 @@
             "admt_employment",
             "disclosure"
           ],
-          "ellavox_relevance": "medium",
-          "ellavox_why": "Customers evaluating AI for hiring workflows may ask Ellavox about IL notice/consent obligations; not core to voice CS workers.",
+          "voice_cs_relevance": "medium",
+          "voice_cs_why": "Customers evaluating AI for hiring workflows may ask CS/voice vendors about IL notice/consent obligations; not core to voice CS workers.",
           "summary": "Illinois requires notice/consent when AI analyzes video interviews, and has expanded employment-AI notice and anti-discrimination themes (including HB 3773-era discussions). Prefer live ILGA statute text over secondary summaries when advising customers.",
           "sources": [
             {
@@ -1395,7 +1487,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Priority jurisdiction baseline for Illinois as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1407,9 +1499,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Indiana: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Indiana: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1421,7 +1513,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Indiana as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1433,9 +1525,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Iowa: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Iowa: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1447,7 +1539,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Iowa as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1459,9 +1551,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Kansas: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Kansas: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1473,7 +1565,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Kansas as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1485,9 +1577,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Kentucky: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Kentucky: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1499,7 +1591,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Kentucky as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1511,9 +1603,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Louisiana: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Louisiana: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1525,7 +1617,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Louisiana as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1537,7 +1629,7 @@
         "kind": "state",
         "status_color": "in_force",
         "status_label": "in_force",
-        "summary": "Enacted chatbot disclosure law (PL 2025, c. 294): clear and conspicuous notice required when AI chatbots engage consumers in trade/commerce in a way that may mislead them into believing they are talking to a human. High relevance for Ellavox CS bots.",
+        "summary": "Enacted chatbot disclosure law (PL 2025, c. 294): clear and conspicuous notice required when AI chatbots engage consumers in trade/commerce in a way that may mislead them into believing they are talking to a human. High relevance for customer-service bots and phone AI.",
         "last_reviewed": "2026-09-22",
         "notes": "Codified at 10 M.R.S. §1500-DD (realloc. from §1500-Y). UTPA enforcement."
       },
@@ -1552,8 +1644,8 @@
             "disclosure",
             "companion_cs"
           ],
-          "ellavox_relevance": "high",
-          "ellavox_why": "Directly covers textual or aural AI chatbots used with Maine consumers; Ellavox CS and voice bots must disclose when a reasonable consumer could think they are talking to a human.",
+          "voice_cs_relevance": "high",
+          "voice_cs_why": "Directly covers textual or aural AI chatbots used with Maine consumers; Customer-service and voice bots must disclose when a reasonable consumer could think they are talking to a human.",
           "summary": "LD 1727 / Public Law 2025 ch. 294. A person may not use an AI chatbot or other computer technology to engage in trade and commerce with a consumer in a manner that may mislead a reasonable consumer into believing they are engaging with a human, unless notified clearly and conspicuously. Violation = Maine Unfair Trade Practices Act.",
           "sources": [
             {
@@ -1597,7 +1689,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Priority jurisdiction baseline for Maine as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1609,9 +1701,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Maryland: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Maryland: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1623,7 +1715,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Maryland as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1635,9 +1727,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Massachusetts: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Massachusetts: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1649,7 +1741,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Massachusetts as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1661,9 +1753,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Michigan: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Michigan: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1675,7 +1767,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Michigan as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1687,9 +1779,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Minnesota: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Minnesota: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1701,7 +1793,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Minnesota as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1713,9 +1805,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Mississippi: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Mississippi: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1727,7 +1819,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Mississippi as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1739,9 +1831,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Missouri: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Missouri: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1753,7 +1845,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Missouri as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1765,9 +1857,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Montana: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Montana: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1779,7 +1871,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Montana as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1791,9 +1883,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Nebraska: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Nebraska: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1805,7 +1897,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Nebraska as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1817,9 +1909,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Nevada: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Nevada: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1831,7 +1923,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Nevada as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1843,9 +1935,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "New Hampshire: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "New Hampshire: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1857,7 +1949,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for New Hampshire as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1869,9 +1961,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "New Jersey: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "New Jersey: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1883,7 +1975,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for New Jersey as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1895,9 +1987,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "New Mexico: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "New Mexico: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1909,7 +2001,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for New Mexico as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1921,7 +2013,7 @@
         "kind": "state",
         "status_color": "watch",
         "status_label": "watch",
-        "summary": "NYC Local Law 144 (AEDT hiring bias audits) is the main in-force local rule. State-level AI bills remain a watch item. Low–medium for Ellavox product; higher if customers use AEDT in NYC hiring.",
+        "summary": "NYC Local Law 144 (AEDT hiring bias audits) is the main in-force local rule. State-level AI bills remain a watch item. Low–medium for core voice/CS products; higher if customers use AEDT in NYC hiring.",
         "last_reviewed": "2026-09-22",
         "notes": "NYC LL144 is local (NYC); tracked under NY state card for discoverability."
       },
@@ -1935,8 +2027,8 @@
           "themes": [
             "admt_employment"
           ],
-          "ellavox_relevance": "low",
-          "ellavox_why": "Hiring-tool bias audits and candidate notice — peripheral to Ellavox voice/CS product; watch if product expands into HR workflows.",
+          "voice_cs_relevance": "low",
+          "voice_cs_why": "Hiring-tool bias audits and candidate notice — peripheral to voice/CS product; watch if product expands into HR workflows.",
           "summary": "Requires independent bias audits, public summaries, and candidate notice before using covered automated employment decision tools in NYC.",
           "sources": [
             {
@@ -1966,7 +2058,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Priority jurisdiction baseline for New York as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -1978,9 +2070,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "North Carolina: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "North Carolina: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -1992,7 +2084,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for North Carolina as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2004,9 +2096,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "North Dakota: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "North Dakota: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2018,7 +2110,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for North Dakota as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2030,9 +2122,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Ohio: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Ohio: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2044,7 +2136,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Ohio as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2056,9 +2148,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Oklahoma: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Oklahoma: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2070,7 +2162,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Oklahoma as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2082,9 +2174,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Oregon: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Oregon: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2096,7 +2188,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Oregon as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2108,9 +2200,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Pennsylvania: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Pennsylvania: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2122,7 +2214,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Pennsylvania as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2134,9 +2226,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Rhode Island: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Rhode Island: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2148,7 +2240,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Rhode Island as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2160,9 +2252,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "South Carolina: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "South Carolina: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2174,7 +2266,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for South Carolina as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2186,9 +2278,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "South Dakota: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "South Dakota: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2200,7 +2292,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for South Dakota as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2212,9 +2304,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Tennessee: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Tennessee: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2226,7 +2318,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Tennessee as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2238,7 +2330,7 @@
         "kind": "state",
         "status_color": "in_force",
         "status_label": "in_force",
-        "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for Ellavox deploying AI in Texas.",
+        "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas.",
         "last_reviewed": "2026-09-22",
         "notes": "Exclusive AG enforcement; cure period; sandbox and AI Council created."
       },
@@ -2253,8 +2345,8 @@
             "governance",
             "disclosure"
           ],
-          "ellavox_relevance": "medium",
-          "ellavox_why": "Applies to developing/deploying/offering AI in Texas; prohibited manipulative uses and government disclosure rules. Moderate product impact; watch AG guidance and federal-preemption overlay.",
+          "voice_cs_relevance": "medium",
+          "voice_cs_why": "Applies to developing/deploying/offering AI in Texas; prohibited manipulative uses and government disclosure rules. Moderate product impact; watch AG guidance and federal-preemption overlay.",
           "summary": "HB 149 signed 2025-06-22 (effective 2026-01-01). Creates Business & Commerce Code Ch. 552 AI protections (prohibited manipulation, social scoring limits, discrimination, etc.), a regulatory sandbox, and the Texas AI Council. Civil penalties; no private right of action for most provisions.",
           "sources": [
             {
@@ -2298,7 +2390,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Priority jurisdiction baseline for Texas as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2310,7 +2402,7 @@
         "kind": "state",
         "status_color": "in_force",
         "status_label": "in_force",
-        "summary": "Utah AI Policy Act framework: generative AI disclosure on clear consumer request; heightened/proactive disclosure for regulated occupations in high-risk interactions. Medium Ellavox relevance for CS bots.",
+        "summary": "Utah AI Policy Act framework: generative AI disclosure on clear consumer request; heightened/proactive disclosure for regulated occupations in high-risk interactions. Medium relevance for customer-service bots and phone AI.",
         "last_reviewed": "2026-09-22",
         "notes": "Subsequent amendments (e.g. SB 226 / SB 332 era) refine disclosure and chatbot rules — confirm current code when advising."
       },
@@ -2325,8 +2417,8 @@
             "disclosure",
             "companion_cs"
           ],
-          "ellavox_relevance": "medium",
-          "ellavox_why": "CS and voice bots serving Utah consumers should honor clear requests to disclose generative AI use; regulated-occupation rules may require prominent disclosure in sensitive contexts.",
+          "voice_cs_relevance": "medium",
+          "voice_cs_why": "CS and voice bots serving Utah consumers should honor clear requests to disclose generative AI use; regulated-occupation rules may require prominent disclosure in sensitive contexts.",
           "summary": "SB 149 (2024) and follow-on amendments require businesses to disclose generative AI use upon clear and unambiguous consumer request, with stronger duties for certain regulated occupations and high-risk interactions (including mental-health chatbot themes in later bills).",
           "sources": [
             {
@@ -2370,7 +2462,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Priority jurisdiction baseline for Utah as of 2026-09-22.",
           "source_url": null,
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2382,9 +2474,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Vermont: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Vermont: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2396,7 +2488,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Vermont as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2408,9 +2500,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Virginia: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Virginia: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2422,7 +2514,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Virginia as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2434,9 +2526,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Washington: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Washington: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2448,7 +2540,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Washington as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2460,9 +2552,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "West Virginia: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "West Virginia: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2474,7 +2566,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for West Virginia as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2486,9 +2578,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Wisconsin: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Wisconsin: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2500,7 +2592,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Wisconsin as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     },
@@ -2512,9 +2604,9 @@
         "kind": "state",
         "status_color": "quiet",
         "status_label": "quiet",
-        "summary": "Wyoming: no Ellavox-material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
+        "summary": "Wyoming: no material AI service, disclosure, or ADMT rules currently in focus. Monitor NCSL and local session activity; escalate if chatbot/voice disclosure or housing ADMT bills advance.",
         "last_reviewed": "2026-09-22",
-        "notes": "No Ellavox-material AI service/disclosure/ADMT rules in focus yet."
+        "notes": "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet."
       },
       "obligations": [],
       "sources": [],
@@ -2526,7 +2618,7 @@
           "title": "Baseline snapshot seeded",
           "detail": "Quiet baseline for Wyoming as of 2026-09-22.",
           "source_url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
-          "created_at": "2026-09-22 21:52:04"
+          "created_at": "2026-09-22 23:01:44"
         }
       ]
     }

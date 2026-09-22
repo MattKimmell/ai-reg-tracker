@@ -327,3 +327,167 @@ footer.app-footer {
   .grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
   header.app-header h1 { font-size: 1.05rem; }
 }
+
+/* --- Stats cards --- */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.85rem;
+  text-align: center;
+}
+.stat-card.accent {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.stat-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* --- Toolbar: chips + search --- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.toolbar .chips { margin-bottom: 0; }
+.search-wrap {
+  position: relative;
+  flex: 1 1 220px;
+  max-width: 360px;
+}
+.search-wrap input[type="search"] {
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+.search-wrap input[type="search"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.search-results {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.search-item {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+.search-item:last-child { border-bottom: none; }
+.search-item:hover { background: var(--surface2); text-decoration: none; }
+.search-item .muted { color: var(--muted); font-size: 0.75rem; }
+.search-empty { padding: 0.65rem 0.75rem; color: var(--muted); font-size: 0.85rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* --- US tile map --- */
+.map-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+.map-row {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 3px;
+  justify-content: flex-start;
+}
+.map-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 28px;
+  flex: 0 0 36px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 4px;
+  background: var(--surface2);
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.1s, border-color 0.15s, box-shadow 0.15s;
+}
+.map-cell:hover {
+  text-decoration: none;
+  transform: scale(1.08);
+  border-color: var(--accent);
+  z-index: 1;
+}
+.map-cell.empty-cell {
+  background: transparent;
+  pointer-events: none;
+  border: none;
+}
+.map-cell.status-in-force { background: rgba(61,154,106,0.45); }
+.map-cell.status-pending { background: rgba(201,162,39,0.45); }
+.map-cell.status-hot { background: rgba(212,101,74,0.5); }
+.map-cell.status-watch { background: rgba(123,143,212,0.45); }
+.map-cell.status-quiet { background: rgba(90,106,126,0.4); }
+
+.map-cell.hit, .state-tile.hit, .federal-card.hit {
+  box-shadow: 0 0 0 2px var(--accent);
+  border-color: var(--accent);
+}
+
+/* --- Chart --- */
+.chart-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.chart-panel .section-label { margin-bottom: 0.5rem; }
+.chart-panel canvas { max-height: 220px; }
+
+@media (max-width: 720px) {
+  .map-cell { width: 28px; height: 24px; flex-basis: 28px; font-size: 0.58rem; }
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
+}

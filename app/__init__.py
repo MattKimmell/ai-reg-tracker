@@ -1,1 +1,1 @@
-"""Ellavox AI Regulation Tracker."""
+"""US AI Reg Tracker."""
