@@ -1,0 +1,111 @@
+#!/usr/bin/env python3
+"""Export tracker.db to a static SPA under docs/ for GitHub Pages.
+
+Usage:
+  python scripts/export_static.py
+  make static
+
+Writes:
+  docs/index.html
+  docs/assets/app.js
+  docs/assets/style.css
+  docs/data/all.json
+
+Hash routes: #/  #/?filter=hot  #/j/CA  #/about
+"""
+from __future__ import annotations
+
+import json
+import shutil
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from app import db  # noqa: E402
+
+DOCS = ROOT / "docs"
+ASSETS = DOCS / "assets"
+DATA_DIR = DOCS / "data"
+STATIC_SRC = Path(__file__).resolve().parent / "static_site"
+APP_CSS = ROOT / "app" / "static" / "style.css"
+
+
+def build_payload() -> dict:
+    db.ensure_db()
+    jurisdictions = db.list_jurisdictions()
+    details = []
+    for j in jurisdictions:
+        detail = db.jurisdiction_detail(j["code"])
+        if not detail:
+            continue
+        # Strip internal DB ids from public dump where convenient but keep
+        # obligation_id on sources so the SPA can filter jurisdiction-level links.
+        details.append(
+            {
+                "jurisdiction": detail["jurisdiction"],
+                "obligations": detail["obligations"],
+                "sources": detail["sources"],
+                "history": detail["history"],
+            }
+        )
+    return {
+        "exported_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "last_global_refresh": db.get_meta("last_global_refresh", "—"),
+        "jurisdiction_count": len(jurisdictions),
+        "jurisdictions": jurisdictions,
+        "details": details,
+    }
+
+
+def write_site(payload: dict) -> None:
+    DOCS.mkdir(parents=True, exist_ok=True)
+    ASSETS.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    # SPA shell + JS from templates
+    for name in ("index.html", "app.js"):
+        src = STATIC_SRC / name
+        if not src.is_file():
+            raise FileNotFoundError(f"Missing SPA template: {src}")
+        dest = DOCS / name if name == "index.html" else ASSETS / name
+        shutil.copy2(src, dest)
+
+    # Reuse live app CSS so static matches FastAPI UI
+    if not APP_CSS.is_file():
+        raise FileNotFoundError(f"Missing stylesheet: {APP_CSS}")
+    shutil.copy2(APP_CSS, ASSETS / "style.css")
+
+    out_json = DATA_DIR / "all.json"
+    out_json.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+    # Disable Jekyll processing on GitHub Pages
+    (DOCS / ".nojekyll").write_text("", encoding="utf-8")
+
+
+def main() -> int:
+    if not db.DB_PATH.is_file():
+        print(f"ERROR: database not found at {db.DB_PATH}", file=sys.stderr)
+        print("Run: python scripts/seed_baseline.py", file=sys.stderr)
+        return 1
+
+    payload = build_payload()
+    write_site(payload)
+
+    n = payload["jurisdiction_count"]
+    print(f"Exported {n} jurisdictions → {DOCS}/")
+    print(f"  {DOCS / 'index.html'}")
+    print(f"  {ASSETS / 'app.js'}")
+    print(f"  {ASSETS / 'style.css'}")
+    print(f"  {DATA_DIR / 'all.json'}")
+    print("Open via GitHub Pages or: python -m http.server -d docs 8080")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

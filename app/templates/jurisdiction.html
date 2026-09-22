@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}{{ j.name }} · Ellavox AI Reg Tracker{% endblock %}
+{% block content %}
+<a class="back" href="/">← All jurisdictions</a>
+
+<div class="j-header">
+  <span class="pill {{ j.status_css }}">{{ j.status_display }}</span>
+  <span class="pill" style="margin-left:0.35rem;">{{ j.kind }}</span>
+  <h1>{{ j.name }} <span style="color:var(--muted); font-weight:400; font-size:1rem;">({{ j.code }})</span></h1>
+  <p class="summary">{{ j.summary }}</p>
+  <p class="meta-line" style="margin-top:0.75rem;">Last reviewed: {{ j.last_reviewed or '—' }}</p>
+</div>
+
+{% if j.notes %}
+<div class="notes"><strong>Notes:</strong> {{ j.notes }}</div>
+{% endif %}
+
+<h3 class="block-title">Obligations</h3>
+{% if obligations %}
+  {% for o in obligations %}
+  <div class="obl">
+    <h4>{{ o.title }}</h4>
+    <div class="meta">
+      <span class="pill {{ o.rel_css }}">Ellavox: {{ o.rel_display }}</span>
+      <span>Status: {{ o.status }}</span>
+      {% if o.effective_date %}<span>Effective: {{ o.effective_date }}</span>{% endif %}
+    </div>
+    <p>{{ o.summary }}</p>
+    {% if o.ellavox_why %}
+    <p class="why"><strong>Why it matters:</strong> {{ o.ellavox_why }}</p>
+    {% endif %}
+    {% if o.themes %}
+    <div class="themes">
+      {% for t in o.themes %}
+      <span class="theme-tag">{{ t }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if o.sources %}
+    <ul class="sources">
+      {% for s in o.sources %}
+      <li><a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.label }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endfor %}
+{% else %}
+<p class="empty">No specific obligations tracked yet for this jurisdiction.</p>
+{% endif %}
+
+{% if sources %}
+<h3 class="block-title">Jurisdiction sources</h3>
+<ul class="sources">
+  {% for s in sources %}
+  {% if not s.obligation_id %}
+  <li><a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.label }}</a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}
+
+<h3 class="block-title">History</h3>
+{% if history %}
+<ul class="timeline">
+  {% for h in history %}
+  <li>
+    <div class="date">{{ h.event_date }}</div>
+    <div class="title">{{ h.title }}</div>
+    {% if h.detail %}<div class="detail">{{ h.detail }}</div>{% endif %}
+    {% if h.source_url %}
+    <div class="detail"><a href="{{ h.source_url }}" target="_blank" rel="noopener noreferrer">Source</a></div>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">No history events yet.</p>
+{% endif %}
+{% endblock %}

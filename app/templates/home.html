@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}US AI Regulation Status · Ellavox{% endblock %}
+{% block content %}
+<p class="meta-line">Last global refresh: <strong>{{ last_refresh }}</strong>
+  · Showing {{ total_count }} jurisdiction{{ 's' if total_count != 1 else '' }}</p>
+
+<div class="chips">
+  <a class="chip {% if filter == 'all' %}active{% endif %}" href="/?filter=all">All</a>
+  <a class="chip {% if filter == 'hot' %}active{% endif %}" href="/?filter=hot">Hot</a>
+  <a class="chip {% if filter == 'in_force' %}active{% endif %}" href="/?filter=in_force">In force</a>
+  <a class="chip {% if filter == 'ellavox' %}active{% endif %}" href="/?filter=ellavox">Ellavox-relevant</a>
+</div>
+
+<div class="legend">
+  <span class="l-in-force">In force</span>
+  <span class="l-pending">Enacted / pending</span>
+  <span class="l-hot">Proposed (hot)</span>
+  <span class="l-watch">Watch</span>
+  <span class="l-quiet">Quiet</span>
+</div>
+
+{% if federal %}
+<p class="section-label">Federal</p>
+{% for j in federal %}
+<a class="federal-card {{ j.status_css }}" href="/j/{{ j.code }}" style="display:block; text-decoration:none; color:inherit;">
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;">
+    <h2 style="margin:0;">{{ j.name }}</h2>
+    <span class="pill {{ j.status_css }}">{{ j.status_display }}</span>
+  </div>
+  <p>{{ j.summary }}</p>
+  <p style="font-size:0.8rem; margin-top:0.6rem;">Reviewed {{ j.last_reviewed or '—' }} →</p>
+</a>
+{% endfor %}
+{% endif %}
+
+{% if states %}
+<p class="section-label">States &amp; DC</p>
+<div class="grid">
+  {% for j in states %}
+  <a class="state-tile {{ j.status_css }}" href="/j/{{ j.code }}" title="{{ j.name }}">
+    <div class="code">{{ j.code }}</div>
+    <div class="name">{{ j.name }}</div>
+    <div class="badge">{{ j.status_display }}</div>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<p class="empty">No jurisdictions match this filter.</p>
+{% endif %}
+{% endblock %}
