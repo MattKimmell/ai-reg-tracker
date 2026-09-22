@@ -52,6 +52,7 @@ CREATE TABLE IF NOT EXISTS history_events (
     title TEXT NOT NULL,
     detail TEXT DEFAULT '',
     source_url TEXT,
+    event_kind TEXT NOT NULL DEFAULT 'milestone',
     created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -67,6 +68,7 @@ def ensure_db() -> None:
     with connect() as conn:
         conn.executescript(SCHEMA)
         _migrate_legacy_columns(conn)
+        _migrate_history_event_kind(conn)
 
 
 def _migrate_legacy_columns(conn: sqlite3.Connection) -> None:
@@ -96,6 +98,17 @@ def _migrate_legacy_columns(conn: sqlite3.Connection) -> None:
     if "voice_cs_why" not in cols:
         conn.execute(
             "ALTER TABLE obligations ADD COLUMN voice_cs_why TEXT DEFAULT ''"
+        )
+
+
+
+def _migrate_history_event_kind(conn: sqlite3.Connection) -> None:
+    """Add event_kind so seed/audit rows can be excluded from activity charts."""
+    cols = {r["name"] for r in conn.execute("PRAGMA table_info(history_events)").fetchall()}
+    if "event_kind" not in cols:
+        conn.execute(
+            "ALTER TABLE history_events ADD COLUMN event_kind "
+            "TEXT NOT NULL DEFAULT 'milestone'"
         )
 
 
@@ -271,11 +284,42 @@ def compute_stats() -> dict[str, int]:
     }
 
 
+_SEED_HISTORY_TITLE_MARKERS = (
+    "baseline snapshot",
+    "baseline seeded",
+    "seed housekeeping",
+    "tracker audit",
+)
+
+
+def _is_seed_history(title: str | None, event_kind: str | None) -> bool:
+    """True for housekeeping/seed rows that must not drive the activity chart."""
+    kind = (event_kind or "milestone").strip().lower()
+    if kind in {"seed_meta", "seed", "audit", "housekeeping"}:
+        return True
+    t = (title or "").strip().lower()
+    return any(m in t for m in _SEED_HISTORY_TITLE_MARKERS)
+
+
 def activity_by_month(months: int = 24) -> list[dict[str, Any]]:
-    """Aggregate history events (+ obligation effective dates) by YYYY-MM."""
+    """Milestones & effective dates by YYYY-MM (excludes seed/audit history).
+
+    Counts:
+      (a) history_events with real legislative/regulatory dates (event_kind
+          milestone/enacted/enforcement/etc., not seed_meta), and
+      (b) obligation effective_date values.
+    Seed/baseline housekeeping rows are never counted.
+    """
     counter: Counter[str] = Counter()
     with connect() as conn:
-        for row in conn.execute("SELECT event_date FROM history_events"):
+        cols = {r["name"] for r in conn.execute("PRAGMA table_info(history_events)")}
+        if "event_kind" in cols:
+            hist_sql = "SELECT event_date, title, event_kind FROM history_events"
+        else:
+            hist_sql = "SELECT event_date, title, NULL AS event_kind FROM history_events"
+        for row in conn.execute(hist_sql):
+            if _is_seed_history(row["title"], row["event_kind"]):
+                continue
             d = (row["event_date"] or "")[:7]
             if len(d) == 7 and d[4] == "-":
                 counter[d] += 1
@@ -428,14 +472,15 @@ def upsert_from_ingest(payload: dict[str, Any]) -> dict[str, Any]:
         for ev in payload.get("history_events") or []:
             conn.execute(
                 "INSERT INTO history_events "
-                "(jurisdiction_id, event_date, title, detail, source_url) "
-                "VALUES (?, ?, ?, ?, ?)",
+                "(jurisdiction_id, event_date, title, detail, source_url, event_kind) "
+                "VALUES (?, ?, ?, ?, ?, ?)",
                 (
                     jid,
                     ev["event_date"],
                     ev["title"],
                     ev.get("detail", ""),
                     ev.get("source_url"),
+                    ev.get("event_kind") or "milestone",
                 ),
             )
             created_events += 1

@@ -273,7 +273,7 @@
     html += renderMap();
 
     html += `<div class="chart-panel">
-      <p class="section-label">Regulatory activity (history events + obligation effective dates)</p>
+      <p class="section-label">Milestones & effective dates (excludes tracker seed/audit events)</p>
       <canvas id="activity-chart" height="100" aria-label="Activity over time chart"></canvas>
     </div>`;
 

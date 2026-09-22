@@ -191,7 +191,7 @@ PRIORITY: dict[str, dict] = {
             {
                 "title": "Required disclosure of AI chatbot use in trade/commerce (10 M.R.S. §1500-DD)",
                 "status": "in_force",
-                "effective_date": "2025-06-12",
+                "effective_date": "2025-09-24",
                 "themes": ["disclosure", "companion_cs"],
                 "voice_cs_relevance": "high",
                 "voice_cs_why": (
@@ -200,7 +200,8 @@ PRIORITY: dict[str, dict] = {
                     "could think they are talking to a human."
                 ),
                 "summary": (
-                    "LD 1727 / Public Law 2025 ch. 294. A person may not use an AI chatbot "
+                    "LD 1727 / Public Law 2025 ch. 294 (approved June 12, 2025; generally "
+                    "effective September 24, 2025). A person may not use an AI chatbot "
                     "or other computer technology to engage in trade and commerce with a "
                     "consumer in a manner that may mislead a reasonable consumer into "
                     "believing they are engaging with a human, unless notified clearly and "
@@ -395,7 +396,7 @@ PRIORITY: dict[str, dict] = {
             {
                 "title": "Artificial Intelligence Video Interview Act + employment AI notice themes",
                 "status": "in_force",
-                "effective_date": None,
+                "effective_date": "2020-01-01",
                 "themes": ["admt_employment", "disclosure"],
                 "voice_cs_relevance": "medium",
                 "voice_cs_why": (
@@ -509,30 +510,30 @@ PRIORITY: dict[str, dict] = {
             "AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for voice/conversation AI."
         ),
         "notes": (
-            "Briefing shorthand 'disclosure effective Oct 1 2026' is only partly accurate: "
-            "WARN/AI-layoff disclosure and anti-discrimination amendments hit Oct 1 2026; "
-            "plain-language AEDT interaction disclosure and written pre-decision notice "
-            "apply to AEDT deployed on/after Oct 1 2027. Also addresses companion/consumer "
-            "chatbot and frontier-model themes — confirm PA text for CS-bot scope."
+            "Split effective dates (verified against PA 26-15 text): Oct 1 2026 first-wave "
+            "framework / anti-discrimination; Jan 1 2027 AI companion safeguards; "
+            "Oct 1 2027 AEDT interaction & pre-decision disclosures for tools deployed on/"
+            "after that date. Confirm companion/CS-bot scope against PA text."
         ),
         "obligations": [
             {
-                "title": "PA 26-15 — AI disclosure & AEDT employment framework",
+                "title": "PA 26-15 — first-wave AI / AEDT framework (anti-discrimination & scaffolding)",
                 "status": "enacted_pending",
                 "effective_date": "2026-10-01",
-                "themes": ["disclosure", "admt_employment", "companion_cs", "governance"],
+                "themes": ["disclosure", "admt_employment", "governance"],
                 "voice_cs_relevance": "high",
                 "voice_cs_why": (
-                    "Phased disclosure duties and companion/online-safety AI themes make "
-                    "CT a high-watch state for CS bots and phone AI; employment "
-                    "AEDT rules matter for customers using hiring AI."
+                    "First wave includes AEDT statutory framework and the rule that AI use "
+                    "is not a defense to discrimination; relevant watch for CS/voice vendors "
+                    "serving CT employers and for companion/online-safety themes in the Act."
                 ),
                 "summary": (
-                    "Substitute SB 5 / Public Act 26-15 signed May/June 2026. Staggered "
-                    "effective dates: Oct 1 2026 (e.g. WARN notices must disclose AI-related "
-                    "layoffs; AEDT not a defense to discrimination); Oct 1 2027 (plain-"
-                    "language interaction disclosure and written pre-decision AEDT notice). "
-                    "Live primary text preferred over briefing shorthand."
+                    "Substitute SB 5 / Public Act 26-15. Effective Oct 1 2026: AEDT definitions "
+                    "and related employment framework provisions, including that use of "
+                    "automated employment-related decision technology is not a defense to "
+                    "discrimination claims (and related WARN/AI-layoff disclosure themes). "
+                    "Core interaction/pre-decision disclosure duties for AEDTs deployed on/"
+                    "after Oct 1 2027 are tracked as a separate obligation."
                 ),
                 "sources": [
                     {
@@ -542,6 +543,31 @@ PRIORITY: dict[str, dict] = {
                     {
                         "label": "Connecticut General Assembly",
                         "url": "https://www.cga.ct.gov/",
+                    },
+                ],
+            },
+            {
+                "title": "PA 26-15 — AEDT interaction & pre-decision disclosures",
+                "status": "enacted_pending",
+                "effective_date": "2027-10-01",
+                "themes": ["disclosure", "admt_employment"],
+                "voice_cs_relevance": "medium",
+                "voice_cs_why": (
+                    "Plain-language interaction disclosure and written pre-decision notice "
+                    "apply to AEDTs deployed on/after Oct 1 2027 — material for hiring-tool "
+                    "customers; secondary for pure CS voice bots."
+                ),
+                "summary": (
+                    "For automated employment-related decision technology deployed on or after "
+                    "October 1, 2027: deployers must disclose interactions in plain language "
+                    "(unless obvious) and provide written pre-decision notice covering purpose, "
+                    "trade name, personal-data categories/sources, and contact information. "
+                    "Developer information-sharing duties support these deployer obligations."
+                ),
+                "sources": [
+                    {
+                        "label": "PA 26-15 official PDF (CGA)",
+                        "url": "https://www.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00015-R00SB-00005-PA.PDF",
                     },
                 ],
             },
@@ -641,13 +667,204 @@ def insert_obligation(conn, jid, obl):
     return oid
 
 
-def insert_history(conn, jid, title, detail, source_url=None):
+def insert_history(
+    conn,
+    jid,
+    event_date,
+    title,
+    detail="",
+    source_url=None,
+    event_kind="milestone",
+):
+    """Insert history. Use event_kind='seed_meta' for non-chart housekeeping only."""
     conn.execute(
         "INSERT INTO history_events "
-        "(jurisdiction_id, event_date, title, detail, source_url, created_at) "
-        "VALUES (?, ?, ?, ?, ?, datetime('now'))",
-        (jid, BASELINE_DATE, title, detail, source_url),
+        "(jurisdiction_id, event_date, title, detail, source_url, event_kind, created_at) "
+        "VALUES (?, ?, ?, ?, ?, ?, datetime('now'))",
+        (jid, event_date, title, detail, source_url, event_kind),
     )
+
+
+# Verified milestones only (primary sources). Never invent dates.
+# These feed the activity chart together with obligation effective_dates.
+VERIFIED_MILESTONES = [
+    {
+        "code": "US-FED",
+        "event_date": "2024-02-08",
+        "title": "FCC 24-17 Declaratory Ruling released (AI voices under TCPA)",
+        "detail": (
+            "FCC Declaratory Ruling FCC 24-17 (adopted Feb 2, 2024; released Feb 8, 2024) "
+            "confirms AI-generated human voices are artificial/prerecorded under the TCPA."
+        ),
+        "source_url": "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf",
+    },
+    {
+        "code": "US-FED",
+        "event_date": "2025-12-11",
+        "title": "EO 14365 signed",
+        "detail": "Executive Order 14365 signed December 11, 2025.",
+        "source_url": (
+            "https://www.federalregister.gov/documents/2025/12/16/2025-23092/"
+            "ensuring-a-national-policy-framework-for-artificial-intelligence"
+        ),
+    },
+    {
+        "code": "US-FED",
+        "event_date": "2025-12-16",
+        "title": "EO 14365 published in Federal Register",
+        "detail": "EO 14365 published December 16, 2025 (90 FR 58499).",
+        "source_url": (
+            "https://www.federalregister.gov/documents/2025/12/16/2025-23092/"
+            "ensuring-a-national-policy-framework-for-artificial-intelligence"
+        ),
+    },
+    {
+        "code": "CA",
+        "event_date": "2019-07-01",
+        "title": "California Bot Act operative",
+        "detail": (
+            "B&P §§17940–17943 (SB 1001) operative July 1, 2019 "
+            "(effective Jan 1, 2019; operative July 1, 2019 per §17943)."
+        ),
+        "source_url": (
+            "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml"
+            "?lawCode=BPC&sectionNum=17941"
+        ),
+    },
+    {
+        "code": "CA",
+        "event_date": "2025-10-01",
+        "title": "FEHA automated-decision systems regulations operative",
+        "detail": (
+            "Civil Rights Council FEHA ADS amendments operative October 1, 2025 "
+            "(Register 2025, No. 26)."
+        ),
+        "source_url": (
+            "https://calcivilrights.ca.gov/2025/06/30/civil-rights-council-secures-approval-"
+            "for-regulations-to-protect-against-employment-discrimination-related-to-"
+            "artificial-intelligence/"
+        ),
+    },
+    {
+        "code": "CA",
+        "event_date": "2027-01-01",
+        "title": "CCPA ADMT compliance deadline for existing uses",
+        "detail": (
+            "CPPA ADMT regulations: general effective date Jan 1, 2026; existing ADMT uses "
+            "for significant decisions generally must comply by Jan 1, 2027."
+        ),
+        "source_url": "https://cppa.ca.gov/regulations/ccpa_updates.html",
+    },
+    {
+        "code": "NY",
+        "event_date": "2023-01-01",
+        "title": "NYC Local Law 144 statutory effective date",
+        "detail": "LL144 took effect January 1, 2023; DCWP delayed enforcement to July 5, 2023.",
+        "source_url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+    },
+    {
+        "code": "NY",
+        "event_date": "2023-07-05",
+        "title": "NYC LL144 enforcement begins",
+        "detail": "NYC DCWP began enforcing Local Law 144 AEDT rules on July 5, 2023.",
+        "source_url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+    },
+    {
+        "code": "UT",
+        "event_date": "2024-03-13",
+        "title": "Utah SB 149 signed (AI Policy Act)",
+        "detail": "Governor signed SB 149 on March 13, 2024; Act effective May 1, 2024.",
+        "source_url": "https://le.utah.gov/~2024/bills/sbillint/SB0149.htm",
+    },
+    {
+        "code": "UT",
+        "event_date": "2024-05-01",
+        "title": "Utah AI Policy Act effective",
+        "detail": "SB 149 §13: This bill takes effect on May 1, 2024.",
+        "source_url": "https://le.utah.gov/~2024/bills/sbillint/SB0149.htm",
+    },
+    {
+        "code": "ME",
+        "event_date": "2025-06-12",
+        "title": "Maine PL 2025, c. 294 approved",
+        "detail": (
+            "LD 1727 / Public Law 2025, c. 294 approved June 12, 2025. Nonemergency First "
+            "Special Session laws generally effective September 24, 2025."
+        ),
+        "source_url": "https://www.maine.gov/pfr/consumercredit/laws_rules/new/pl294.pdf",
+    },
+    {
+        "code": "ME",
+        "event_date": "2025-09-24",
+        "title": "Maine AI chatbot disclosure effective",
+        "detail": (
+            "10 M.R.S. §1500-DD generally effective September 24, 2025 (First Special Session "
+            "2025 nonemergency general effective date)."
+        ),
+        "source_url": "https://www.mainelegislature.org/legis/statutes/10/title10sec1500-DD.html",
+    },
+    {
+        "code": "TX",
+        "event_date": "2025-06-22",
+        "title": "Texas TRAIGA (HB 149) signed",
+        "detail": "HB 149 signed June 22, 2025; effective January 1, 2026.",
+        "source_url": "https://capitol.texas.gov/BillLookup/history.aspx?Bill=HB149&LegSess=89R",
+    },
+    {
+        "code": "TX",
+        "event_date": "2026-01-01",
+        "title": "Texas TRAIGA effective",
+        "detail": "Texas Responsible AI Governance Act (HB 149) effective January 1, 2026.",
+        "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm",
+    },
+    {
+        "code": "CT",
+        "event_date": "2026-10-01",
+        "title": "PA 26-15 first-wave provisions effective",
+        "detail": (
+            "Oct 1, 2026: AEDT framework scaffolding and anti-discrimination amendments "
+            "(among other first-wave provisions)."
+        ),
+        "source_url": "https://www.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00015-R00SB-00005-PA.PDF",
+    },
+    {
+        "code": "CT",
+        "event_date": "2027-01-01",
+        "title": "PA 26-15 AI companion safeguards effective",
+        "detail": "AI companion safeguard sections take effect January 1, 2027.",
+        "source_url": "https://www.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00015-R00SB-00005-PA.PDF",
+    },
+    {
+        "code": "CT",
+        "event_date": "2027-10-01",
+        "title": "PA 26-15 AEDT interaction/pre-decision disclosures apply",
+        "detail": (
+            "Interaction disclosure and written pre-decision notice apply to AEDTs deployed "
+            "on or after October 1, 2027."
+        ),
+        "source_url": "https://www.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00015-R00SB-00005-PA.PDF",
+    },
+    {
+        "code": "CO",
+        "event_date": "2027-01-01",
+        "title": "Colorado SB26-189 ADMT effective",
+        "detail": (
+            "SB26-189 ADMT framework generally effective January 1, 2027 for consequential "
+            "decisions including residential lease/purchase."
+        ),
+        "source_url": "https://www.leg.colorado.gov/bills/sb26-189",
+    },
+    {
+        "code": "IL",
+        "event_date": "2020-01-01",
+        "title": "Illinois AI Video Interview Act effective",
+        "detail": (
+            "Public Act 101-0260 (Artificial Intelligence Video Interview Act) effective "
+            "January 1, 2020."
+        ),
+        "source_url": "https://www.ilga.gov/Legislation/publicacts/view/101-0260",
+    },
+]
 
 
 def main() -> None:
@@ -655,9 +872,9 @@ def main() -> None:
         db.DB_PATH.unlink()
     db.ensure_db()
 
+    code_to_jid: dict[str, int] = {}
     count = 0
     with db.connect() as conn:
-        # Federal first
         fed = PRIORITY["US-FED"]
         jid = insert_jurisdiction(
             conn,
@@ -668,6 +885,7 @@ def main() -> None:
             fed["summary"],
             fed.get("notes", ""),
         )
+        code_to_jid["US-FED"] = jid
         for obl in fed["obligations"]:
             insert_obligation(conn, jid, obl)
         for src in fed.get("sources") or []:
@@ -675,12 +893,6 @@ def main() -> None:
                 "INSERT INTO sources (jurisdiction_id, label, url) VALUES (?, ?, ?)",
                 (jid, src["label"], src["url"]),
             )
-        insert_history(
-            conn,
-            jid,
-            "Baseline snapshot seeded",
-            "Initial US AI Reg Tracker baseline as of 2026-09-22.",
-        )
         count += 1
 
         for code, name in STATES:
@@ -702,12 +914,6 @@ def main() -> None:
                         "INSERT INTO sources (jurisdiction_id, label, url) VALUES (?, ?, ?)",
                         (jid, src["label"], src["url"]),
                     )
-                insert_history(
-                    conn,
-                    jid,
-                    "Baseline snapshot seeded",
-                    f"Priority jurisdiction baseline for {name} as of 2026-09-22.",
-                )
             else:
                 jid = insert_jurisdiction(
                     conn,
@@ -718,14 +924,24 @@ def main() -> None:
                     quiet_summary(name),
                     "No material AI service/disclosure/ADMT rules for voice/conversation operators in focus yet.",
                 )
-                insert_history(
-                    conn,
-                    jid,
-                    "Baseline snapshot seeded",
-                    f"Quiet baseline for {name} as of 2026-09-22.",
-                    "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database",
-                )
+            code_to_jid[code] = jid
             count += 1
+
+        # Verified legislative/regulatory milestones only — never per-jurisdiction
+        # "baseline snapshot" rows (those previously caused a fake Sep 2026 spike).
+        for ev in VERIFIED_MILESTONES:
+            jid = code_to_jid.get(ev["code"])
+            if not jid:
+                raise SystemExit(f"Missing jurisdiction for milestone: {ev['code']}")
+            insert_history(
+                conn,
+                jid,
+                ev["event_date"],
+                ev["title"],
+                ev["detail"],
+                ev.get("source_url"),
+                event_kind="milestone",
+            )
 
         conn.execute(
             "INSERT INTO meta(key, value) VALUES ('last_global_refresh', ?)",
@@ -733,7 +949,7 @@ def main() -> None:
         )
         conn.execute(
             "INSERT INTO meta(key, value) VALUES ('seed_version', ?)",
-            ("baseline-2026-09-22",),
+            ("baseline-2026-09-22-v2-no-chart-noise",),
         )
 
     print(f"Seeded {count} jurisdictions into {db.DB_PATH}")
@@ -741,7 +957,11 @@ def main() -> None:
         n_obl = conn.execute("SELECT COUNT(*) AS c FROM obligations").fetchone()["c"]
         n_src = conn.execute("SELECT COUNT(*) AS c FROM sources").fetchone()["c"]
         n_hist = conn.execute("SELECT COUNT(*) AS c FROM history_events").fetchone()["c"]
-    print(f"  obligations={n_obl} sources={n_src} history_events={n_hist}")
+        n_seedish = conn.execute(
+            "SELECT COUNT(*) AS c FROM history_events WHERE event_kind = 'seed_meta' "
+            "OR lower(title) LIKE '%baseline snapshot%'"
+        ).fetchone()["c"]
+    print(f"  obligations={n_obl} sources={n_src} history_events={n_hist} seedish_history={n_seedish}")
 
 
 if __name__ == "__main__":
