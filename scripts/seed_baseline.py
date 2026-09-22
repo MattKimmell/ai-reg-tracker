@@ -110,7 +110,7 @@ PRIORITY: dict[str, dict] = {
                     },
                     {
                         "label": "FCC statement — TCPA applies to AI voices",
-                        "url": "https://www.fcc.gov/document/fcc-confirms-tcpa-applies-ai-technologies-generate-human-voices/starks-statement",
+                        "url": "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf",
                     },
                 ],
             },
@@ -132,7 +132,7 @@ PRIORITY: dict[str, dict] = {
                 "sources": [
                     {
                         "label": "FTC — Mission / Section 5 overview",
-                        "url": "https://www.ftc.gov/about-ftc/mission",
+                        "url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions",
                     },
                     {
                         "label": "15 U.S.C. §45 (Cornell LII)",
@@ -163,7 +163,7 @@ PRIORITY: dict[str, dict] = {
                     },
                     {
                         "label": "Congress.gov — federal legislation search",
-                        "url": "https://www.congress.gov/",
+                        "url": "https://www.law.cornell.edu/uscode/text/47/227",
                     },
                 ],
             },
@@ -171,7 +171,7 @@ PRIORITY: dict[str, dict] = {
         "sources": [
             {
                 "label": "NCSL Artificial Intelligence legislation database",
-                "url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
+                "url": "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database",
             },
         ],
     },
@@ -254,11 +254,11 @@ PRIORITY: dict[str, dict] = {
                 "sources": [
                     {
                         "label": "Cal. Bus. & Prof. Code §17941 (Justia)",
-                        "url": "https://law.justia.com/codes/california/code-bpc/division-7/part-3/chapter-6/section-17941/",
+                        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=17941",
                     },
                     {
                         "label": "NCSL AI legislation database (landing)",
-                        "url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
+                        "url": "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database",
                     },
                 ],
             },
@@ -282,7 +282,7 @@ PRIORITY: dict[str, dict] = {
                 "sources": [
                     {
                         "label": "California Privacy Protection Agency",
-                        "url": "https://cppa.ca.gov/",
+                        "url": "https://cppa.ca.gov/regulations/ccpa_updates.html",
                     },
                 ],
             },
@@ -331,7 +331,7 @@ PRIORITY: dict[str, dict] = {
                 "sources": [
                     {
                         "label": "CA Civil Rights Department",
-                        "url": "https://calcivilrights.ca.gov/",
+                        "url": "https://calcivilrights.ca.gov/2025/06/30/civil-rights-council-secures-approval-for-regulations-to-protect-against-employment-discrimination-related-to-artificial-intelligence/",
                     },
                 ],
             },
@@ -588,7 +588,7 @@ PRIORITY: dict[str, dict] = {
                     },
                     {
                         "label": "CO Division of Real Estate — SB26-189 summary",
-                        "url": "https://dre.colorado.gov/sb26-189-summary",
+                        "url": "https://www.leg.colorado.gov/bills/sb26-189",
                     },
                 ],
             },
@@ -723,7 +723,7 @@ def main() -> None:
                     jid,
                     "Baseline snapshot seeded",
                     f"Quiet baseline for {name} as of 2026-09-22.",
-                    "https://www.ncsl.org/technology-and-communication/artificial-intelligence",
+                    "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database",
                 )
             count += 1
 

@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-09-22T23:01:44Z",
+  "exported_at": "2026-09-22T23:07:27Z",
   "last_global_refresh": "2026-09-22",
   "jurisdiction_count": 52,
   "stats": {
@@ -702,13 +702,6 @@
               "obligation_id": 1,
               "label": "FCC 24-17 Declaratory Ruling (PDF)",
               "url": "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf"
-            },
-            {
-              "id": 2,
-              "jurisdiction_id": null,
-              "obligation_id": 1,
-              "label": "FCC statement — TCPA applies to AI voices",
-              "url": "https://www.fcc.gov/document/fcc-confirms-tcpa-applies-ai-technologies-generate-human-voices/starks-statement"
             }
           ]
         },
@@ -731,8 +724,8 @@
               "id": 3,
               "jurisdiction_id": null,
               "obligation_id": 2,
-              "label": "FTC — Mission / Section 5 overview",
-              "url": "https://www.ftc.gov/about-ftc/mission"
+              "label": "FTC — Inquiry into AI chatbots acting as companions (Sep 2025)",
+              "url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions"
             },
             {
               "id": 4,
@@ -767,8 +760,8 @@
               "id": 6,
               "jurisdiction_id": null,
               "obligation_id": 3,
-              "label": "Congress.gov — federal legislation search",
-              "url": "https://www.congress.gov/"
+              "label": "47 U.S.C. §227 TCPA (Cornell LII)",
+              "url": "https://www.law.cornell.edu/uscode/text/47/227"
             }
           ]
         }
@@ -782,18 +775,11 @@
           "url": "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf"
         },
         {
-          "id": 2,
-          "jurisdiction_id": null,
-          "obligation_id": 1,
-          "label": "FCC statement — TCPA applies to AI voices",
-          "url": "https://www.fcc.gov/document/fcc-confirms-tcpa-applies-ai-technologies-generate-human-voices/starks-statement"
-        },
-        {
           "id": 3,
           "jurisdiction_id": null,
           "obligation_id": 2,
-          "label": "FTC — Mission / Section 5 overview",
-          "url": "https://www.ftc.gov/about-ftc/mission"
+          "label": "FTC — Inquiry into AI chatbots acting as companions (Sep 2025)",
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions"
         },
         {
           "id": 4,
@@ -813,15 +799,15 @@
           "id": 6,
           "jurisdiction_id": null,
           "obligation_id": 3,
-          "label": "Congress.gov — federal legislation search",
-          "url": "https://www.congress.gov/"
+          "label": "47 U.S.C. §227 TCPA (Cornell LII)",
+          "url": "https://www.law.cornell.edu/uscode/text/47/227"
         },
         {
           "id": 7,
           "jurisdiction_id": 1,
           "obligation_id": null,
-          "label": "NCSL Artificial Intelligence legislation database",
-          "url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence"
+          "label": "NCSL Artificial Intelligence Legislation Database",
+          "url": "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database"
         }
       ],
       "history": [
@@ -970,15 +956,15 @@
               "id": 8,
               "jurisdiction_id": null,
               "obligation_id": 4,
-              "label": "Cal. Bus. & Prof. Code §17941 (Justia)",
-              "url": "https://law.justia.com/codes/california/code-bpc/division-7/part-3/chapter-6/section-17941/"
+              "label": "Cal. Bus. & Prof. Code §17941 — Bot disclosure (LegInfo)",
+              "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=17941"
             },
             {
               "id": 9,
               "jurisdiction_id": null,
               "obligation_id": 4,
-              "label": "NCSL AI legislation database (landing)",
-              "url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence"
+              "label": "NCSL Artificial Intelligence Legislation Database",
+              "url": "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database"
             }
           ]
         },
@@ -1002,8 +988,15 @@
               "id": 10,
               "jurisdiction_id": null,
               "obligation_id": 5,
-              "label": "California Privacy Protection Agency",
-              "url": "https://cppa.ca.gov/"
+              "label": "CPPA — ADMT / CCPA updates regulations",
+              "url": "https://cppa.ca.gov/regulations/ccpa_updates.html"
+            },
+            {
+              "id": 29,
+              "jurisdiction_id": null,
+              "obligation_id": 5,
+              "label": "CPPA — Final ADMT / CCPA regulation text (PDF)",
+              "url": "https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf"
             }
           ]
         },
@@ -1054,8 +1047,22 @@
               "id": 13,
               "jurisdiction_id": null,
               "obligation_id": 7,
-              "label": "CA Civil Rights Department",
-              "url": "https://calcivilrights.ca.gov/"
+              "label": "CRD — FEHA ADS regulations approval (June 2025)",
+              "url": "https://calcivilrights.ca.gov/2025/06/30/civil-rights-council-secures-approval-for-regulations-to-protect-against-employment-discrimination-related-to-artificial-intelligence/"
+            },
+            {
+              "id": 27,
+              "jurisdiction_id": null,
+              "obligation_id": 7,
+              "label": "CRD — Final text: FEHA ADS employment regulations (PDF)",
+              "url": "https://calcivilrights.ca.gov/wp-content/uploads/sites/32/2025/06/Final-Text-regulations-automated-employment-decision-systems.pdf"
+            },
+            {
+              "id": 28,
+              "jurisdiction_id": null,
+              "obligation_id": 7,
+              "label": "CRD Civil Rights Council — rulemaking actions (ADS)",
+              "url": "https://calcivilrights.ca.gov/civilrightscouncil/rulemaking-actions/"
             }
           ]
         }
@@ -1065,22 +1072,22 @@
           "id": 8,
           "jurisdiction_id": null,
           "obligation_id": 4,
-          "label": "Cal. Bus. & Prof. Code §17941 (Justia)",
-          "url": "https://law.justia.com/codes/california/code-bpc/division-7/part-3/chapter-6/section-17941/"
+          "label": "Cal. Bus. & Prof. Code §17941 — Bot disclosure (LegInfo)",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=17941"
         },
         {
           "id": 9,
           "jurisdiction_id": null,
           "obligation_id": 4,
-          "label": "NCSL AI legislation database (landing)",
-          "url": "https://www.ncsl.org/technology-and-communication/artificial-intelligence"
+          "label": "NCSL Artificial Intelligence Legislation Database",
+          "url": "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database"
         },
         {
           "id": 10,
           "jurisdiction_id": null,
           "obligation_id": 5,
-          "label": "California Privacy Protection Agency",
-          "url": "https://cppa.ca.gov/"
+          "label": "CPPA — ADMT / CCPA updates regulations",
+          "url": "https://cppa.ca.gov/regulations/ccpa_updates.html"
         },
         {
           "id": 11,
@@ -1100,8 +1107,29 @@
           "id": 13,
           "jurisdiction_id": null,
           "obligation_id": 7,
-          "label": "CA Civil Rights Department",
-          "url": "https://calcivilrights.ca.gov/"
+          "label": "CRD — FEHA ADS regulations approval (June 2025)",
+          "url": "https://calcivilrights.ca.gov/2025/06/30/civil-rights-council-secures-approval-for-regulations-to-protect-against-employment-discrimination-related-to-artificial-intelligence/"
+        },
+        {
+          "id": 27,
+          "jurisdiction_id": null,
+          "obligation_id": 7,
+          "label": "CRD — Final text: FEHA ADS employment regulations (PDF)",
+          "url": "https://calcivilrights.ca.gov/wp-content/uploads/sites/32/2025/06/Final-Text-regulations-automated-employment-decision-systems.pdf"
+        },
+        {
+          "id": 28,
+          "jurisdiction_id": null,
+          "obligation_id": 7,
+          "label": "CRD Civil Rights Council — rulemaking actions (ADS)",
+          "url": "https://calcivilrights.ca.gov/civilrightscouncil/rulemaking-actions/"
+        },
+        {
+          "id": 29,
+          "jurisdiction_id": null,
+          "obligation_id": 5,
+          "label": "CPPA — Final ADMT / CCPA regulation text (PDF)",
+          "url": "https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf"
         }
       ],
       "history": [
@@ -1150,13 +1178,6 @@
               "obligation_id": 8,
               "label": "SB26-189 bill page (Colorado General Assembly)",
               "url": "https://www.leg.colorado.gov/bills/sb26-189"
-            },
-            {
-              "id": 15,
-              "jurisdiction_id": null,
-              "obligation_id": 8,
-              "label": "CO Division of Real Estate — SB26-189 summary",
-              "url": "https://dre.colorado.gov/sb26-189-summary"
             }
           ]
         }
@@ -1168,13 +1189,6 @@
           "obligation_id": 8,
           "label": "SB26-189 bill page (Colorado General Assembly)",
           "url": "https://www.leg.colorado.gov/bills/sb26-189"
-        },
-        {
-          "id": 15,
-          "jurisdiction_id": null,
-          "obligation_id": 8,
-          "label": "CO Division of Real Estate — SB26-189 summary",
-          "url": "https://dre.colorado.gov/sb26-189-summary"
         }
       ],
       "history": [
@@ -1224,13 +1238,6 @@
               "obligation_id": 9,
               "label": "PA 26-15 official PDF (CGA)",
               "url": "https://www.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00015-R00SB-00005-PA.PDF"
-            },
-            {
-              "id": 17,
-              "jurisdiction_id": null,
-              "obligation_id": 9,
-              "label": "Connecticut General Assembly",
-              "url": "https://www.cga.ct.gov/"
             }
           ]
         }
@@ -1242,13 +1249,6 @@
           "obligation_id": 9,
           "label": "PA 26-15 official PDF (CGA)",
           "url": "https://www.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00015-R00SB-00005-PA.PDF"
-        },
-        {
-          "id": 17,
-          "jurisdiction_id": null,
-          "obligation_id": 9,
-          "label": "Connecticut General Assembly",
-          "url": "https://www.cga.ct.gov/"
         }
       ],
       "history": [
@@ -1450,15 +1450,8 @@
               "id": 18,
               "jurisdiction_id": null,
               "obligation_id": 10,
-              "label": "AI Video Interview Act (ILCS via ILGA)",
-              "url": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&ChapterID=68"
-            },
-            {
-              "id": 19,
-              "jurisdiction_id": null,
-              "obligation_id": 10,
-              "label": "ILGA legislation search (landing)",
-              "url": "https://ilga.gov/legislation/"
+              "label": "Illinois Artificial Intelligence Video Interview Act (source)",
+              "url": "https://codes.findlaw.com/il/chapter-820-employment/il-st-sect-820-42-1/"
             }
           ]
         }
@@ -1468,15 +1461,8 @@
           "id": 18,
           "jurisdiction_id": null,
           "obligation_id": 10,
-          "label": "AI Video Interview Act (ILCS via ILGA)",
-          "url": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&ChapterID=68"
-        },
-        {
-          "id": 19,
-          "jurisdiction_id": null,
-          "obligation_id": 10,
-          "label": "ILGA legislation search (landing)",
-          "url": "https://ilga.gov/legislation/"
+          "label": "Illinois Artificial Intelligence Video Interview Act (source)",
+          "url": "https://codes.findlaw.com/il/chapter-820-employment/il-st-sect-820-42-1/"
         }
       ],
       "history": [
@@ -2427,13 +2413,6 @@
               "obligation_id": 14,
               "label": "Utah SB 149 (2024) bill text",
               "url": "https://le.utah.gov/~2024/bills/sbillint/SB0149.htm"
-            },
-            {
-              "id": 26,
-              "jurisdiction_id": null,
-              "obligation_id": 14,
-              "label": "Utah Legislature bill search (landing)",
-              "url": "https://le.utah.gov/"
             }
           ]
         }
@@ -2445,13 +2424,6 @@
           "obligation_id": 14,
           "label": "Utah SB 149 (2024) bill text",
           "url": "https://le.utah.gov/~2024/bills/sbillint/SB0149.htm"
-        },
-        {
-          "id": 26,
-          "jurisdiction_id": null,
-          "obligation_id": 14,
-          "label": "Utah Legislature bill search (landing)",
-          "url": "https://le.utah.gov/"
         }
       ],
       "history": [
