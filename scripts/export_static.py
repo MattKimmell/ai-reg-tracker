@@ -130,6 +130,14 @@ def main() -> int:
     write_site(payload)
 
     n = payload["jurisdiction_count"]
+    # Keep asset query params so browsers don't keep a stale SPA layout.
+    index_path = DOCS / "index.html"
+    if index_path.exists():
+        html = index_path.read_text(encoding="utf-8")
+        html = re.sub(r"assets/style\.css(\?v=\d+)?", "assets/style.css?v=13", html)
+        html = re.sub(r"assets/app\.js(\?v=\d+)?", "assets/app.js?v=13", html)
+        index_path.write_text(html, encoding="utf-8")
+
     print(f"Exported {n} jurisdictions → {DOCS}/")
     print(f"  {DOCS / 'index.html'}")
     print(f"  {ASSETS / 'app.js'}")
