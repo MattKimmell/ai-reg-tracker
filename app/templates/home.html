@@ -20,6 +20,7 @@
     <li class="briefing-row">
       <div class="briefing-chips">
         <a class="briefing-jcode" href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a>
+        <span class="pill {{ item.bucket_css }}">{{ item.bucket_label }}</span>
         {% if item.topic %}<span class="briefing-topic">{{ item.topic }}</span>{% endif %}
       </div>
       <p class="briefing-blurb">{{ item.blurb }}</p>
@@ -28,7 +29,7 @@
   </ul>
   {% if briefing['coming_soon'] %}
   <p class="briefing-oneline">
-    <span class="briefing-kicker">Coming soon</span>
+    <span class="pill status-pending">Coming soon</span>
     {% for item in briefing['coming_soon'] %}
     <a href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a> {{ item.date_display }}{% if not loop.last %} · {% endif %}
     {% endfor %}
@@ -36,7 +37,7 @@
   {% endif %}
   {% if briefing['pending'] %}
   <p class="briefing-oneline">
-    <span class="briefing-kicker">Pending</span>
+    <span class="pill status-hot">Pending</span>
     {% for item in briefing['pending'] %}
     <a href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a> {{ item.date_display }}{% if not loop.last %} · {% endif %}
     {% endfor %}

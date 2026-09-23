@@ -259,21 +259,22 @@
       html += `<li class="briefing-row">
         <div class="briefing-chips">
           <a class="briefing-jcode" href="#/j/${esc(item.jurisdiction_code)}">${esc(item.jurisdiction_label)}</a>
+          <span class="pill ${esc(item.bucket_css || "status-in-force")}">${esc(item.bucket_label || "In force")}</span>
           ${item.topic ? `<span class="briefing-topic">${esc(item.topic)}</span>` : ""}
         </div>
         <p class="briefing-blurb">${esc(item.blurb || "")}</p>
       </li>`;
     }
     html += `</ul>`;
-    function oneline(label, items, hashPrefix) {
+    function oneline(label, pillCss, items, hashPrefix) {
       if (!items.length) return "";
       const bits = items.map((item) =>
         `<a href="${hashPrefix}${esc(item.jurisdiction_code)}">${esc(item.jurisdiction_label)}</a> ${esc(item.date_display || item.effective_date || "pending")}`
       );
-      return `<p class="briefing-oneline"><span class="briefing-kicker">${esc(label)}</span> ${bits.join(" · ")}</p>`;
+      return `<p class="briefing-oneline"><span class="pill ${esc(pillCss)}">${esc(label)}</span> ${bits.join(" · ")}</p>`;
     }
-    html += oneline("Coming soon", comingSoon, "#/j/");
-    html += oneline("Pending", pending, "#/j/");
+    html += oneline("Coming soon", "status-pending", comingSoon, "#/j/");
+    html += oneline("Pending", "status-hot", pending, "#/j/");
     html += `</section>`;
     return html;
   }
