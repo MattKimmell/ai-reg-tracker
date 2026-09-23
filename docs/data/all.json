@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-09-23T14:45:56Z",
+  "exported_at": "2026-09-23T14:53:33Z",
   "last_global_refresh": "2026-09-22",
   "jurisdiction_count": 52,
   "stats": {
@@ -209,6 +209,80 @@
         "date_display": "May 1, 2024",
         "obligation_status": "in_force",
         "sort": 70
+      }
+    ],
+    "coming_soon": [
+      {
+        "id": "ct-wave1",
+        "jurisdiction_code": "CT",
+        "jurisdiction_label": "Connecticut",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2026-10-01",
+        "date_display": "Oct 1, 2026",
+        "obligation_status": "enacted_pending",
+        "sort": 80
+      },
+      {
+        "id": "ct-wave2",
+        "jurisdiction_code": "CT",
+        "jurisdiction_label": "Connecticut",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-10-01",
+        "date_display": "Oct 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 90
+      },
+      {
+        "id": "ca-admt",
+        "jurisdiction_code": "CA",
+        "jurisdiction_label": "California",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-01-01",
+        "date_display": "Jan 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 100
+      },
+      {
+        "id": "co-admt",
+        "jurisdiction_code": "CO",
+        "jurisdiction_label": "Colorado",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-01-01",
+        "date_display": "Jan 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 110
+      }
+    ],
+    "pending": [
+      {
+        "id": "ca-ab1609",
+        "jurisdiction_code": "CA",
+        "jurisdiction_label": "California",
+        "topic": "",
+        "bucket": "pending",
+        "bucket_label": "Pending",
+        "bucket_css": "status-hot",
+        "blurb": "",
+        "effective_date": null,
+        "date_display": "pending (governor)",
+        "obligation_status": "proposed",
+        "sort": 120
       }
     ],
     "upcoming": [

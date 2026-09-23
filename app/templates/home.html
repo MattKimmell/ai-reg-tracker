@@ -26,16 +26,21 @@
     </li>
     {% endfor %}
   </ul>
-  {% if briefing['upcoming'] %}
-  <p class="briefing-section">Coming soon / pending</p>
-  <ul class="briefing-upcoming">
-    {% for item in briefing['upcoming'] %}
-    <li>
-      <a href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a>
-      <span>{{ item.date_display }}</span>
-    </li>
+  {% if briefing['coming_soon'] %}
+  <p class="briefing-oneline">
+    <span class="briefing-kicker">Coming soon</span>
+    {% for item in briefing['coming_soon'] %}
+    <a href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a> {{ item.date_display }}{% if not loop.last %} · {% endif %}
     {% endfor %}
-  </ul>
+  </p>
+  {% endif %}
+  {% if briefing['pending'] %}
+  <p class="briefing-oneline">
+    <span class="briefing-kicker">Pending</span>
+    {% for item in briefing['pending'] %}
+    <a href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a> {{ item.date_display }}{% if not loop.last %} · {% endif %}
+    {% endfor %}
+  </p>
   {% endif %}
 </section>
 {% endif %}

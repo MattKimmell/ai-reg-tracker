@@ -115,6 +115,42 @@
   }
 
 
+
+  var LABEL_NUDGE = {
+    RI: [14, 2], DE: [14, 2], CT: [2, 3], NJ: [12, 2], MD: [14, 8],
+    DC: [16, 10], MA: [8, 0], NH: [10, -2], VT: [-2, 2],
+    FL: [10, 12], LA: [-2, 10], MI: [10, 18], AK: [18, -8], HI: [0, 2],
+    ID: [0, 8], NV: [2, 6], CA: [-4, 8], WV: [2, 4]
+  };
+
+  function addStateLabels(svg) {
+    var NS = "http://www.w3.org/2000/svg";
+    var layer = document.createElementNS(NS, "g");
+    layer.setAttribute("class", "state-labels");
+    layer.setAttribute("pointer-events", "none");
+    var nodes = svg.querySelectorAll(":scope > [data-code]");
+    nodes.forEach(function (el) {
+      var code = (el.getAttribute("data-code") || "").toUpperCase();
+      if (!code) return;
+      var box;
+      try { box = el.getBBox(); } catch (err) { return; }
+      if (!box.width && !box.height) return;
+      var x = box.x + box.width / 2;
+      var y = box.y + box.height / 2;
+      var n = LABEL_NUDGE[code];
+      if (n) { x += n[0]; y += n[1]; }
+      var text = document.createElementNS(NS, "text");
+      text.setAttribute("x", String(x));
+      text.setAttribute("y", String(y));
+      text.setAttribute("class", "state-abbr");
+      text.setAttribute("text-anchor", "middle");
+      text.setAttribute("dominant-baseline", "middle");
+      text.textContent = code;
+      layer.appendChild(text);
+    });
+    svg.appendChild(layer);
+  }
+
   function mountUsMap() {
     var panel = document.getElementById("us-map");
     var byCode = window.TRACKER_MAP || {};
@@ -150,6 +186,7 @@
           }
         });
       });
+      addStateLabels(svgRoot);
     }
 
     fetch("/static/us-states.svg", { cache: "force-cache" })

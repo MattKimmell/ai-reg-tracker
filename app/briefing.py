@@ -231,7 +231,8 @@ def build_briefing(as_of: date | None = None) -> dict[str, Any]:
         items.append(_row_to_item(row, obl))
 
     in_force = [i for i in items if i["bucket"] == "in_force"]
-    upcoming = [i for i in items if i["bucket"] in ("coming_soon", "pending")]
+    coming_soon = [i for i in items if i["bucket"] == "coming_soon"]
+    pending = [i for i in items if i["bucket"] == "pending"]
 
     return {
         "title": "What to know right now",
@@ -239,6 +240,8 @@ def build_briefing(as_of: date | None = None) -> dict[str, Any]:
         "as_of": as_of.isoformat(),
         "disclaimer": "Not legal advice.",
         "in_force": in_force,
-        "upcoming": upcoming,
+        "coming_soon": coming_soon,
+        "pending": pending,
+        "upcoming": coming_soon + pending,
         "items": items,
     }

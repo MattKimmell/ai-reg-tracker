@@ -608,30 +608,37 @@ svg.us-map g.state.hit .state {
   text-transform: uppercase;
   color: var(--muted);
 }
-.briefing-upcoming {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0.25rem;
-}
-.briefing-upcoming li {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.35rem 0;
-  border-bottom: 1px solid var(--border);
+.briefing-oneline {
+  margin: 0.55rem 0 0;
   font-size: 0.92rem;
-}
-.briefing-upcoming li:last-child { border-bottom: none; }
-.briefing-upcoming a {
+  line-height: 1.55;
   color: var(--text);
+}
+.briefing-oneline .briefing-kicker {
+  display: inline-block;
+  margin-right: 0.45rem;
+  font-size: 0.72rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.briefing-oneline a {
+  font-weight: 600;
+  color: var(--accent);
   text-decoration: none;
 }
-.briefing-upcoming a:hover { color: var(--accent); }
-.briefing-upcoming span {
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+.briefing-oneline a:hover { text-decoration: underline; }
+svg.us-map .state-abbr {
+  fill: var(--text);
+  font-size: 9px;
+  font-weight: 700;
+  font-family: var(--font);
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 2.4px;
+  stroke-linejoin: round;
 }
 @media (max-width: 720px) {
   .briefing-panel { padding: 0.95rem 0.9rem 0.7rem; }

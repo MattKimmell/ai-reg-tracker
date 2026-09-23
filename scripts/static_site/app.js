@@ -160,6 +160,42 @@
       </div>`;
   }
 
+
+  var LABEL_NUDGE = {
+    RI: [14, 2], DE: [14, 2], CT: [2, 3], NJ: [12, 2], MD: [14, 8],
+    DC: [16, 10], MA: [8, 0], NH: [10, -2], VT: [-2, 2],
+    FL: [10, 12], LA: [-2, 10], MI: [10, 18], AK: [18, -8], HI: [0, 2],
+    ID: [0, 8], NV: [2, 6], CA: [-4, 8], WV: [2, 4]
+  };
+
+  function addStateLabels(svg) {
+    var NS = "http://www.w3.org/2000/svg";
+    var layer = document.createElementNS(NS, "g");
+    layer.setAttribute("class", "state-labels");
+    layer.setAttribute("pointer-events", "none");
+    var nodes = svg.querySelectorAll(":scope > [data-code]");
+    nodes.forEach(function (el) {
+      var code = (el.getAttribute("data-code") || "").toUpperCase();
+      if (!code) return;
+      var box;
+      try { box = el.getBBox(); } catch (err) { return; }
+      if (!box.width && !box.height) return;
+      var x = box.x + box.width / 2;
+      var y = box.y + box.height / 2;
+      var n = LABEL_NUDGE[code];
+      if (n) { x += n[0]; y += n[1]; }
+      var text = document.createElementNS(NS, "text");
+      text.setAttribute("x", String(x));
+      text.setAttribute("y", String(y));
+      text.setAttribute("class", "state-abbr");
+      text.setAttribute("text-anchor", "middle");
+      text.setAttribute("dominant-baseline", "middle");
+      text.textContent = code;
+      layer.appendChild(text);
+    });
+    svg.appendChild(layer);
+  }
+
   async function mountUsMap(byCode) {
     const panel = document.getElementById("us-map");
     if (!panel) return;
@@ -199,6 +235,7 @@
           }
         });
       });
+      addStateLabels(svg);
     } catch (err) {
       panel.innerHTML = `<p class="map-loading">Map failed to load (${esc(err.message)}).</p>`;
     }
@@ -208,8 +245,9 @@
   function renderBriefingHtml() {
     const b = DATA.briefing;
     const inForce = (b && b.in_force) || [];
-    const upcoming = (b && b.upcoming) || [];
-    if (!inForce.length && !upcoming.length) return "";
+    const comingSoon = (b && b.coming_soon) || [];
+    const pending = (b && b.pending) || [];
+    if (!inForce.length && !comingSoon.length && !pending.length) return "";
     let html = `<section class="briefing-panel" aria-labelledby="briefing-title">
       <div class="briefing-header">
         <h2 id="briefing-title">${esc(b.title || "What to know right now")}</h2>
@@ -227,16 +265,15 @@
       </li>`;
     }
     html += `</ul>`;
-    if (upcoming.length) {
-      html += `<p class="briefing-section">Coming soon / pending</p><ul class="briefing-upcoming">`;
-      for (const item of upcoming) {
-        html += `<li>
-          <a href="#/j/${esc(item.jurisdiction_code)}">${esc(item.jurisdiction_label)}</a>
-          <span>${esc(item.date_display || item.effective_date || "pending")}</span>
-        </li>`;
-      }
-      html += `</ul>`;
+    function oneline(label, items, hashPrefix) {
+      if (!items.length) return "";
+      const bits = items.map((item) =>
+        `<a href="${hashPrefix}${esc(item.jurisdiction_code)}">${esc(item.jurisdiction_label)}</a> ${esc(item.date_display || item.effective_date || "pending")}`
+      );
+      return `<p class="briefing-oneline"><span class="briefing-kicker">${esc(label)}</span> ${bits.join(" · ")}</p>`;
     }
+    html += oneline("Coming soon", comingSoon, "#/j/");
+    html += oneline("Pending", pending, "#/j/");
     html += `</section>`;
     return html;
   }
