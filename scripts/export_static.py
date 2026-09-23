@@ -134,8 +134,8 @@ def main() -> int:
     index_path = DOCS / "index.html"
     if index_path.exists():
         html = index_path.read_text(encoding="utf-8")
-        html = re.sub(r"assets/style\.css(\?v=\d+)?", "assets/style.css?v=13", html)
-        html = re.sub(r"assets/app\.js(\?v=\d+)?", "assets/app.js?v=13", html)
+        html = re.sub(r"assets/style\.css(\?v=\d+)?", "assets/style.css?v=14", html)
+        html = re.sub(r"assets/app\.js(\?v=\d+)?", "assets/app.js?v=14", html)
         index_path.write_text(html, encoding="utf-8")
 
     print(f"Exported {n} jurisdictions → {DOCS}/")
