@@ -303,6 +303,27 @@
 
     html += renderBriefingHtml();
 
+    if (federal.length) {
+      html += `<p class="section-label">Federal</p>`;
+      for (const j of federal) {
+        html += `<a class="federal-card ${j.status_css}" href="#/j/${esc(j.code)}" data-code="${esc(j.code)}" style="display:block; text-decoration:none; color:inherit;">
+          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;">
+            <h2 style="margin:0;">${esc(j.name)}</h2>
+            <span class="pill ${j.status_css}">${esc(j.status_display)}</span>
+          </div>
+          <p>${esc(j.summary)}</p>
+          <p style="font-size:0.8rem; margin-top:0.6rem;">Reviewed ${esc(j.last_reviewed || "—")} →</p>
+        </a>`;
+      }
+    }
+
+    html += renderMap();
+
+    html += `<div class="chart-panel">
+      <p class="section-label">Milestones & effective dates (excludes tracker seed/audit events)</p>
+      <canvas id="activity-chart" height="100" aria-label="Activity over time chart"></canvas>
+    </div>`;
+
     html += `<div class="stats-row">
       <div class="stat-card"><div class="stat-num">${stats.in_force}</div><div class="stat-label">In force</div></div>
       <div class="stat-card"><div class="stat-num">${stats.enacted_pending}</div><div class="stat-label">Enacted / pending</div></div>
@@ -331,27 +352,6 @@
       <span class="l-hot">Proposed (hot)</span>
       <span class="l-watch">Watch</span>
       <span class="l-quiet">Quiet</span>
-    </div>`;
-
-    if (federal.length) {
-      html += `<p class="section-label">Federal</p>`;
-      for (const j of federal) {
-        html += `<a class="federal-card ${j.status_css}" href="#/j/${esc(j.code)}" data-code="${esc(j.code)}" style="display:block; text-decoration:none; color:inherit;">
-          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;">
-            <h2 style="margin:0;">${esc(j.name)}</h2>
-            <span class="pill ${j.status_css}">${esc(j.status_display)}</span>
-          </div>
-          <p>${esc(j.summary)}</p>
-          <p style="font-size:0.8rem; margin-top:0.6rem;">Reviewed ${esc(j.last_reviewed || "—")} →</p>
-        </a>`;
-      }
-    }
-
-    html += renderMap();
-
-    html += `<div class="chart-panel">
-      <p class="section-label">Milestones & effective dates (excludes tracker seed/audit events)</p>
-      <canvas id="activity-chart" height="100" aria-label="Activity over time chart"></canvas>
     </div>`;
 
     if (states.length) {

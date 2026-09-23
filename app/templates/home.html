@@ -46,6 +46,30 @@
 </section>
 {% endif %}
 
+{% if federal %}
+<p class="section-label">Federal</p>
+{% for j in federal %}
+<a class="federal-card {{ j.status_css }}" href="/j/{{ j.code }}" data-code="{{ j.code }}" style="display:block; text-decoration:none; color:inherit;">
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;">
+    <h2 style="margin:0;">{{ j.name }}</h2>
+    <span class="pill {{ j.status_css }}">{{ j.status_display }}</span>
+  </div>
+  <p>{{ j.summary }}</p>
+  <p style="font-size:0.8rem; margin-top:0.6rem;">Reviewed {{ j.last_reviewed or '—' }} →</p>
+</a>
+{% endfor %}
+{% endif %}
+
+<p class="section-label">United States map</p>
+<div class="map-panel" id="us-map">
+  <p class="map-loading">Loading map…</p>
+</div>
+
+<div class="chart-panel">
+  <p class="section-label">Milestones & effective dates (excludes tracker seed/audit events)</p>
+  <canvas id="activity-chart" height="100" aria-label="Activity over time chart"></canvas>
+</div>
+
 <div class="stats-row" id="stats-row">
   <div class="stat-card"><div class="stat-num">{{ stats.in_force }}</div><div class="stat-label">In force</div></div>
   <div class="stat-card"><div class="stat-num">{{ stats.enacted_pending }}</div><div class="stat-label">Enacted / pending</div></div>
@@ -75,30 +99,6 @@
   <span class="l-hot">Proposed (hot)</span>
   <span class="l-watch">Watch</span>
   <span class="l-quiet">Quiet</span>
-</div>
-
-{% if federal %}
-<p class="section-label">Federal</p>
-{% for j in federal %}
-<a class="federal-card {{ j.status_css }}" href="/j/{{ j.code }}" data-code="{{ j.code }}" style="display:block; text-decoration:none; color:inherit;">
-  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;">
-    <h2 style="margin:0;">{{ j.name }}</h2>
-    <span class="pill {{ j.status_css }}">{{ j.status_display }}</span>
-  </div>
-  <p>{{ j.summary }}</p>
-  <p style="font-size:0.8rem; margin-top:0.6rem;">Reviewed {{ j.last_reviewed or '—' }} →</p>
-</a>
-{% endfor %}
-{% endif %}
-
-<p class="section-label">United States map</p>
-<div class="map-panel" id="us-map">
-  <p class="map-loading">Loading map…</p>
-</div>
-
-<div class="chart-panel">
-  <p class="section-label">Milestones & effective dates (excludes tracker seed/audit events)</p>
-  <canvas id="activity-chart" height="100" aria-label="Activity over time chart"></canvas>
 </div>
 
 {% if states %}
