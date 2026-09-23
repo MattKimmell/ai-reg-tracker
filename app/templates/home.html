@@ -7,6 +7,30 @@
 <p class="meta-line">Last global refresh: <strong>{{ last_refresh }}</strong>
   · Showing {{ total_count }} jurisdiction{{ 's' if total_count != 1 else '' }}</p>
 
+
+{% if briefing and briefing['items'] %}
+<section class="briefing-panel" aria-labelledby="briefing-title">
+  <div class="briefing-header">
+    <h2 id="briefing-title">{{ briefing.title }}</h2>
+    <p class="briefing-sub">{{ briefing.subtitle }}</p>
+    <p class="briefing-meta">As of {{ briefing.as_of }} · {{ briefing.disclaimer }}</p>
+  </div>
+  <ul class="briefing-list">
+    {% for item in briefing['items'] %}
+    <li class="briefing-row">
+      <div class="briefing-chips">
+        <a class="briefing-jcode" href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a>
+        <span class="pill {{ item.bucket_css }}">{{ item.bucket_label }}</span>
+        <span class="briefing-topic">{{ item.topic }}</span>
+        {% if item.effective_date %}<span class="briefing-date">{{ item.effective_date }}</span>{% endif %}
+      </div>
+      <p class="briefing-blurb">{{ item.blurb }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
 <div class="stats-row" id="stats-row">
   <div class="stat-card"><div class="stat-num">{{ stats.in_force }}</div><div class="stat-label">In force</div></div>
   <div class="stat-card"><div class="stat-num">{{ stats.enacted_pending }}</div><div class="stat-label">Enacted / pending</div></div>

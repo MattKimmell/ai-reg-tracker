@@ -12,6 +12,7 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
 
 from app import db
+from app import briefing
 
 APP_DIR = Path(__file__).resolve().parent
 
@@ -85,6 +86,7 @@ def home(
     refresh = db.get_meta("last_global_refresh", "—")
     stats = db.compute_stats()
     activity = db.activity_by_month(24)
+    briefing_payload = briefing.build_briefing()
 
     # Map status payload for client-side SVG coloring (code → {name, status_css, status_display})
     map_status = {}
@@ -129,6 +131,7 @@ def home(
             "activity_json": json.dumps(activity),
             "search_index_json": json.dumps(search_index),
             "map_status_json": json.dumps(map_status),
+            "briefing": briefing_payload,
         },
     )
 

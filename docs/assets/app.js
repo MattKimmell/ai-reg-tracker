@@ -204,6 +204,32 @@
     }
   }
 
+
+  function renderBriefingHtml() {
+    const b = DATA.briefing;
+    if (!b || !b.items || !b.items.length) return "";
+    let html = `<section class="briefing-panel" aria-labelledby="briefing-title">
+      <div class="briefing-header">
+        <h2 id="briefing-title">${esc(b.title || "Operator briefing")}</h2>
+        <p class="briefing-sub">${esc(b.subtitle || "")}</p>
+        <p class="briefing-meta">As of ${esc(b.as_of || "—")} · ${esc(b.disclaimer || "")}</p>
+      </div>
+      <ul class="briefing-list">`;
+    for (const item of b.items) {
+      html += `<li class="briefing-row">
+        <div class="briefing-chips">
+          <a class="briefing-jcode" href="#/j/${esc(item.jurisdiction_code)}">${esc(item.jurisdiction_label)}</a>
+          <span class="pill ${esc(item.bucket_css || "")}">${esc(item.bucket_label || "")}</span>
+          <span class="briefing-topic">${esc(item.topic || "")}</span>
+          ${item.effective_date ? `<span class="briefing-date">${esc(item.effective_date)}</span>` : ""}
+        </div>
+        <p class="briefing-blurb">${esc(item.blurb || "")}</p>
+      </li>`;
+    }
+    html += `</ul></section>`;
+    return html;
+  }
+
   function renderHome(filter) {
     setNav("home");
     document.title = "US AI Regulation Status · US AI Reg Tracker";
@@ -225,6 +251,8 @@
     let html = "";
     html += `<p class="meta-line">Last global refresh: <strong>${esc(DATA.last_global_refresh || "—")}</strong>
       · Showing ${jurisdictions.length} jurisdiction${jurisdictions.length !== 1 ? "s" : ""}</p>`;
+
+    html += renderBriefingHtml();
 
     html += `<div class="stats-row">
       <div class="stat-card"><div class="stat-num">${stats.in_force}</div><div class="stat-label">In force</div></div>

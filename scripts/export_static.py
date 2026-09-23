@@ -11,6 +11,7 @@ Writes:
   docs/assets/style.css
   docs/assets/us-states.svg
   docs/data/all.json
+  docs/data/briefing.json
 
 Hash routes: #/  #/?filter=hot  #/j/CA  #/about
 """
@@ -27,6 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from app import db  # noqa: E402
+from app import briefing  # noqa: E402
 
 DOCS = ROOT / "docs"
 ASSETS = DOCS / "assets"
@@ -68,12 +70,14 @@ def build_payload() -> dict:
                 "history": detail["history"],
             }
         )
+    briefing_payload = briefing.build_briefing()
     payload = {
         "exported_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "last_global_refresh": db.get_meta("last_global_refresh", "—"),
         "jurisdiction_count": len(jurisdictions),
         "stats": db.compute_stats(),
         "activity": db.activity_by_month(24),
+        "briefing": briefing_payload,
         "jurisdictions": jurisdictions,
         "details": details,
     }
@@ -107,6 +111,12 @@ def write_site(payload: dict) -> None:
         encoding="utf-8",
     )
 
+    briefing_json = DATA_DIR / "briefing.json"
+    briefing_json.write_text(
+        json.dumps(payload.get("briefing") or {}, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
 
 
@@ -126,6 +136,7 @@ def main() -> int:
     print(f"  {ASSETS / 'style.css'}")
     print(f"  {ASSETS / 'us-states.svg'}")
     print(f"  {DATA_DIR / 'all.json'}")
+    print(f"  {DATA_DIR / 'briefing.json'}")
     print("Open via GitHub Pages or: python -m http.server -d docs 8080")
     return 0
 
