@@ -207,26 +207,37 @@
 
   function renderBriefingHtml() {
     const b = DATA.briefing;
-    if (!b || !b.items || !b.items.length) return "";
+    const inForce = (b && b.in_force) || [];
+    const upcoming = (b && b.upcoming) || [];
+    if (!inForce.length && !upcoming.length) return "";
     let html = `<section class="briefing-panel" aria-labelledby="briefing-title">
       <div class="briefing-header">
-        <h2 id="briefing-title">${esc(b.title || "Operator briefing")}</h2>
-        <p class="briefing-sub">${esc(b.subtitle || "")}</p>
+        <h2 id="briefing-title">${esc(b.title || "What to know right now")}</h2>
         <p class="briefing-meta">As of ${esc(b.as_of || "—")} · ${esc(b.disclaimer || "")}</p>
       </div>
+      <p class="briefing-section">In force</p>
       <ul class="briefing-list">`;
-    for (const item of b.items) {
+    for (const item of inForce) {
       html += `<li class="briefing-row">
         <div class="briefing-chips">
           <a class="briefing-jcode" href="#/j/${esc(item.jurisdiction_code)}">${esc(item.jurisdiction_label)}</a>
-          <span class="pill ${esc(item.bucket_css || "")}">${esc(item.bucket_label || "")}</span>
-          <span class="briefing-topic">${esc(item.topic || "")}</span>
-          ${item.effective_date ? `<span class="briefing-date">${esc(item.effective_date)}</span>` : ""}
+          ${item.topic ? `<span class="briefing-topic">${esc(item.topic)}</span>` : ""}
         </div>
         <p class="briefing-blurb">${esc(item.blurb || "")}</p>
       </li>`;
     }
-    html += `</ul></section>`;
+    html += `</ul>`;
+    if (upcoming.length) {
+      html += `<p class="briefing-section">Coming soon / pending</p><ul class="briefing-upcoming">`;
+      for (const item of upcoming) {
+        html += `<li>
+          <a href="#/j/${esc(item.jurisdiction_code)}">${esc(item.jurisdiction_label)}</a>
+          <span>${esc(item.date_display || item.effective_date || "pending")}</span>
+        </li>`;
+      }
+      html += `</ul>`;
+    }
+    html += `</section>`;
     return html;
   }
 

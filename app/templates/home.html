@@ -8,26 +8,35 @@
   · Showing {{ total_count }} jurisdiction{{ 's' if total_count != 1 else '' }}</p>
 
 
-{% if briefing and briefing['items'] %}
+{% if briefing and briefing['in_force'] %}
 <section class="briefing-panel" aria-labelledby="briefing-title">
   <div class="briefing-header">
     <h2 id="briefing-title">{{ briefing.title }}</h2>
-    <p class="briefing-sub">{{ briefing.subtitle }}</p>
     <p class="briefing-meta">As of {{ briefing.as_of }} · {{ briefing.disclaimer }}</p>
   </div>
+  <p class="briefing-section">In force</p>
   <ul class="briefing-list">
-    {% for item in briefing['items'] %}
+    {% for item in briefing['in_force'] %}
     <li class="briefing-row">
       <div class="briefing-chips">
         <a class="briefing-jcode" href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a>
-        <span class="pill {{ item.bucket_css }}">{{ item.bucket_label }}</span>
-        <span class="briefing-topic">{{ item.topic }}</span>
-        {% if item.effective_date %}<span class="briefing-date">{{ item.effective_date }}</span>{% endif %}
+        {% if item.topic %}<span class="briefing-topic">{{ item.topic }}</span>{% endif %}
       </div>
       <p class="briefing-blurb">{{ item.blurb }}</p>
     </li>
     {% endfor %}
   </ul>
+  {% if briefing['upcoming'] %}
+  <p class="briefing-section">Coming soon / pending</p>
+  <ul class="briefing-upcoming">
+    {% for item in briefing['upcoming'] %}
+    <li>
+      <a href="/j/{{ item.jurisdiction_code }}">{{ item.jurisdiction_label }}</a>
+      <span>{{ item.date_display }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 </section>
 {% endif %}
 

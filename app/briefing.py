@@ -1,28 +1,33 @@
 """Curated operator briefing for voice & conversation AI operators.
 
-Plain-English rows for the home-page panel. Dates and obligation status are
-cross-checked against tracker.db when available; blurbs stay curated so monthly
-exports stay accurate without inventing effective dates.
+In-force rows get a short blurb. Coming-soon / pending rows are state + date only.
 """
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime
 from typing import Any
 
 from app import db
 
-# Reference "now" for framing imminent dates in this seed era.
 AS_OF = date(2026, 9, 23)
 
 BUCKET_META = {
     "in_force": {"label": "In force", "css": "status-in-force"},
     "coming_soon": {"label": "Coming soon", "css": "status-pending"},
-    "watch": {"label": "Watch", "css": "status-watch"},
     "pending": {"label": "Pending", "css": "status-hot"},
 }
 
-# Curated rows. `obligation_match` is a substring of obligation title used to
-# pull live effective_date / status from the DB when present.
+
+def _human_date(iso: str | None, fallback: str = "pending") -> str:
+    if not iso:
+        return fallback
+    try:
+        d = datetime.strptime(iso, "%Y-%m-%d").date()
+    except ValueError:
+        return iso
+    return f"{d.strftime('%b')} {d.day}, {d.year}"
+
+
 CURATED: list[dict[str, Any]] = [
     {
         "id": "fed-tcpa",
@@ -32,7 +37,9 @@ CURATED: list[dict[str, Any]] = [
         "bucket": "in_force",
         "blurb": (
             "If you call cell phones with an AI voice, treat it like a robocall. "
-            "You generally need written consent first, and the caller ID has to be honest."
+            "You generally need written consent first. At the start of the call, "
+            "say who is calling and give a real callback number. Caller ID does "
+            "not need to say the call is AI."
         ),
         "obligation_match": "TCPA",
         "sort": 10,
@@ -45,23 +52,10 @@ CURATED: list[dict[str, Any]] = [
         "bucket": "in_force",
         "blurb": (
             "Don't pretend the bot is a person, and don't oversell what the AI can do. "
-            "That is already an FTC issue, not a future one."
+            "That is already an FTC issue."
         ),
         "obligation_match": "FTC Act",
         "sort": 20,
-    },
-    {
-        "id": "fed-eo",
-        "jurisdiction_code": "US-FED",
-        "jurisdiction_label": "Federal",
-        "topic": "Federal vs. states",
-        "bucket": "watch",
-        "blurb": (
-            "Washington is talking about overriding state AI laws. That talk has not "
-            "wiped out the state rules below — keep following them."
-        ),
-        "obligation_match": "EO 14365",
-        "sort": 30,
     },
     {
         "id": "me-chatbot",
@@ -74,7 +68,7 @@ CURATED: list[dict[str, Any]] = [
             "it is AI. Text and voice both count."
         ),
         "obligation_match": "Required disclosure of AI chatbot",
-        "sort": 40,
+        "sort": 30,
     },
     {
         "id": "ca-bot-act",
@@ -83,11 +77,10 @@ CURATED: list[dict[str, Any]] = [
         "topic": "Bot Act",
         "bucket": "in_force",
         "blurb": (
-            "If a bot is trying to sell something online (or influence a vote), say it is a bot. "
-            "Don't let people think they are talking to a person."
+            "If a bot is trying to sell something online (or influence a vote), say it is a bot."
         ),
         "obligation_match": "California Bot Act",
-        "sort": 50,
+        "sort": 40,
     },
     {
         "id": "ca-feha",
@@ -97,77 +90,10 @@ CURATED: list[dict[str, Any]] = [
         "bucket": "in_force",
         "blurb": (
             "If you or a customer use AI in hiring for California workers, employment AI "
-            "rules already apply. Less relevant for day-to-day customer-service bots."
+            "rules already apply."
         ),
         "obligation_match": "FEHA automated-decision",
-        "sort": 60,
-    },
-    {
-        "id": "ca-admt",
-        "jurisdiction_code": "CA",
-        "jurisdiction_label": "California",
-        "topic": "Automated decisions",
-        "bucket": "coming_soon",
-        "blurb": (
-            "By 2027, if AI is making significant decisions about people — not just chatting — "
-            "they get notice, a way to opt out, and a right to see what happened. "
-            "Check whether any customer workflow is actually deciding, not just helping."
-        ),
-        "obligation_match": "CCPA / CPRA ADMT",
-        "sort": 70,
-    },
-    {
-        "id": "ca-ab1609",
-        "jurisdiction_code": "CA",
-        "jurisdiction_label": "California",
-        "topic": "CS chatbot bill",
-        "bucket": "pending",
-        "blurb": (
-            "A customer-service chatbot bill for larger companies is sitting with the "
-            "governor (sent Sept 14). Not law yet — watch whether it is signed or vetoed."
-        ),
-        "obligation_match": "AB 1609",
-        "sort": 80,
-    },
-    {
-        "id": "ct-wave1",
-        "jurisdiction_code": "CT",
-        "jurisdiction_label": "Connecticut",
-        "topic": "Decision tools (Oct 1)",
-        "bucket": "coming_soon",
-        "blurb": (
-            "In a week, Connecticut starts treating automated decision tools more seriously. "
-            "Using AI is not a shield if the outcome discriminates."
-        ),
-        "obligation_match": "first-wave AI / AEDT",
-        "sort": 90,
-    },
-    {
-        "id": "ct-wave2",
-        "jurisdiction_code": "CT",
-        "jurisdiction_label": "Connecticut",
-        "topic": "Tell people it is AI",
-        "bucket": "coming_soon",
-        "blurb": (
-            "A year later, new automated decision tools will need to tell people they are "
-            "talking to AI and give written notice before a decision. More of a hiring-tool "
-            "issue than a pure customer-service voice bot issue."
-        ),
-        "obligation_match": "AEDT interaction",
-        "sort": 100,
-    },
-    {
-        "id": "co-admt",
-        "jurisdiction_code": "CO",
-        "jurisdiction_label": "Colorado",
-        "topic": "Leases and big decisions",
-        "bucket": "coming_soon",
-        "blurb": (
-            "In 2027, automated decisions that matter — including whether someone gets a "
-            "lease — come with extra duties. Important if bots help with property leasing."
-        ),
-        "obligation_match": "SB 26-189",
-        "sort": 110,
+        "sort": 50,
     },
     {
         "id": "tx-traiga",
@@ -180,52 +106,76 @@ CURATED: list[dict[str, Any]] = [
             "general can go after companies that develop or offer AI in the state."
         ),
         "obligation_match": "TRAIGA",
-        "sort": 120,
+        "sort": 60,
     },
     {
         "id": "ut-disclosure",
         "jurisdiction_code": "UT",
         "jurisdiction_label": "Utah",
-        "topic": "AI Policy Act",
+        "topic": "Say it is AI if asked",
         "bucket": "in_force",
         "blurb": (
             "If a Utah customer asks whether they are talking to AI, tell them. "
             "Some regulated jobs need you to say it up front."
         ),
         "obligation_match": "Utah AI Policy Act",
-        "sort": 130,
+        "sort": 70,
     },
     {
-        "id": "il-employment",
-        "jurisdiction_code": "IL",
-        "jurisdiction_label": "Illinois",
-        "topic": "Employment AI",
-        "bucket": "watch",
-        "blurb": (
-            "If anyone uses AI on video interviews of Illinois candidates, they need notice "
-            "and consent. Not a day-to-day customer-service bot rule."
-        ),
-        "obligation_match": "Artificial Intelligence Video Interview",
-        "sort": 140,
+        "id": "ct-wave1",
+        "jurisdiction_code": "CT",
+        "jurisdiction_label": "Connecticut",
+        "topic": "",
+        "bucket": "coming_soon",
+        "blurb": "",
+        "obligation_match": "first-wave AI / AEDT",
+        "sort": 80,
     },
     {
-        "id": "nyc-ll144",
-        "jurisdiction_code": "NY",
-        "jurisdiction_label": "NYC / NY",
-        "topic": "Local Law 144",
-        "bucket": "watch",
-        "blurb": (
-            "If AI is used to hire in New York City, it needs a bias audit and the candidate "
-            "has to be told. Hiring-adjacent, not a customer-service bot rule."
-        ),
-        "obligation_match": "NYC Local Law 144",
-        "sort": 150,
+        "id": "ct-wave2",
+        "jurisdiction_code": "CT",
+        "jurisdiction_label": "Connecticut",
+        "topic": "",
+        "bucket": "coming_soon",
+        "blurb": "",
+        "obligation_match": "AEDT interaction",
+        "sort": 90,
+    },
+    {
+        "id": "ca-admt",
+        "jurisdiction_code": "CA",
+        "jurisdiction_label": "California",
+        "topic": "",
+        "bucket": "coming_soon",
+        "blurb": "",
+        "obligation_match": "CCPA / CPRA ADMT",
+        "sort": 100,
+    },
+    {
+        "id": "co-admt",
+        "jurisdiction_code": "CO",
+        "jurisdiction_label": "Colorado",
+        "topic": "",
+        "bucket": "coming_soon",
+        "blurb": "",
+        "obligation_match": "SB 26-189",
+        "sort": 110,
+    },
+    {
+        "id": "ca-ab1609",
+        "jurisdiction_code": "CA",
+        "jurisdiction_label": "California",
+        "topic": "",
+        "bucket": "pending",
+        "blurb": "",
+        "obligation_match": "AB 1609",
+        "date_fallback": "pending (governor)",
+        "sort": 120,
     },
 ]
 
 
 def _obligation_index() -> dict[str, list[dict[str, Any]]]:
-    """Map jurisdiction code → obligations (for live date/status cross-check)."""
     out: dict[str, list[dict[str, Any]]] = {}
     db.ensure_db()
     for j in db.list_jurisdictions():
@@ -249,44 +199,46 @@ def _match_obligation(
     return None
 
 
+def _row_to_item(row: dict[str, Any], obl: dict[str, Any] | None) -> dict[str, Any]:
+    bucket = row["bucket"]
+    meta = BUCKET_META.get(bucket, BUCKET_META["coming_soon"])
+    effective = (obl or {}).get("effective_date") or None
+    fallback = row.get("date_fallback") or "pending"
+    return {
+        "id": row["id"],
+        "jurisdiction_code": row["jurisdiction_code"],
+        "jurisdiction_label": row["jurisdiction_label"],
+        "topic": row.get("topic") or "",
+        "bucket": bucket,
+        "bucket_label": meta["label"],
+        "bucket_css": meta["css"],
+        "blurb": row.get("blurb") or "",
+        "effective_date": effective,
+        "date_display": _human_date(effective, fallback),
+        "obligation_status": (obl or {}).get("status") or None,
+        "sort": row["sort"],
+    }
+
+
 def build_briefing(as_of: date | None = None) -> dict[str, Any]:
-    """Build exportable briefing payload with curated blurbs + live dates."""
     as_of = as_of or AS_OF
     by_code = _obligation_index()
     items: list[dict[str, Any]] = []
-
     for row in sorted(CURATED, key=lambda r: r["sort"]):
-        bucket = row["bucket"]
-        meta = BUCKET_META.get(bucket, BUCKET_META["watch"])
         obl = _match_obligation(
             by_code.get(row["jurisdiction_code"], []), row.get("obligation_match")
         )
-        effective = (obl or {}).get("effective_date") or None
-        obl_status = (obl or {}).get("status") or None
+        items.append(_row_to_item(row, obl))
 
-        items.append(
-            {
-                "id": row["id"],
-                "jurisdiction_code": row["jurisdiction_code"],
-                "jurisdiction_label": row["jurisdiction_label"],
-                "topic": row["topic"],
-                "bucket": bucket,
-                "bucket_label": meta["label"],
-                "bucket_css": meta["css"],
-                "blurb": row["blurb"],
-                "effective_date": effective,
-                "obligation_status": obl_status,
-                "sort": row["sort"],
-            }
-        )
+    in_force = [i for i in items if i["bucket"] == "in_force"]
+    upcoming = [i for i in items if i["bucket"] in ("coming_soon", "pending")]
 
     return {
-        "title": "Operator briefing — what to know right now",
-        "subtitle": (
-            "What matters now if you run voice, SMS, or chat AI that talks to customers "
-            "and gets work done."
-        ),
+        "title": "What to know right now",
+        "subtitle": "",
         "as_of": as_of.isoformat(),
-        "disclaimer": "Operational briefing · Not legal advice · Confirm against primary sources.",
+        "disclaimer": "Not legal advice.",
+        "in_force": in_force,
+        "upcoming": upcoming,
         "items": items,
     }
