@@ -1,7 +1,7 @@
 {
   "title": "What to know right now",
   "subtitle": "",
-  "as_of": "2026-09-23",
+  "as_of": "2026-10-01",
   "disclaimer": "Not legal advice.",
   "in_force": [
     {
@@ -101,24 +101,24 @@
       "date_display": "May 1, 2024",
       "obligation_status": "in_force",
       "sort": 70
+    },
+    {
+      "id": "ct-wave1",
+      "jurisdiction_code": "CT",
+      "jurisdiction_label": "Connecticut",
+      "topic": "CART Act first wave",
+      "bucket": "in_force",
+      "bucket_label": "In force",
+      "bucket_css": "status-in-force",
+      "blurb": "Connecticut's first-wave AI rules are live. Using AI is not a defense to employment discrimination, and WARN-style layoff notices may need to say if AI or other tech changes were involved. Bigger AEDT hiring notices come Oct 2027.",
+      "effective_date": "2026-10-01",
+      "date_display": "Oct 1, 2026",
+      "obligation_status": "in_force",
+      "sort": 75
     }
   ],
   "coming_soon": [
     {
-      "id": "ct-wave1",
-      "jurisdiction_code": "CT",
-      "jurisdiction_label": "Connecticut",
-      "topic": "",
-      "bucket": "coming_soon",
-      "bucket_label": "Coming soon",
-      "bucket_css": "status-pending",
-      "blurb": "",
-      "effective_date": "2026-10-01",
-      "date_display": "Oct 1, 2026",
-      "obligation_status": "enacted_pending",
-      "sort": 80
-    },
-    {
       "id": "ct-wave2",
       "jurisdiction_code": "CT",
       "jurisdiction_label": "Connecticut",
@@ -147,6 +147,20 @@
       "sort": 100
     },
     {
+      "id": "ca-ab1609",
+      "jurisdiction_code": "CA",
+      "jurisdiction_label": "California",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 105
+    },
+    {
       "id": "co-admt",
       "jurisdiction_code": "CO",
       "jurisdiction_label": "Colorado",
@@ -161,38 +175,9 @@
       "sort": 110
     }
   ],
-  "pending": [
-    {
-      "id": "ca-ab1609",
-      "jurisdiction_code": "CA",
-      "jurisdiction_label": "California",
-      "topic": "",
-      "bucket": "pending",
-      "bucket_label": "Pending",
-      "bucket_css": "status-hot",
-      "blurb": "",
-      "effective_date": null,
-      "date_display": "pending (governor)",
-      "obligation_status": "proposed",
-      "sort": 120
-    }
-  ],
+  "pending": [],
   "upcoming": [
     {
-      "id": "ct-wave1",
-      "jurisdiction_code": "CT",
-      "jurisdiction_label": "Connecticut",
-      "topic": "",
-      "bucket": "coming_soon",
-      "bucket_label": "Coming soon",
-      "bucket_css": "status-pending",
-      "blurb": "",
-      "effective_date": "2026-10-01",
-      "date_display": "Oct 1, 2026",
-      "obligation_status": "enacted_pending",
-      "sort": 80
-    },
-    {
       "id": "ct-wave2",
       "jurisdiction_code": "CT",
       "jurisdiction_label": "Connecticut",
@@ -221,6 +206,20 @@
       "sort": 100
     },
     {
+      "id": "ca-ab1609",
+      "jurisdiction_code": "CA",
+      "jurisdiction_label": "California",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 105
+    },
+    {
       "id": "co-admt",
       "jurisdiction_code": "CO",
       "jurisdiction_label": "Colorado",
@@ -233,20 +232,6 @@
       "date_display": "Jan 1, 2027",
       "obligation_status": "enacted_pending",
       "sort": 110
-    },
-    {
-      "id": "ca-ab1609",
-      "jurisdiction_code": "CA",
-      "jurisdiction_label": "California",
-      "topic": "",
-      "bucket": "pending",
-      "bucket_label": "Pending",
-      "bucket_css": "status-hot",
-      "blurb": "",
-      "effective_date": null,
-      "date_display": "pending (governor)",
-      "obligation_status": "proposed",
-      "sort": 120
     }
   ],
   "items": [
@@ -352,15 +337,15 @@
       "id": "ct-wave1",
       "jurisdiction_code": "CT",
       "jurisdiction_label": "Connecticut",
-      "topic": "",
-      "bucket": "coming_soon",
-      "bucket_label": "Coming soon",
-      "bucket_css": "status-pending",
-      "blurb": "",
+      "topic": "CART Act first wave",
+      "bucket": "in_force",
+      "bucket_label": "In force",
+      "bucket_css": "status-in-force",
+      "blurb": "Connecticut's first-wave AI rules are live. Using AI is not a defense to employment discrimination, and WARN-style layoff notices may need to say if AI or other tech changes were involved. Bigger AEDT hiring notices come Oct 2027.",
       "effective_date": "2026-10-01",
       "date_display": "Oct 1, 2026",
-      "obligation_status": "enacted_pending",
-      "sort": 80
+      "obligation_status": "in_force",
+      "sort": 75
     },
     {
       "id": "ct-wave2",
@@ -391,6 +376,20 @@
       "sort": 100
     },
     {
+      "id": "ca-ab1609",
+      "jurisdiction_code": "CA",
+      "jurisdiction_label": "California",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 105
+    },
+    {
       "id": "co-admt",
       "jurisdiction_code": "CO",
       "jurisdiction_label": "Colorado",
@@ -403,20 +402,6 @@
       "date_display": "Jan 1, 2027",
       "obligation_status": "enacted_pending",
       "sort": 110
-    },
-    {
-      "id": "ca-ab1609",
-      "jurisdiction_code": "CA",
-      "jurisdiction_label": "California",
-      "topic": "",
-      "bucket": "pending",
-      "bucket_label": "Pending",
-      "bucket_css": "status-hot",
-      "blurb": "",
-      "effective_date": null,
-      "date_display": "pending (governor)",
-      "obligation_status": "proposed",
-      "sort": 120
     }
   ]
 }

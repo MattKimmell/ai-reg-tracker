@@ -1,11 +1,11 @@
 {
-  "exported_at": "2026-09-23T14:55:45Z",
-  "last_global_refresh": "2026-09-22",
+  "exported_at": "2026-10-01T13:54:20Z",
+  "last_global_refresh": "2026-10-01",
   "jurisdiction_count": 52,
   "stats": {
-    "in_force": 3,
+    "in_force": 4,
     "enacted_pending": 2,
-    "proposed_hot": 1,
+    "proposed_hot": 0,
     "watch": 3,
     "quiet": 43,
     "voice_high": 7,
@@ -51,11 +51,11 @@
     },
     {
       "month": "2026-09",
-      "count": 0
+      "count": 4
     },
     {
       "month": "2026-10",
-      "count": 2
+      "count": 4
     },
     {
       "month": "2026-11",
@@ -67,7 +67,7 @@
     },
     {
       "month": "2027-01",
-      "count": 5
+      "count": 6
     },
     {
       "month": "2027-02",
@@ -109,7 +109,7 @@
   "briefing": {
     "title": "What to know right now",
     "subtitle": "",
-    "as_of": "2026-09-23",
+    "as_of": "2026-10-01",
     "disclaimer": "Not legal advice.",
     "in_force": [
       {
@@ -209,24 +209,24 @@
         "date_display": "May 1, 2024",
         "obligation_status": "in_force",
         "sort": 70
+      },
+      {
+        "id": "ct-wave1",
+        "jurisdiction_code": "CT",
+        "jurisdiction_label": "Connecticut",
+        "topic": "CART Act first wave",
+        "bucket": "in_force",
+        "bucket_label": "In force",
+        "bucket_css": "status-in-force",
+        "blurb": "Connecticut's first-wave AI rules are live. Using AI is not a defense to employment discrimination, and WARN-style layoff notices may need to say if AI or other tech changes were involved. Bigger AEDT hiring notices come Oct 2027.",
+        "effective_date": "2026-10-01",
+        "date_display": "Oct 1, 2026",
+        "obligation_status": "in_force",
+        "sort": 75
       }
     ],
     "coming_soon": [
       {
-        "id": "ct-wave1",
-        "jurisdiction_code": "CT",
-        "jurisdiction_label": "Connecticut",
-        "topic": "",
-        "bucket": "coming_soon",
-        "bucket_label": "Coming soon",
-        "bucket_css": "status-pending",
-        "blurb": "",
-        "effective_date": "2026-10-01",
-        "date_display": "Oct 1, 2026",
-        "obligation_status": "enacted_pending",
-        "sort": 80
-      },
-      {
         "id": "ct-wave2",
         "jurisdiction_code": "CT",
         "jurisdiction_label": "Connecticut",
@@ -255,6 +255,20 @@
         "sort": 100
       },
       {
+        "id": "ca-ab1609",
+        "jurisdiction_code": "CA",
+        "jurisdiction_label": "California",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-01-01",
+        "date_display": "Jan 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 105
+      },
+      {
         "id": "co-admt",
         "jurisdiction_code": "CO",
         "jurisdiction_label": "Colorado",
@@ -269,38 +283,9 @@
         "sort": 110
       }
     ],
-    "pending": [
-      {
-        "id": "ca-ab1609",
-        "jurisdiction_code": "CA",
-        "jurisdiction_label": "California",
-        "topic": "",
-        "bucket": "pending",
-        "bucket_label": "Pending",
-        "bucket_css": "status-hot",
-        "blurb": "",
-        "effective_date": null,
-        "date_display": "pending (governor)",
-        "obligation_status": "proposed",
-        "sort": 120
-      }
-    ],
+    "pending": [],
     "upcoming": [
       {
-        "id": "ct-wave1",
-        "jurisdiction_code": "CT",
-        "jurisdiction_label": "Connecticut",
-        "topic": "",
-        "bucket": "coming_soon",
-        "bucket_label": "Coming soon",
-        "bucket_css": "status-pending",
-        "blurb": "",
-        "effective_date": "2026-10-01",
-        "date_display": "Oct 1, 2026",
-        "obligation_status": "enacted_pending",
-        "sort": 80
-      },
-      {
         "id": "ct-wave2",
         "jurisdiction_code": "CT",
         "jurisdiction_label": "Connecticut",
@@ -329,6 +314,20 @@
         "sort": 100
       },
       {
+        "id": "ca-ab1609",
+        "jurisdiction_code": "CA",
+        "jurisdiction_label": "California",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-01-01",
+        "date_display": "Jan 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 105
+      },
+      {
         "id": "co-admt",
         "jurisdiction_code": "CO",
         "jurisdiction_label": "Colorado",
@@ -341,20 +340,6 @@
         "date_display": "Jan 1, 2027",
         "obligation_status": "enacted_pending",
         "sort": 110
-      },
-      {
-        "id": "ca-ab1609",
-        "jurisdiction_code": "CA",
-        "jurisdiction_label": "California",
-        "topic": "",
-        "bucket": "pending",
-        "bucket_label": "Pending",
-        "bucket_css": "status-hot",
-        "blurb": "",
-        "effective_date": null,
-        "date_display": "pending (governor)",
-        "obligation_status": "proposed",
-        "sort": 120
       }
     ],
     "items": [
@@ -460,15 +445,15 @@
         "id": "ct-wave1",
         "jurisdiction_code": "CT",
         "jurisdiction_label": "Connecticut",
-        "topic": "",
-        "bucket": "coming_soon",
-        "bucket_label": "Coming soon",
-        "bucket_css": "status-pending",
-        "blurb": "",
+        "topic": "CART Act first wave",
+        "bucket": "in_force",
+        "bucket_label": "In force",
+        "bucket_css": "status-in-force",
+        "blurb": "Connecticut's first-wave AI rules are live. Using AI is not a defense to employment discrimination, and WARN-style layoff notices may need to say if AI or other tech changes were involved. Bigger AEDT hiring notices come Oct 2027.",
         "effective_date": "2026-10-01",
         "date_display": "Oct 1, 2026",
-        "obligation_status": "enacted_pending",
-        "sort": 80
+        "obligation_status": "in_force",
+        "sort": 75
       },
       {
         "id": "ct-wave2",
@@ -499,6 +484,20 @@
         "sort": 100
       },
       {
+        "id": "ca-ab1609",
+        "jurisdiction_code": "CA",
+        "jurisdiction_label": "California",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-01-01",
+        "date_display": "Jan 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 105
+      },
+      {
         "id": "co-admt",
         "jurisdiction_code": "CO",
         "jurisdiction_label": "Colorado",
@@ -511,20 +510,6 @@
         "date_display": "Jan 1, 2027",
         "obligation_status": "enacted_pending",
         "sort": 110
-      },
-      {
-        "id": "ca-ab1609",
-        "jurisdiction_code": "CA",
-        "jurisdiction_label": "California",
-        "topic": "",
-        "bucket": "pending",
-        "bucket_label": "Pending",
-        "bucket_css": "status-hot",
-        "blurb": "",
-        "effective_date": null,
-        "date_display": "pending (governor)",
-        "obligation_status": "proposed",
-        "sort": 120
       }
     ]
   },
@@ -537,7 +522,7 @@
       "status_color": "watch",
       "status_label": "watch",
       "summary": "No comprehensive federal AI statute. Sector rules (TCPA synthetic voice, FTC §5) remain the primary constraints for voice/conversation AI operators. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
-      "last_reviewed": "2026-09-22",
+      "last_reviewed": "2026-10-01",
       "notes": "Monitor FCC TCPA voice-AI consent, FTC deceptive-claims enforcement, and any congressional preemption vehicle. State disclosure/ADMT laws remain operative unless Congress acts."
     },
     {
@@ -591,8 +576,8 @@
       "kind": "state",
       "status_color": "enacted_pending",
       "status_label": "enacted_pending",
-      "summary": "Dense AI stack: existing Bot Act disclosure, FEHA ADS employment rules, CCPA ADMT regs (compliance runway into 2027), and AB 1609 (customer-service chatbots) enrolled and presented to the Governor 2026-09-14 — outcome pending as of baseline.",
-      "last_reviewed": "2026-09-22",
+      "summary": "Dense AI stack: Bot Act disclosure and FEHA ADS employment rules in force; AB 1609 (Right to Human Customer Service / CS chatbots) chaptered 2026-09-28 (Ch. 733) — effective Jan 1, 2027 for large private businesses (>$500M revenue); CCPA ADMT regs with compliance runway into 2027; SB 1000 (AI Transparency Act amendments) chaptered 2026-09-30 as urgency (provenance/genAI content — lower direct CS relevance).",
+      "last_reviewed": "2026-10-01",
       "notes": "AB 1609 was on the Governor's desk as of 2026-09-22; do not assume chaptered until confirmed. CCPA ADMT significant-decision duties generally phase by 2027."
     },
     {
@@ -602,8 +587,8 @@
       "kind": "state",
       "status_color": "enacted_pending",
       "status_label": "enacted_pending",
-      "summary": "SB 26-189 ADMT framework effective Jan 1 2027 for consequential decisions including residential lease/purchase. High for AppFolio/PM vertical. Customer-service bots may fall outside covered ADMT when used under an acceptable-use pattern that does not materially influence lease decisions.",
-      "last_reviewed": "2026-09-22",
+      "summary": "SB 26-189 ADMT framework effective Jan 1, 2027 for consequential decisions including residential lease/purchase. High for property-management vertical. AG formal comments on proposed ADMT & Chatbot Safety rules through Oct 26, 2026 (coag.gov/ai). Customer-service bots may fall outside covered ADMT when used under an acceptable-use pattern that does not materially influence lease decisions.",
+      "last_reviewed": "2026-10-01",
       "notes": "SB 24-205 AI Act was repealed/replaced by SB 26-189 ADMT structure. Confirm AUP/exclusion language with counsel for CS bots that do not score/rank tenants."
     },
     {
@@ -611,10 +596,10 @@
       "code": "CT",
       "name": "Connecticut",
       "kind": "state",
-      "status_color": "proposed_hot",
-      "status_label": "proposed_hot",
-      "summary": "Public Act 26-15 (Online Safety / AI Responsibility & Transparency) — broad AI statute with phased effective dates. First wave Oct 1 2026; core AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for voice/conversation AI.",
-      "last_reviewed": "2026-09-22",
+      "status_color": "in_force",
+      "status_label": "in_force",
+      "summary": "Public Act 26-15 (CART Act / Online Safety) — first-wave provisions in force as of Oct 1, 2026 (AEDT framework scaffolding, AI not a defense to employment discrimination, WARN/AI-layoff disclosure themes). Core AEDT interaction and pre-decision disclosures apply to deployments on/after Oct 1, 2027. High watch for voice/conversation AI operators serving CT employers and CS channels.",
+      "last_reviewed": "2026-10-01",
       "notes": "Split effective dates (verified against PA 26-15 text): Oct 1 2026 first-wave framework / anti-discrimination; Jan 1 2027 AI companion safeguards; Oct 1 2027 AEDT interaction & pre-decision disclosures for tools deployed on/after that date. Confirm companion/CS-bot scope against PA text."
     },
     {
@@ -691,7 +676,7 @@
       "status_color": "watch",
       "status_label": "watch",
       "summary": "Employment-focused AI rules (video interview notice; broader AI employment notice/anti-bias themes). Medium relevance — voice/conversation CS operators are not primarily a hiring-tool vendor, but customers may ask.",
-      "last_reviewed": "2026-09-22",
+      "last_reviewed": "2026-10-01",
       "notes": "Track IDHR guidance; detailed proposed notice regs were in flux mid-2026."
     },
     {
@@ -757,7 +742,7 @@
       "status_color": "in_force",
       "status_label": "in_force",
       "summary": "Enacted chatbot disclosure law (PL 2025, c. 294): clear and conspicuous notice required when AI chatbots engage consumers in trade/commerce in a way that may mislead them into believing they are talking to a human. High relevance for customer-service bots and phone AI.",
-      "last_reviewed": "2026-09-22",
+      "last_reviewed": "2026-10-01",
       "notes": "Codified at 10 M.R.S. §1500-DD (realloc. from §1500-Y). UTPA enforcement."
     },
     {
@@ -900,7 +885,7 @@
       "status_color": "watch",
       "status_label": "watch",
       "summary": "NYC Local Law 144 (AEDT hiring bias audits) is the main in-force local rule. State-level AI bills remain a watch item. Low–medium for core voice/CS products; higher if customers use AEDT in NYC hiring.",
-      "last_reviewed": "2026-09-22",
+      "last_reviewed": "2026-10-01",
       "notes": "NYC LL144 is local (NYC); tracked under NY state card for discoverability."
     },
     {
@@ -1021,7 +1006,7 @@
       "status_color": "in_force",
       "status_label": "in_force",
       "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas.",
-      "last_reviewed": "2026-09-22",
+      "last_reviewed": "2026-10-01",
       "notes": "Exclusive AG enforcement; cure period; sandbox and AI Council created."
     },
     {
@@ -1032,7 +1017,7 @@
       "status_color": "in_force",
       "status_label": "in_force",
       "summary": "Utah AI Policy Act framework: generative AI disclosure on clear consumer request; heightened/proactive disclosure for regulated occupations in high-risk interactions. Medium relevance for customer-service bots and phone AI.",
-      "last_reviewed": "2026-09-22",
+      "last_reviewed": "2026-10-01",
       "notes": "Subsequent amendments (e.g. SB 226 / SB 332 era) refine disclosure and chatbot rules — confirm current code when advising."
     },
     {
@@ -1112,7 +1097,7 @@
         "status_color": "watch",
         "status_label": "watch",
         "summary": "No comprehensive federal AI statute. Sector rules (TCPA synthetic voice, FTC §5) remain the primary constraints for voice/conversation AI operators. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
-        "last_reviewed": "2026-09-22",
+        "last_reviewed": "2026-10-01",
         "notes": "Monitor FCC TCPA voice-AI consent, FTC deceptive-claims enforcement, and any congressional preemption vehicle. State disclosure/ADMT laws remain operative unless Congress acts."
       },
       "obligations": [
@@ -1260,6 +1245,16 @@
       ],
       "history": [
         {
+          "id": 24,
+          "jurisdiction_id": 1,
+          "event_date": "2026-09-30",
+          "title": "FCC TCPA consent-revocation modernization (open meeting / draft R&O)",
+          "detail": "FCC circulated a Report and Order (CG Docket 02-278) for the Sept 30, 2026 open meeting to modify TCPA consent-revocation rules: allow informational opt-outs to apply only to the specific message category; allow callers to designate exclusive revocation methods; ease financial-institution fraud-alert number condition. Draft states amendments effective 30 days after Federal Register publication (superseding prior delayed revoke-all date). Treat as watch until FR publication confirms adoption/effective date — AI synthetic voice still remains artificial/prerecorded under FCC 24-17.",
+          "source_url": "https://docs.fcc.gov/public/attachments/DOC-424844A1.pdf",
+          "event_kind": "milestone",
+          "created_at": "2026-10-01 13:54:02"
+        },
+        {
           "id": 3,
           "jurisdiction_id": 1,
           "event_date": "2025-12-16",
@@ -1363,8 +1358,8 @@
         "kind": "state",
         "status_color": "enacted_pending",
         "status_label": "enacted_pending",
-        "summary": "Dense AI stack: existing Bot Act disclosure, FEHA ADS employment rules, CCPA ADMT regs (compliance runway into 2027), and AB 1609 (customer-service chatbots) enrolled and presented to the Governor 2026-09-14 — outcome pending as of baseline.",
-        "last_reviewed": "2026-09-22",
+        "summary": "Dense AI stack: Bot Act disclosure and FEHA ADS employment rules in force; AB 1609 (Right to Human Customer Service / CS chatbots) chaptered 2026-09-28 (Ch. 733) — effective Jan 1, 2027 for large private businesses (>$500M revenue); CCPA ADMT regs with compliance runway into 2027; SB 1000 (AI Transparency Act amendments) chaptered 2026-09-30 as urgency (provenance/genAI content — lower direct CS relevance).",
+        "last_reviewed": "2026-10-01",
         "notes": "AB 1609 was on the Governor's desk as of 2026-09-22; do not assume chaptered until confirmed. CCPA ADMT significant-decision duties generally phase by 2027."
       },
       "obligations": [
@@ -1425,22 +1420,22 @@
         {
           "id": 6,
           "jurisdiction_id": 6,
-          "title": "AB 1609 — Customer service chatbots (pending Governor)",
-          "status": "proposed",
-          "effective_date": null,
+          "title": "AB 1609 — Right to Human Customer Service (chatbots)",
+          "status": "enacted_pending",
+          "effective_date": "2027-01-01",
           "themes": [
             "disclosure",
             "companion_cs"
           ],
           "voice_cs_relevance": "high",
-          "voice_cs_why": "Would impose human-agent access and related CS chatbot duties on large private businesses — directly in the customer-service / phone AI lane if enacted.",
-          "summary": "AB 1609 (2025–2026) would add B&P Ch. 22.6.1 on customer-service chatbots for large private businesses. Enrolled and presented to the Governor 2026-09-14. As of baseline 2026-09-22, final outcome (signed/vetoed) not confirmed — treat as pending, not in force.",
+          "voice_cs_why": "Directly regulates large-business customer-service chatbots and telephonic CS: AI disclosure, easy human-agent request, and good-faith 15-minute connect or one-business-day appointment — high relevance for voice/SMS/chat operators serving California customers of covered businesses.",
+          "summary": "AB 1609 (Zbur), Chapter 733, Statutes of 2026 — approved by the Governor and chaptered by the Secretary of State on September 28, 2026 (non-urgency). Adds B&P Code Ch. 22.6.1. Applies to large private businesses with more than $500 million gross annual revenue nationally that provide goods/services to California customers. Requires: no representing a CS chatbot as human; clear/conspicuous AI disclosure when a reasonable person would likely be misled; a simple feature to request a human agent during regular business hours on all CS platforms (including chatbots and phone); and a good-faith effort to connect within 15 minutes or schedule a specific appointment within one business day. Civil penalties up to $5,000 / $10,000 (public prosecutor; no private right of action). Default California non-urgency effective date: January 1, 2027 (bill also references Jan 1, 2027 operational baselines).",
           "sources": [
             {
               "id": 11,
               "jurisdiction_id": null,
               "obligation_id": 6,
-              "label": "AB 1609 bill status (LegInfo)",
+              "label": "AB 1609 bill status — chaptered Ch. 733 (LegInfo)",
               "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1609"
             },
             {
@@ -1448,6 +1443,13 @@
               "jurisdiction_id": null,
               "obligation_id": 6,
               "label": "AB 1609 bill text (LegInfo)",
+              "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1609"
+            },
+            {
+              "id": 29,
+              "jurisdiction_id": null,
+              "obligation_id": 6,
+              "label": "AB 1609 chaptered text — Chapter 733 (LegInfo)",
               "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1609"
             }
           ]
@@ -1471,6 +1473,36 @@
               "obligation_id": 7,
               "label": "CA Civil Rights Department",
               "url": "https://calcivilrights.ca.gov/2025/06/30/civil-rights-council-secures-approval-for-regulations-to-protect-against-employment-discrimination-related-to-artificial-intelligence/"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "jurisdiction_id": 6,
+          "title": "SB 1000 — California AI Transparency Act amendments",
+          "status": "in_force",
+          "effective_date": "2026-09-30",
+          "themes": [
+            "governance",
+            "other"
+          ],
+          "voice_cs_relevance": "low",
+          "voice_cs_why": "Provenance / GenAI content transparency amendments for covered providers; generally not a direct disclosure duty for voice or customer-service conversation operators unless they also ship covered GenAI content systems.",
+          "summary": "SB 1000 (Becker), Chapter 861, Statutes of 2026 — approved by the Governor and chaptered September 30, 2026. Urgency statute taking effect immediately. Amends the California AI Transparency Act (B&P §§22757.1 et seq.): expands covered-provider definition (removes 1M monthly-user threshold), replaces AI detection tool with disclosure verification tool, adjusts latent provenance disclosure (including create vs alter), and delays application for GenAI systems designed primarily as assistive technology until 2029. Lower direct relevance for conversation/CS operators than AB 1609.",
+          "sources": [
+            {
+              "id": 30,
+              "jurisdiction_id": null,
+              "obligation_id": 16,
+              "label": "SB 1000 bill status — chaptered Ch. 861 (LegInfo)",
+              "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB1000"
+            },
+            {
+              "id": 31,
+              "jurisdiction_id": null,
+              "obligation_id": 16,
+              "label": "Governor Newsom — AI framework signing announcement (2026-09-30)",
+              "url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
             }
           ]
         }
@@ -1501,7 +1533,7 @@
           "id": 11,
           "jurisdiction_id": null,
           "obligation_id": 6,
-          "label": "AB 1609 bill status (LegInfo)",
+          "label": "AB 1609 bill status — chaptered Ch. 733 (LegInfo)",
           "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1609"
         },
         {
@@ -1517,6 +1549,27 @@
           "obligation_id": 7,
           "label": "CA Civil Rights Department",
           "url": "https://calcivilrights.ca.gov/2025/06/30/civil-rights-council-secures-approval-for-regulations-to-protect-against-employment-discrimination-related-to-artificial-intelligence/"
+        },
+        {
+          "id": 29,
+          "jurisdiction_id": null,
+          "obligation_id": 6,
+          "label": "AB 1609 chaptered text — Chapter 733 (LegInfo)",
+          "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1609"
+        },
+        {
+          "id": 30,
+          "jurisdiction_id": null,
+          "obligation_id": 16,
+          "label": "SB 1000 bill status — chaptered Ch. 861 (LegInfo)",
+          "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB1000"
+        },
+        {
+          "id": 31,
+          "jurisdiction_id": null,
+          "obligation_id": 16,
+          "label": "Governor Newsom — AI framework signing announcement (2026-09-30)",
+          "url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
         }
       ],
       "history": [
@@ -1529,6 +1582,26 @@
           "source_url": "https://cppa.ca.gov/regulations/ccpa_updates.html",
           "event_kind": "milestone",
           "created_at": "2026-09-22 23:19:23"
+        },
+        {
+          "id": 22,
+          "jurisdiction_id": 6,
+          "event_date": "2026-09-30",
+          "title": "SB 1000 chaptered (AI Transparency Act amendments)",
+          "detail": "Governor approved and Secretary of State chaptered SB 1000 as Chapter 861, Statutes of 2026. Urgency — immediate effect. Provenance/disclosure-verification updates for GenAI covered providers; low direct impact on voice/CS operators.",
+          "source_url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB1000",
+          "event_kind": "milestone",
+          "created_at": "2026-10-01 13:54:02"
+        },
+        {
+          "id": 21,
+          "jurisdiction_id": 6,
+          "event_date": "2026-09-28",
+          "title": "AB 1609 chaptered (Right to Human Customer Service)",
+          "detail": "Governor approved and Secretary of State chaptered AB 1609 as Chapter 733, Statutes of 2026. Non-urgency; generally effective January 1, 2027. Disclosure + human-handoff rules for large private businesses (>$500M national revenue) using customer-service chatbots / telephonic CS with California customers.",
+          "source_url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1609",
+          "event_kind": "milestone",
+          "created_at": "2026-10-01 13:54:02"
         },
         {
           "id": 5,
@@ -1560,8 +1633,8 @@
         "kind": "state",
         "status_color": "enacted_pending",
         "status_label": "enacted_pending",
-        "summary": "SB 26-189 ADMT framework effective Jan 1 2027 for consequential decisions including residential lease/purchase. High for AppFolio/PM vertical. Customer-service bots may fall outside covered ADMT when used under an acceptable-use pattern that does not materially influence lease decisions.",
-        "last_reviewed": "2026-09-22",
+        "summary": "SB 26-189 ADMT framework effective Jan 1, 2027 for consequential decisions including residential lease/purchase. High for property-management vertical. AG formal comments on proposed ADMT & Chatbot Safety rules through Oct 26, 2026 (coag.gov/ai). Customer-service bots may fall outside covered ADMT when used under an acceptable-use pattern that does not materially influence lease decisions.",
+        "last_reviewed": "2026-10-01",
         "notes": "SB 24-205 AI Act was repealed/replaced by SB 26-189 ADMT structure. Confirm AUP/exclusion language with counsel for CS bots that do not score/rank tenants."
       },
       "obligations": [
@@ -1593,6 +1666,13 @@
               "obligation_id": 8,
               "label": "CO Division of Real Estate — SB26-189 summary",
               "url": "https://www.leg.colorado.gov/bills/sb26-189"
+            },
+            {
+              "id": 32,
+              "jurisdiction_id": null,
+              "obligation_id": 8,
+              "label": "Colorado AG — ADMT & Chatbot Safety rulemaking",
+              "url": "https://coag.gov/ai/"
             }
           ]
         }
@@ -1611,6 +1691,13 @@
           "obligation_id": 8,
           "label": "CO Division of Real Estate — SB26-189 summary",
           "url": "https://www.leg.colorado.gov/bills/sb26-189"
+        },
+        {
+          "id": 32,
+          "jurisdiction_id": null,
+          "obligation_id": 8,
+          "label": "Colorado AG — ADMT & Chatbot Safety rulemaking",
+          "url": "https://coag.gov/ai/"
         }
       ],
       "history": [
@@ -1623,6 +1710,16 @@
           "source_url": "https://www.leg.colorado.gov/bills/sb26-189",
           "event_kind": "milestone",
           "created_at": "2026-09-22 23:19:23"
+        },
+        {
+          "id": 23,
+          "jurisdiction_id": 7,
+          "event_date": "2026-10-26",
+          "title": "CO ADMT & Chatbot Safety rulemaking comment deadline",
+          "detail": "Colorado AG formal written comments on proposed ADMT Act and Chatbot Safety Act rules accepted through October 26, 2026 at 11:59 p.m. MST (or last day of hearing if continued). Statute effective dates unchanged: Jan 1, 2027. Watch rule text for deployer notice / chatbot disclosure clarifications.",
+          "source_url": "https://coag.gov/ai/",
+          "event_kind": "milestone",
+          "created_at": "2026-10-01 13:54:02"
         }
       ]
     },
@@ -1632,10 +1729,10 @@
         "code": "CT",
         "name": "Connecticut",
         "kind": "state",
-        "status_color": "proposed_hot",
-        "status_label": "proposed_hot",
-        "summary": "Public Act 26-15 (Online Safety / AI Responsibility & Transparency) — broad AI statute with phased effective dates. First wave Oct 1 2026; core AEDT interaction/pre-decision disclosures Oct 1 2027. High watch for voice/conversation AI.",
-        "last_reviewed": "2026-09-22",
+        "status_color": "in_force",
+        "status_label": "in_force",
+        "summary": "Public Act 26-15 (CART Act / Online Safety) — first-wave provisions in force as of Oct 1, 2026 (AEDT framework scaffolding, AI not a defense to employment discrimination, WARN/AI-layoff disclosure themes). Core AEDT interaction and pre-decision disclosures apply to deployments on/after Oct 1, 2027. High watch for voice/conversation AI operators serving CT employers and CS channels.",
+        "last_reviewed": "2026-10-01",
         "notes": "Split effective dates (verified against PA 26-15 text): Oct 1 2026 first-wave framework / anti-discrimination; Jan 1 2027 AI companion safeguards; Oct 1 2027 AEDT interaction & pre-decision disclosures for tools deployed on/after that date. Confirm companion/CS-bot scope against PA text."
       },
       "obligations": [
@@ -1643,7 +1740,7 @@
           "id": 9,
           "jurisdiction_id": 8,
           "title": "PA 26-15 — first-wave AI / AEDT framework (anti-discrimination & scaffolding)",
-          "status": "enacted_pending",
+          "status": "in_force",
           "effective_date": "2026-10-01",
           "themes": [
             "disclosure",
@@ -1651,8 +1748,8 @@
             "governance"
           ],
           "voice_cs_relevance": "high",
-          "voice_cs_why": "First wave includes AEDT statutory framework and the rule that AI use is not a defense to discrimination; relevant watch for CS/voice vendors serving CT employers and for companion/online-safety themes in the Act.",
-          "summary": "Substitute SB 5 / Public Act 26-15. Effective Oct 1 2026: AEDT definitions and related employment framework provisions, including that use of automated employment-related decision technology is not a defense to discrimination claims (and related WARN/AI-layoff disclosure themes). Core interaction/pre-decision disclosure duties for AEDTs deployed on/after Oct 1 2027 are tracked as a separate obligation.",
+          "voice_cs_why": "First wave is live: AEDT statutory framework and the rule that AI use is not a defense to discrimination; relevant watch for CS/voice vendors serving CT employers and for companion/online-safety themes in the Act.",
+          "summary": "Substitute SB 5 / Public Act 26-15 (CART Act). First-wave provisions effective October 1, 2026: AEDT definitions and related employment framework provisions, including that use of automated employment-related decision technology is not a defense to discrimination claims, plus WARN/AI-layoff disclosure themes. CT AG (2026-09-16) advised consumers/businesses of new CART Act rights and requirements beginning Oct 1, 2026. Core interaction/pre-decision disclosure duties for AEDTs deployed on/after Oct 1, 2027 remain a separate obligation (id 10).",
           "sources": [
             {
               "id": 16,
@@ -1667,6 +1764,13 @@
               "obligation_id": 9,
               "label": "Connecticut General Assembly",
               "url": "https://www.cga.ct.gov/"
+            },
+            {
+              "id": 28,
+              "jurisdiction_id": null,
+              "obligation_id": 9,
+              "label": "CT AG — new privacy/AI rights beginning Oct 1, 2026",
+              "url": "https://portal.ct.gov/ag/press-releases/2026-press-releases/rights-and-requirements-related-to-new-and-updated-privacy-laws"
             }
           ]
         },
@@ -1715,6 +1819,13 @@
           "obligation_id": 10,
           "label": "PA 26-15 official PDF (CGA)",
           "url": "https://www.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00015-R00SB-00005-PA.PDF"
+        },
+        {
+          "id": 28,
+          "jurisdiction_id": null,
+          "obligation_id": 9,
+          "label": "CT AG — new privacy/AI rights beginning Oct 1, 2026",
+          "url": "https://portal.ct.gov/ag/press-releases/2026-press-releases/rights-and-requirements-related-to-new-and-updated-privacy-laws"
         }
       ],
       "history": [
@@ -1739,12 +1850,22 @@
           "created_at": "2026-09-22 23:19:23"
         },
         {
+          "id": 20,
+          "jurisdiction_id": 8,
+          "event_date": "2026-10-01",
+          "title": "CART Act first wave now in force",
+          "detail": "Connecticut PA 26-15 / SB5 first-wave AI provisions became operative. AG Tong (Sept 16, 2026) highlighted employment AI notice themes and anti-discrimination; companion/kids chatbot safeguards phase in on later dates. Primary text: 2026PA-00015 (CGA).",
+          "source_url": "https://portal.ct.gov/ag/press-releases/2026-press-releases/rights-and-requirements-related-to-new-and-updated-privacy-laws",
+          "event_kind": "milestone",
+          "created_at": "2026-10-01 13:54:02"
+        },
+        {
           "id": 15,
           "jurisdiction_id": 8,
           "event_date": "2026-10-01",
           "title": "PA 26-15 first-wave provisions effective",
-          "detail": "Oct 1, 2026: AEDT framework scaffolding and anti-discrimination amendments (among other first-wave provisions).",
-          "source_url": "https://www.cga.ct.gov/2026/ACT/PA/PDF/2026PA-00015-R00SB-00005-PA.PDF",
+          "detail": "Oct 1, 2026: CART Act first-wave provisions take effect (AEDT framework scaffolding, anti-discrimination amendments, WARN/AI-layoff disclosure themes). Confirmed by CT AG press release (2026-09-16) advising of new rights/requirements beginning Oct 1, 2026. Core AEDT interaction/pre-decision notices: Oct 1, 2027.",
+          "source_url": "https://portal.ct.gov/ag/press-releases/2026-press-releases/rights-and-requirements-related-to-new-and-updated-privacy-laws",
           "event_kind": "milestone",
           "created_at": "2026-09-22 23:19:23"
         }
@@ -1855,7 +1976,7 @@
         "status_color": "watch",
         "status_label": "watch",
         "summary": "Employment-focused AI rules (video interview notice; broader AI employment notice/anti-bias themes). Medium relevance — voice/conversation CS operators are not primarily a hiring-tool vendor, but customers may ask.",
-        "last_reviewed": "2026-09-22",
+        "last_reviewed": "2026-10-01",
         "notes": "Track IDHR guidance; detailed proposed notice regs were in flux mid-2026."
       },
       "obligations": [
@@ -2008,7 +2129,7 @@
         "status_color": "in_force",
         "status_label": "in_force",
         "summary": "Enacted chatbot disclosure law (PL 2025, c. 294): clear and conspicuous notice required when AI chatbots engage consumers in trade/commerce in a way that may mislead them into believing they are talking to a human. High relevance for customer-service bots and phone AI.",
-        "last_reviewed": "2026-09-22",
+        "last_reviewed": "2026-10-01",
         "notes": "Codified at 10 M.R.S. §1500-DD (realloc. from §1500-Y). UTPA enforcement."
       },
       "obligations": [
@@ -2283,7 +2404,7 @@
         "status_color": "watch",
         "status_label": "watch",
         "summary": "NYC Local Law 144 (AEDT hiring bias audits) is the main in-force local rule. State-level AI bills remain a watch item. Low–medium for core voice/CS products; higher if customers use AEDT in NYC hiring.",
-        "last_reviewed": "2026-09-22",
+        "last_reviewed": "2026-10-01",
         "notes": "NYC LL144 is local (NYC); tracked under NY state card for discoverability."
       },
       "obligations": [
@@ -2511,7 +2632,7 @@
         "status_color": "in_force",
         "status_label": "in_force",
         "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas.",
-        "last_reviewed": "2026-09-22",
+        "last_reviewed": "2026-10-01",
         "notes": "Exclusive AG enforcement; cure period; sandbox and AI Council created."
       },
       "obligations": [
@@ -2594,7 +2715,7 @@
         "status_color": "in_force",
         "status_label": "in_force",
         "summary": "Utah AI Policy Act framework: generative AI disclosure on clear consumer request; heightened/proactive disclosure for regulated occupations in high-risk interactions. Medium relevance for customer-service bots and phone AI.",
-        "last_reviewed": "2026-09-22",
+        "last_reviewed": "2026-10-01",
         "notes": "Subsequent amendments (e.g. SB 226 / SB 332 era) refine disclosure and chatbot rules — confirm current code when advising."
       },
       "obligations": [

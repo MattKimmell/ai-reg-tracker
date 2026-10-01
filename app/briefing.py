@@ -9,7 +9,7 @@ from typing import Any
 
 from app import db
 
-AS_OF = date(2026, 9, 23)
+AS_OF = date(2026, 10, 1)
 
 BUCKET_META = {
     "in_force": {"label": "In force", "css": "status-in-force"},
@@ -125,11 +125,15 @@ CURATED: list[dict[str, Any]] = [
         "id": "ct-wave1",
         "jurisdiction_code": "CT",
         "jurisdiction_label": "Connecticut",
-        "topic": "",
-        "bucket": "coming_soon",
-        "blurb": "",
+        "topic": "CART Act first wave",
+        "bucket": "in_force",
+        "blurb": (
+            "Connecticut's first-wave AI rules are live. Using AI is not a defense to "
+            "employment discrimination, and WARN-style layoff notices may need to say if "
+            "AI or other tech changes were involved. Bigger AEDT hiring notices come Oct 2027."
+        ),
         "obligation_match": "first-wave AI / AEDT",
-        "sort": 80,
+        "sort": 75,
     },
     {
         "id": "ct-wave2",
@@ -166,11 +170,10 @@ CURATED: list[dict[str, Any]] = [
         "jurisdiction_code": "CA",
         "jurisdiction_label": "California",
         "topic": "",
-        "bucket": "pending",
+        "bucket": "coming_soon",
         "blurb": "",
         "obligation_match": "AB 1609",
-        "date_fallback": "pending (governor)",
-        "sort": 120,
+        "sort": 105,
     },
 ]
 
