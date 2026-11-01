@@ -175,6 +175,20 @@
       "sort": 105
     },
     {
+      "id": "co-chatbot-safety",
+      "jurisdiction_code": "CO",
+      "jurisdiction_label": "Colorado",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 107
+    },
+    {
       "id": "ny-minors-chatbot",
       "jurisdiction_code": "NY",
       "jurisdiction_label": "New York",
@@ -260,6 +274,20 @@
       "date_display": "Jan 1, 2027",
       "obligation_status": "enacted_pending",
       "sort": 105
+    },
+    {
+      "id": "co-chatbot-safety",
+      "jurisdiction_code": "CO",
+      "jurisdiction_label": "Colorado",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 107
     },
     {
       "id": "ny-minors-chatbot",
@@ -458,6 +486,20 @@
       "date_display": "Jan 1, 2027",
       "obligation_status": "enacted_pending",
       "sort": 105
+    },
+    {
+      "id": "co-chatbot-safety",
+      "jurisdiction_code": "CO",
+      "jurisdiction_label": "Colorado",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 107
     },
     {
       "id": "ny-minors-chatbot",

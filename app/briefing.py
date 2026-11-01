@@ -186,6 +186,16 @@ CURATED: list[dict[str, Any]] = [
         "sort": 85,
     },
     {
+        "id": "co-chatbot-safety",
+        "jurisdiction_code": "CO",
+        "jurisdiction_label": "Colorado",
+        "topic": "",
+        "bucket": "coming_soon",
+        "blurb": "",
+        "obligation_match": "HB 26-1263",
+        "sort": 107,
+    },
+    {
         "id": "ny-minors-chatbot",
         "jurisdiction_code": "NY",
         "jurisdiction_label": "New York",

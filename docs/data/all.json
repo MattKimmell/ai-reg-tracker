@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-11-01T14:04:19Z",
+  "exported_at": "2026-11-01T14:51:16Z",
   "last_global_refresh": "2026-11-01",
   "jurisdiction_count": 52,
   "stats": {
@@ -55,7 +55,7 @@
     },
     {
       "month": "2026-10",
-      "count": 9
+      "count": 11
     },
     {
       "month": "2026-11",
@@ -67,7 +67,7 @@
     },
     {
       "month": "2027-01",
-      "count": 7
+      "count": 8
     },
     {
       "month": "2027-02",
@@ -283,6 +283,20 @@
         "sort": 105
       },
       {
+        "id": "co-chatbot-safety",
+        "jurisdiction_code": "CO",
+        "jurisdiction_label": "Colorado",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-01-01",
+        "date_display": "Jan 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 107
+      },
+      {
         "id": "ny-minors-chatbot",
         "jurisdiction_code": "NY",
         "jurisdiction_label": "New York",
@@ -368,6 +382,20 @@
         "date_display": "Jan 1, 2027",
         "obligation_status": "enacted_pending",
         "sort": 105
+      },
+      {
+        "id": "co-chatbot-safety",
+        "jurisdiction_code": "CO",
+        "jurisdiction_label": "Colorado",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-01-01",
+        "date_display": "Jan 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 107
       },
       {
         "id": "ny-minors-chatbot",
@@ -568,6 +596,20 @@
         "sort": 105
       },
       {
+        "id": "co-chatbot-safety",
+        "jurisdiction_code": "CO",
+        "jurisdiction_label": "Colorado",
+        "topic": "",
+        "bucket": "coming_soon",
+        "bucket_label": "Coming soon",
+        "bucket_css": "status-pending",
+        "blurb": "",
+        "effective_date": "2027-01-01",
+        "date_display": "Jan 1, 2027",
+        "obligation_status": "enacted_pending",
+        "sort": 107
+      },
+      {
         "id": "ny-minors-chatbot",
         "jurisdiction_code": "NY",
         "jurisdiction_label": "New York",
@@ -605,7 +647,7 @@
       "kind": "federal",
       "status_color": "watch",
       "status_label": "watch",
-      "summary": "No comprehensive federal AI statute or preemption law (Great American AI Act remains an unnumbered discussion draft). Sector rules (TCPA synthetic voice, FTC §5) remain the primary constraints for voice/conversation AI operators. FCC TCPA consent-revocation modernization published Oct 26, 2026, effective Nov 25, 2026. FCC 24-84 AI-call disclosure NPRM still not adopted. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
+      "summary": "No comprehensive federal AI statute or preemption law (Great American AI Act remains an unnumbered discussion draft). Sector rules (TCPA synthetic voice, FTC §5) remain the primary constraints for voice/conversation AI operators. FCC TCPA consent-revocation modernization published Oct 26, 2026, effective Nov 25, 2026. FCC 24-84 AI-call disclosure NPRM still not adopted. FTC sent CIDs to OpenAI and Anthropic (Oct 14, 2026) in an AI consumer-protection probe. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
       "last_reviewed": "2026-11-01",
       "notes": "Monitor FCC TCPA voice-AI consent, FTC deceptive-claims enforcement, and any congressional preemption vehicle. State disclosure/ADMT laws remain operative unless Congress acts."
     },
@@ -1089,7 +1131,7 @@
       "kind": "state",
       "status_color": "in_force",
       "status_label": "in_force",
-      "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas.",
+      "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas. Oct 23, 2026: AG sued OpenAI under the DTPA (not TRAIGA) over chatbot safety/marketing claims — AI claims are being enforced through general consumer-protection law.",
       "last_reviewed": "2026-11-01",
       "notes": "Exclusive AG enforcement; cure period; sandbox and AI Council created."
     },
@@ -1180,7 +1222,7 @@
         "kind": "federal",
         "status_color": "watch",
         "status_label": "watch",
-        "summary": "No comprehensive federal AI statute or preemption law (Great American AI Act remains an unnumbered discussion draft). Sector rules (TCPA synthetic voice, FTC §5) remain the primary constraints for voice/conversation AI operators. FCC TCPA consent-revocation modernization published Oct 26, 2026, effective Nov 25, 2026. FCC 24-84 AI-call disclosure NPRM still not adopted. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
+        "summary": "No comprehensive federal AI statute or preemption law (Great American AI Act remains an unnumbered discussion draft). Sector rules (TCPA synthetic voice, FTC §5) remain the primary constraints for voice/conversation AI operators. FCC TCPA consent-revocation modernization published Oct 26, 2026, effective Nov 25, 2026. FCC 24-84 AI-call disclosure NPRM still not adopted. FTC sent CIDs to OpenAI and Anthropic (Oct 14, 2026) in an AI consumer-protection probe. EO 14365 advances a preemption narrative but does not repeal state AI laws.",
         "last_reviewed": "2026-11-01",
         "notes": "Monitor FCC TCPA voice-AI consent, FTC deceptive-claims enforcement, and any congressional preemption vehicle. State disclosure/ADMT laws remain operative unless Congress acts."
       },
@@ -1288,7 +1330,7 @@
           ],
           "voice_cs_relevance": "high",
           "voice_cs_why": "Outbound AI voice/SMS (payment reminders, delinquency, appointment calls) must honor opt-outs; informational opt-outs can now be scoped to one message category, telemarketing opt-outs still revoke all telemarketing, and callers may designate one clearly disclosed exclusive opt-out method. Replaces the 2024 'revoke all' rule.",
-          "summary": "FCC modified 47 CFR 64.1200(a)(10): informational revocations may apply only to the category targeted; callers may designate an exclusive revocation method; financial-institution fraud-alert exemption eased. Published 90 FR / 2026-21821 on Oct 26, 2026; effective Nov 25, 2026.",
+          "summary": "FCC Report & Order FCC 26-67 (adopted Sept 30, released Oct 1, 2026) modified 47 CFR 64.1200(a)(10)-(12): informational revocations may apply only to the category targeted; telemarketing opt-outs still revoke all telemarketing; callers may designate an exclusive revocation method (key-press/voice opt-out on the call, standard reply words like STOP, or a designated website/number) if clearly disclosed on each call/text; revocations honored within 10 business days; financial-institution fraud-alert exemption eased. Published at 91 FR 67214 (FR Doc. 2026-21821) on Oct 26, 2026; effective Nov 25, 2026, superseding the delayed 'revoke all' rule (previously pushed to Jan 31, 2027).",
           "sources": [
             {
               "id": 33,
@@ -1301,8 +1343,8 @@
               "id": 34,
               "jurisdiction_id": null,
               "obligation_id": 17,
-              "label": "FCC Report & Order (DOC-424844A1)",
-              "url": "https://docs.fcc.gov/public/attachments/DOC-424844A1.pdf"
+              "label": "FCC Report & Order FCC 26-67 (final)",
+              "url": "https://docs.fcc.gov/public/attachments/FCC-26-67A1.pdf"
             }
           ]
         }
@@ -1368,8 +1410,8 @@
           "id": 34,
           "jurisdiction_id": null,
           "obligation_id": 17,
-          "label": "FCC Report & Order (DOC-424844A1)",
-          "url": "https://docs.fcc.gov/public/attachments/DOC-424844A1.pdf"
+          "label": "FCC Report & Order FCC 26-67 (final)",
+          "url": "https://docs.fcc.gov/public/attachments/FCC-26-67A1.pdf"
         }
       ],
       "history": [
@@ -1392,6 +1434,16 @@
           "source_url": "https://www.law360.com/articles/2540020/fcc-making-zero-plans-to-ease-political-robocall-rules",
           "event_kind": "milestone",
           "created_at": "2026-11-01 14:04:07"
+        },
+        {
+          "id": 30,
+          "jurisdiction_id": 1,
+          "event_date": "2026-10-14",
+          "title": "FTC sends civil investigative demands to OpenAI and Anthropic",
+          "detail": "FTC spokesperson confirmed subpoenas (CIDs) to OpenAI and Anthropic seeking documents on safety incidents, safeguards, privacy policies and marketing, under the agency's consumer-protection authority; more demands to other AI firms may follow. Signals FTC §5 scrutiny of AI safety/marketing claims; no new rule.",
+          "source_url": "https://www.cbsnews.com/news/ftc-subpoenas-anthropic-openai-consumer-protection/",
+          "event_kind": "milestone",
+          "created_at": "2026-11-01 14:51:08"
         },
         {
           "id": 24,
@@ -1824,6 +1876,38 @@
               "url": "https://coag.gov/ai/"
             }
           ]
+        },
+        {
+          "id": 19,
+          "jurisdiction_id": 7,
+          "title": "HB 26-1263 — Chatbot Safety Act (conversational AI service operators)",
+          "status": "enacted_pending",
+          "effective_date": "2027-01-01",
+          "themes": [
+            "chatbot",
+            "disclosure",
+            "minors",
+            "companion_cs"
+          ],
+          "voice_cs_relevance": "medium",
+          "voice_cs_why": "Excludes bots primarily designed for commerce/transactional assistance, customer support, or customer service, and business-operations tools — typical CS/leasing/dispatch AI workers likely fall outside. Open-ended, general-purpose public chatbots are covered. Keep deployments scoped to CS tasks and document the primary purpose.",
+          "summary": "Signed July 1, 2026; operator duties from Jan 1, 2027 for publicly accessible AI systems that primarily simulate human conversation: clear and conspicuous AI disclosure (first interaction each day, at least every 3 hours unless persistent, and whenever asked), suicide/self-harm protocols, no representing outputs as licensed professional services, age estimation and safeguards for minors, annual report to the AG. AG is addressing it in the 4 CCR 904-6 rulemaking.",
+          "sources": [
+            {
+              "id": 37,
+              "jurisdiction_id": null,
+              "obligation_id": 19,
+              "label": "HB26-1263 session law text (Colorado General Assembly)",
+              "url": "https://leg.colorado.gov/laws/session-laws/HB26-1263/208/download"
+            },
+            {
+              "id": 38,
+              "jurisdiction_id": null,
+              "obligation_id": 19,
+              "label": "Colorado AG — ADMT & Chatbot Safety rulemaking",
+              "url": "https://coag.gov/ai/"
+            }
+          ]
         }
       ],
       "sources": [
@@ -1845,6 +1929,20 @@
           "id": 32,
           "jurisdiction_id": null,
           "obligation_id": 8,
+          "label": "Colorado AG — ADMT & Chatbot Safety rulemaking",
+          "url": "https://coag.gov/ai/"
+        },
+        {
+          "id": 37,
+          "jurisdiction_id": null,
+          "obligation_id": 19,
+          "label": "HB26-1263 session law text (Colorado General Assembly)",
+          "url": "https://leg.colorado.gov/laws/session-laws/HB26-1263/208/download"
+        },
+        {
+          "id": 38,
+          "jurisdiction_id": null,
+          "obligation_id": 19,
           "label": "Colorado AG — ADMT & Chatbot Safety rulemaking",
           "url": "https://coag.gov/ai/"
         }
@@ -2613,7 +2711,7 @@
           ],
           "voice_cs_relevance": "low",
           "voice_cs_why": "Targets companion-style chatbots offered to minors (bots claiming to be human, relationships, self-harm, sexual content). Business customer-service bots are unlikely to be the focus, but the ban on bots pretending to be human applies to any user not confirmed as an adult, so check scope if consumer-facing bots could reach minors.",
-          "summary": "Signed Oct 28, 2026. Prohibits 12 categories of unsafe features for users under 18 or not confirmed adult; requires multiple age-verification options (one not solely government ID) and deletion of age data; AG enforcement up to $25,000 per violation plus public complaint portal.",
+          "summary": "Signed Oct 28, 2026 (Ch. 368); effective Jan 1, 2027. Adds GBL Art. 48 (§§1800-1805): operators may not offer specified unsafe chatbot features (pretending to be human/alive/have emotions, claimed relationships, self-harm/eating-disorder/drug promotion, encouraging secrecy/isolation, sexually explicit content) to users under 18 or to any user not confirmed as an adult; requires more than one age-verification option (one not solely government ID) and deletion of age data; AG enforcement up to $25,000 per violation plus a public complaint portal.",
           "sources": [
             {
               "id": 35,
@@ -2856,7 +2954,7 @@
         "kind": "state",
         "status_color": "in_force",
         "status_label": "in_force",
-        "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas.",
+        "summary": "TRAIGA (HB 149) — Texas Responsible AI Governance Act — effective 2026-01-01. Broad governance and prohibited-use framework with AG enforcement; medium-high relevance for voice/conversation AI operators deploying in Texas. Oct 23, 2026: AG sued OpenAI under the DTPA (not TRAIGA) over chatbot safety/marketing claims — AI claims are being enforced through general consumer-protection law.",
         "last_reviewed": "2026-11-01",
         "notes": "Exclusive AG enforcement; cure period; sandbox and AI Council created."
       },
@@ -2909,6 +3007,16 @@
         }
       ],
       "history": [
+        {
+          "id": 31,
+          "jurisdiction_id": 45,
+          "event_date": "2026-10-23",
+          "title": "Texas AG sues OpenAI under the DTPA",
+          "detail": "AG Paxton sued OpenAI and CEO Sam Altman under the Texas Deceptive Trade Practices Act over alleged misrepresentation of ChatGPT safety and harms to users including minors. Brought under the DTPA, not TRAIGA; no public TRAIGA enforcement action reported to date.",
+          "source_url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-openai-and-ceo-sam-altman-lying-users-and-harming-texans",
+          "event_kind": "milestone",
+          "created_at": "2026-11-01 14:51:08"
+        },
         {
           "id": 14,
           "jurisdiction_id": 45,
