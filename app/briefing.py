@@ -9,7 +9,7 @@ from typing import Any
 
 from app import db
 
-AS_OF = date(2026, 10, 1)
+AS_OF = date(2026, 11, 1)
 
 BUCKET_META = {
     "in_force": {"label": "In force", "css": "status-in-force"},
@@ -174,6 +174,26 @@ CURATED: list[dict[str, Any]] = [
         "blurb": "",
         "obligation_match": "AB 1609",
         "sort": 105,
+    },
+    {
+        "id": "fed-tcpa-revocation",
+        "jurisdiction_code": "US-FED",
+        "jurisdiction_label": "Federal",
+        "topic": "",
+        "bucket": "coming_soon",
+        "blurb": "",
+        "obligation_match": "TCPA consent revocation",
+        "sort": 85,
+    },
+    {
+        "id": "ny-minors-chatbot",
+        "jurisdiction_code": "NY",
+        "jurisdiction_label": "New York",
+        "topic": "",
+        "bucket": "coming_soon",
+        "blurb": "",
+        "obligation_match": "S.9051B",
+        "sort": 108,
     },
 ]
 

@@ -1,7 +1,7 @@
 {
   "title": "What to know right now",
   "subtitle": "",
-  "as_of": "2026-10-01",
+  "as_of": "2026-11-01",
   "disclaimer": "Not legal advice.",
   "in_force": [
     {
@@ -119,6 +119,20 @@
   ],
   "coming_soon": [
     {
+      "id": "fed-tcpa-revocation",
+      "jurisdiction_code": "US-FED",
+      "jurisdiction_label": "Federal",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2026-11-25",
+      "date_display": "Nov 25, 2026",
+      "obligation_status": "enacted_pending",
+      "sort": 85
+    },
+    {
       "id": "ct-wave2",
       "jurisdiction_code": "CT",
       "jurisdiction_label": "Connecticut",
@@ -159,6 +173,20 @@
       "date_display": "Jan 1, 2027",
       "obligation_status": "enacted_pending",
       "sort": 105
+    },
+    {
+      "id": "ny-minors-chatbot",
+      "jurisdiction_code": "NY",
+      "jurisdiction_label": "New York",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 108
     },
     {
       "id": "co-admt",
@@ -178,6 +206,20 @@
   "pending": [],
   "upcoming": [
     {
+      "id": "fed-tcpa-revocation",
+      "jurisdiction_code": "US-FED",
+      "jurisdiction_label": "Federal",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2026-11-25",
+      "date_display": "Nov 25, 2026",
+      "obligation_status": "enacted_pending",
+      "sort": 85
+    },
+    {
       "id": "ct-wave2",
       "jurisdiction_code": "CT",
       "jurisdiction_label": "Connecticut",
@@ -218,6 +260,20 @@
       "date_display": "Jan 1, 2027",
       "obligation_status": "enacted_pending",
       "sort": 105
+    },
+    {
+      "id": "ny-minors-chatbot",
+      "jurisdiction_code": "NY",
+      "jurisdiction_label": "New York",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 108
     },
     {
       "id": "co-admt",
@@ -348,6 +404,20 @@
       "sort": 75
     },
     {
+      "id": "fed-tcpa-revocation",
+      "jurisdiction_code": "US-FED",
+      "jurisdiction_label": "Federal",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2026-11-25",
+      "date_display": "Nov 25, 2026",
+      "obligation_status": "enacted_pending",
+      "sort": 85
+    },
+    {
       "id": "ct-wave2",
       "jurisdiction_code": "CT",
       "jurisdiction_label": "Connecticut",
@@ -388,6 +458,20 @@
       "date_display": "Jan 1, 2027",
       "obligation_status": "enacted_pending",
       "sort": 105
+    },
+    {
+      "id": "ny-minors-chatbot",
+      "jurisdiction_code": "NY",
+      "jurisdiction_label": "New York",
+      "topic": "",
+      "bucket": "coming_soon",
+      "bucket_label": "Coming soon",
+      "bucket_css": "status-pending",
+      "blurb": "",
+      "effective_date": "2027-01-01",
+      "date_display": "Jan 1, 2027",
+      "obligation_status": "enacted_pending",
+      "sort": 108
     },
     {
       "id": "co-admt",
